@@ -7,11 +7,8 @@ export default function Footer() {
       <div className="container">
         <div className={styles.content}>
           <p className={styles.text}>
-            Creado por <span className={styles.name}>Cristián Pozo Labbé</span> y <span className={styles.name}>Karina Guajardo Carrasco</span>
+            Creado por <span className={styles.name}>Cristián Pozo Labbé</span> y <span className={styles.name}>Diego Pozo Labbé</span>
           </p>
-          <div className={styles.iconWrapper}>
-             <Heart size={16} fill="var(--primary)" color="var(--primary)" />
-          </div>
         </div>
         
         <div className={styles.linksSection}>
