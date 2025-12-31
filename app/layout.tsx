@@ -15,6 +15,9 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Encuentra tu colegio",
   description: "Encuentra tu colegio ideal",
+  icons: {
+    icon: "/favicon.webp",
+  },
 };
 
 import Footer from "../components/Footer";
