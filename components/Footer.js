@@ -9,6 +9,9 @@ export default function Footer() {
           <p className={styles.text}>
             Creado por <span className={styles.name}>Cristián Pozo Labbé</span> y <span className={styles.name}>Diego Pozo Labbé</span>
           </p>
+          <p className={styles.copyright}>
+            © 2026 Todos los derechos reservados
+          </p>
         </div>
         
         <div className={styles.linksSection}>
