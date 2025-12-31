@@ -106,9 +106,9 @@ a.secondary {
   }
 }
 
-@media (max-width: 600px) {
+@media (max-width: 768px) {
   .main {
-    padding: 48px 24px;
+    padding: 32px 16px;
   }
 
   .intro {
@@ -116,9 +116,14 @@ a.secondary {
   }
 
   .intro h1 {
-    font-size: 32px;
-    line-height: 40px;
-    letter-spacing: -1.92px;
+    font-size: 28px;
+    line-height: 36px;
+    letter-spacing: -1.5px;
+  }
+
+  .intro p {
+    font-size: 16px;
+    line-height: 24px;
   }
 }
 
