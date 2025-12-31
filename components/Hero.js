@@ -1,16 +1,9 @@
 import { GraduationCap, Sun, Moon } from 'lucide-react';
 import styles from './Hero.module.css';
 
-export default function Hero({ theme, toggleTheme }) {
+export default function Hero() {
   return (
     <section className={styles.hero}>
-      <button 
-        className={styles.themeToggle} 
-        onClick={toggleTheme}
-        aria-label="Toggle Theme"
-      >
-        {theme === 'light' ? <Moon size={20} /> : <Sun size={20} />}
-      </button>
       <div className={styles.container}>
         <div className={styles.badge}>
             <GraduationCap size={20} className={styles.badgeIcon} />

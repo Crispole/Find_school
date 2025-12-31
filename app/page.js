@@ -5,6 +5,7 @@ import schoolsData from '../data/schools.json';
 import SchoolCard from '../components/SchoolCard';
 import FilterBar from '../components/FilterBar';
 import Hero from '../components/Hero';
+import Navbar from '../components/Navbar';
 import CurrencySwitcher from '../components/CurrencySwitcher';
 import ComparisonModal from '../components/ComparisonModal';
 
@@ -78,7 +79,8 @@ export default function Home() {
 
   return (
     <main style={{ minHeight: '100vh', paddingBottom: '4rem' }}>
-      <Hero theme={theme} toggleTheme={toggleTheme} />
+      <Navbar theme={theme} toggleTheme={toggleTheme} />
+      <Hero />
       
       <div className="container">
         <FilterBar 

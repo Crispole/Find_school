@@ -1,0 +1,100 @@
+.navbar {
+  background-color: var(--card-bg, #ffffff);
+  border-bottom: 1px solid var(--card-border, #e2e8f0);
+  padding: 0.75rem 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  width: 100%;
+  z-index: 1000;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  text-decoration: none;
+  color: var(--text-primary, #111827);
+  font-weight: 700;
+  font-size: 1.25rem;
+  transition: opacity 0.2s;
+  flex-shrink: 0;
+}
+
+.logo:hover {
+  opacity: 0.8;
+}
+
+.logoIcon {
+  color: var(--primary, #2563eb);
+}
+
+.navRight {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+}
+
+.navLinks {
+  display: flex;
+  gap: 2rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.navLink {
+  text-decoration: none;
+  color: var(--text-secondary, #4b5563);
+  font-weight: 500;
+  font-size: 0.95rem;
+  transition: color 0.2s;
+  white-space: nowrap;
+}
+
+.navLink:hover {
+  color: var(--primary, #2563eb);
+}
+
+.themeToggle {
+  background: var(--background);
+  border: 1px solid var(--card-border);
+  color: var(--text-primary);
+  padding: 0.5rem;
+  border-radius: 50%;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: all 0.2s ease;
+}
+
+.themeToggle:hover {
+  background: var(--card-border);
+  transform: scale(1.1);
+}
+
+@media (max-width: 768px) {
+  .navRight {
+    gap: 1rem;
+  }
+
+  .navLinks {
+    display: none;
+    /* Hide links on mobile for now to focus on logo/toggle */
+  }
+
+  .logoText {
+    font-size: 1.1rem;
+  }
+}
