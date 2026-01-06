@@ -27,7 +27,7 @@ export default function SchoolCard({ school, currency, rates }) {
             href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(school.address)}`}
             target="_blank"
             rel="noopener noreferrer"
-            className={styles.commune}
+            className={`${styles.commune} tour-card-commune`}
             style={{ textDecoration: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center' }}
         >
             <MapPin size={16} style={{ marginRight: '4px' }} />
@@ -49,7 +49,7 @@ export default function SchoolCard({ school, currency, rates }) {
 
         <div className={styles.fees}>
             <div 
-                className={styles.feesHeader} 
+                className={`${styles.feesHeader} tour-card-fees`} 
                 onClick={() => setShowFeesModal(true)}
                 title="Ver detalle de aranceles"
             >
@@ -97,11 +97,11 @@ export default function SchoolCard({ school, currency, rates }) {
         )}
 
         <div className={styles.actions}>
-            <a href={school.website} target="_blank" rel="noopener noreferrer" className={`${styles.btn} ${styles.btnOutline}`}>
+            <a href={school.website} target="_blank" rel="noopener noreferrer" className={`${styles.btn} ${styles.btnOutline} tour-card-website`}>
                 <ExternalLink size={16} />
                 Sitio Web
             </a>
-            <a href={`mailto:${school.email}`} className={`${styles.btn} ${styles.btnPrimary}`}>
+            <a href={`mailto:${school.email}`} className={`${styles.btn} ${styles.btnPrimary} tour-card-contact`}>
                 <Mail size={16} />
                 Contactar
             </a>

@@ -13,8 +13,25 @@ export default function Navbar({ theme, toggleTheme }) {
         <div className={styles.navRight}>
           <ul className={styles.navLinks}>
             <li><Link href="/quienes-somos" className={styles.navLink}>Quienes somos</Link></li>
-            <li><Link href="/#como-funciona" className={styles.navLink}>Cómo funciona</Link></li>
-            <li><Link href="/#contacto" className={styles.navLink}>Contacto</Link></li>
+            <li>
+              <button 
+                onClick={(e) => {
+                  e.preventDefault();
+                  if (window.location.pathname === '/') {
+                    if (typeof window !== 'undefined' && window.startTour) {
+                      window.startTour();
+                    }
+                  } else {
+                    window.location.href = '/?tutorial=true';
+                  }
+                }} 
+                className={styles.navLink}
+                style={{ background: 'none', border: 'none', cursor: 'pointer', fontFamily: 'inherit', fontSize: 'inherit' }}
+              >
+                Cómo funciona
+              </button>
+            </li>
+            <li><Link href="/contacto" className={styles.navLink}>Contacto</Link></li>
           </ul>
           <button 
             className={styles.themeToggle} 

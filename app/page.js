@@ -8,6 +8,10 @@ import Hero from '../components/Hero';
 import Navbar from '../components/Navbar';
 import CurrencySwitcher from '../components/CurrencySwitcher';
 import ComparisonModal from '../components/ComparisonModal';
+import Link from 'next/link';
+import { driver } from 'driver.js';
+import 'driver.js/dist/driver.css';
+
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState('');
@@ -15,9 +19,10 @@ export default function Home() {
   const [selectedCommune, setSelectedCommune] = useState('');
   const [selectedDependency, setSelectedDependency] = useState('');
   const [currency, setCurrency] = useState('CLP');
-  const [exchangeRates, setExchangeRates] = useState({ CLP: 1, UF: 38000, USD: 980 });
+  const [exchangeRates, setExchangeRates] = useState({ CLP: 1, UF: 39700, USD: 900 });
   const [theme, setTheme] = useState('light');
   const [isCompareOpen, setIsCompareOpen] = useState(false);
+
 
   useEffect(() => {
     const savedTheme = localStorage.getItem('theme') || 'light';
@@ -36,7 +41,37 @@ export default function Home() {
         }
     };
     fetchRates();
+
+    // Set global callback for Navbar
+    window.startTour = () => {
+        const driverObj = driver({
+            showProgress: true,
+            animate: true,
+            steps: [
+                { element: '#tour-filters', popover: { title: 'Filtros', description: 'Selecciona el tipo de establecimiento: todos - municipales - subvencionados - particulares' } },
+                { element: '#tour-compare', popover: { title: 'Compara', description: 'Eliges dos establecimientos y comparas características de cada uno.' } },
+                { element: '#tour-currency', popover: { title: 'Divisa', description: 'Seleccionas la divisa que te acomode.' } },
+                { element: '.tour-card-commune', popover: { title: 'Ubicación', description: 'Al hacer clic en la comuna de la card te llevará al lugar del establecimiento.' } },
+                { element: '.tour-card-fees', popover: { title: 'Costos', description: 'Al hacer clic en costos se abre un modal que detalla el valor del establecimiento.' } },
+                { element: '.tour-card-website', popover: { title: 'Sitio Web', description: 'Al hacer clic en sitio web te lleva a la página oficial del establecimiento.' } },
+                { element: '.tour-card-contact', popover: { title: 'Contactar', description: 'Al hacer clic en contactar enviarás un correo para solicitar más información del establecimiento.' } }
+            ]
+        });
+        driverObj.drive();
+    };
+
+    // Check for tutorial query param
+    const urlParams = new URLSearchParams(window.location.search);
+    if (urlParams.get('tutorial') === 'true') {
+      // Small delay to ensure render
+      setTimeout(() => {
+          if (window.startTour) window.startTour();
+      }, 500);
+      // Clean up URL
+      window.history.replaceState({}, document.title, "/");
+    }
   }, []);
+
 
   const toggleTheme = () => {
     const newTheme = theme === 'light' ? 'dark' : 'light';
@@ -103,6 +138,9 @@ export default function Home() {
             onClose={() => setIsCompareOpen(false)} 
             schools={schoolsData} 
         />
+
+
+
         
         <div style={{ marginBottom: '1rem', color: 'var(--text-secondary)' }}>
             Mostrando <strong>{filteredSchools.length}</strong> colegios encontrados

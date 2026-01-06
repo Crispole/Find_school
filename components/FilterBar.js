@@ -64,7 +64,7 @@ export default function FilterBar({
       </select>
       
       {/* 4. Dependency Switcher */}
-      <div className={styles.filterGroup}>
+      <div className={styles.filterGroup} id="tour-filters">
         <div className={styles.toggleGroup}>
           <button 
             className={`${styles.toggleBtn} ${!selectedDependency ? styles.active : ''}`}
@@ -94,13 +94,15 @@ export default function FilterBar({
       </div>
 
       {/* 4.5 Comparison Button */}
-      <button className={styles.compareBtn} onClick={onCompareClick}>
+      <button className={styles.compareBtn} onClick={onCompareClick} id="tour-compare">
         <Scale size={18} />
         <span>Compara</span>
       </button>
 
       {/* 5. Currency Switcher */}
-      <CurrencySwitcher currentCurrency={currency} setCurrency={setCurrency} />
+      <div id="tour-currency">
+        <CurrencySwitcher currentCurrency={currency} setCurrency={setCurrency} />
+      </div>
     </div>
   );
 }
