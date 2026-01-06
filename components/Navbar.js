@@ -12,9 +12,9 @@ export default function Navbar({ theme, toggleTheme }) {
         </Link>
         <div className={styles.navRight}>
           <ul className={styles.navLinks}>
-            <li><Link href="#quienes-somos" className={styles.navLink}>Quienes somos</Link></li>
-            <li><Link href="#como-funciona" className={styles.navLink}>Cómo funciona</Link></li>
-            <li><Link href="#contacto" className={styles.navLink}>Contacto</Link></li>
+            <li><Link href="/quienes-somos" className={styles.navLink}>Quienes somos</Link></li>
+            <li><Link href="/#como-funciona" className={styles.navLink}>Cómo funciona</Link></li>
+            <li><Link href="/#contacto" className={styles.navLink}>Contacto</Link></li>
           </ul>
           <button 
             className={styles.themeToggle} 

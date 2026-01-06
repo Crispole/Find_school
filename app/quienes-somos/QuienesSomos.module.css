@@ -1,0 +1,223 @@
+.mainContainer {
+    padding-top: 5rem;
+    /* Space for fixed navbar */
+    min-height: 100vh;
+}
+
+.section {
+    padding: 5rem 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.container {
+    max-width: 1000px;
+    width: 100%;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(135deg, var(--card-bg) 0%, var(--background) 100%);
+    text-align: center;
+    padding: 8rem 1rem 6rem;
+}
+
+.heroTitle {
+    font-size: 3.5rem;
+    max-width: 800px;
+    margin: 0 auto 1.5rem;
+    background: linear-gradient(to right, var(--primary), var(--accent));
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+}
+
+.heroSubtitle {
+    font-size: 1.25rem;
+    color: var(--text-secondary);
+    max-width: 700px;
+    margin: 0 auto 2.5rem;
+    line-height: 1.6;
+}
+
+.heroButtons {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+/* Vision Section */
+.vision {
+    background-color: var(--card-bg);
+}
+
+.visionContent {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    align-items: center;
+}
+
+.visionText h2 {
+    margin-bottom: 2rem;
+}
+
+.visionText p {
+    font-size: 1.1rem;
+    margin-bottom: 1.5rem;
+}
+
+/* Founders Section */
+.founders {
+    background-color: var(--background);
+}
+
+.foundersGrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.founderCard {
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: 2.5rem;
+    transition: transform 0.3s ease, shadow 0.3s ease;
+}
+
+.founderCard:hover {
+    transform: translateY(-5px);
+    box-shadow: var(--shadow-lg);
+}
+
+.founderHeader {
+    margin-bottom: 1.5rem;
+}
+
+.founderName {
+    font-size: 1.5rem;
+    color: var(--primary);
+    margin-bottom: 0.25rem;
+}
+
+.founderRole {
+    font-weight: 600;
+    color: var(--text-primary);
+    display: block;
+}
+
+.founderTitle {
+    font-size: 0.9rem;
+    color: var(--text-muted);
+}
+
+.founderQuote {
+    font-style: italic;
+    font-weight: 500;
+    color: var(--text-primary);
+    margin-bottom: 1rem;
+    padding-left: 1rem;
+    border-left: 3px solid var(--primary);
+}
+
+.founderBio {
+    font-size: 0.95rem;
+    color: var(--text-secondary);
+}
+
+/* Data Features */
+.features {
+    background-color: var(--card-bg);
+}
+
+.featuresGrid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.featureCard {
+    padding: 2rem;
+    border-radius: var(--radius);
+    background: var(--background);
+    border: 1px solid var(--card-border);
+}
+
+.featureIcon {
+    font-size: 2rem;
+    margin-bottom: 1rem;
+    display: block;
+}
+
+.featureCard h3 {
+    color: var(--primary);
+}
+
+.featureList {
+    list-style: none;
+    margin-top: 1rem;
+}
+
+.featureList li {
+    margin-bottom: 0.5rem;
+    font-size: 0.95rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.featureList li::before {
+    content: "•";
+    color: var(--primary);
+    font-weight: bold;
+}
+
+/* CTA Section */
+.cta {
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    color: white;
+    text-align: center;
+}
+
+.cta h2 {
+    color: white;
+    margin-bottom: 1.5rem;
+}
+
+.cta p {
+    color: rgba(255, 255, 255, 0.9);
+    max-width: 600px;
+    margin: 0 auto 2.5rem;
+    font-size: 1.2rem;
+}
+
+.ctaButton {
+    background: white;
+    color: var(--primary);
+}
+
+.ctaButton:hover {
+    background: #f1f5f9;
+    transform: scale(1.05);
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+    .heroTitle {
+        font-size: 2.5rem;
+    }
+
+    .visionContent,
+    .foundersGrid {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+
+    .founderCard {
+        padding: 1.5rem;
+    }
+}
