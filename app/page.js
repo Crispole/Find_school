@@ -48,13 +48,13 @@ export default function Home() {
             showProgress: true,
             animate: true,
             steps: [
-                { element: '#tour-filters', popover: { title: 'Filtros', description: 'Selecciona el tipo de establecimiento: todos - municipales - subvencionados - particulares' } },
-                { element: '#tour-compare', popover: { title: 'Compara', description: 'Eliges dos establecimientos y comparas características de cada uno.' } },
-                { element: '#tour-currency', popover: { title: 'Divisa', description: 'Seleccionas la divisa que te acomode.' } },
-                { element: '.tour-card-commune', popover: { title: 'Ubicación', description: 'Al hacer clic en la comuna de la card te llevará al lugar del establecimiento.' } },
-                { element: '.tour-card-fees', popover: { title: 'Costos', description: 'Al hacer clic en costos se abre un modal que detalla el valor del establecimiento.' } },
-                { element: '.tour-card-website', popover: { title: 'Sitio Web', description: 'Al hacer clic en sitio web te lleva a la página oficial del establecimiento.' } },
-                { element: '.tour-card-contact', popover: { title: 'Contactar', description: 'Al hacer clic en contactar enviarás un correo para solicitar más información del establecimiento.' } }
+                { element: '#tour-filters', popover: { title: 'Filtros', description: 'Selecciona el tipo de establecimiento: Todos - Municipales - Subvencionados - Particulares' } },
+                { element: '#tour-compare', popover: { title: 'Compara', description: 'Elige dos establecimientos y compara sus características.' } },
+                { element: '#tour-currency', popover: { title: 'Divisa', description: 'Selecciona la divisa que te más te acomode.' } },
+                { element: '.tour-card-commune', popover: { title: 'Ubicación', description: 'Encuentra el establecimiento el Google Maps' } },
+                { element: '.tour-card-fees', popover: { title: 'Costos', description: 'Encuentra los detalles de valores del establecimiento.' } },
+                { element: '.tour-card-website', popover: { title: 'Sitio Web', description: 'Vamos a la página oficial del establecimiento.' } },
+                { element: '.tour-card-contact', popover: { title: 'Contactar', description: '¿Tienes dudas? Envía un correo para solicitar más información del establecimiento.' } }
             ]
         });
         driverObj.drive();

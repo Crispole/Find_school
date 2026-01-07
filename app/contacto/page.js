@@ -57,6 +57,7 @@ export default function Contacto() {
       
       <div className={styles.container}>
         <div className={styles.header}>
+          <p></p>
           <h1 className={styles.title}>Hablemos</h1>
           <p className={styles.subtitle}>
             ¿Tienes alguna duda sobre un colegio? ¿Sugerencias para mejorar la plataforma? 

@@ -1,7 +1,7 @@
 export const EXCHANGE_RATES = {
   CLP: 1,
-  UF: 38000,
-  USD: 980
+  UF: 39700,
+  USD: 900
 };
 
 export const parseValue = (valueStr) => {

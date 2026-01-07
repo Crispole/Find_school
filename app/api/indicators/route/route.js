@@ -17,9 +17,9 @@ export async function GET() {
     console.error('Error fetching indicators:', error);
     // Fallback values if API fails
     return NextResponse.json({
-      UF: 38000,
-      USD: 980,
-      UTM: 64000
+      UF: 39700,
+      USD: 900,
+      UTM: 69500
     });
   }
 }
