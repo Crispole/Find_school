@@ -35,8 +35,10 @@
   opacity: 0.8;
 }
 
-.logoIcon {
-  color: var(--primary, #2563eb);
+.logoImage {
+  height: 50px;
+  width: auto;
+  object-fit: contain;
 }
 
 .navRight {

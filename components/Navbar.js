@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { School, Sun, Moon } from 'lucide-react';
+import { Sun, Moon } from 'lucide-react';
 import styles from './Navbar.module.css';
 
 export default function Navbar({ theme, toggleTheme }) {
@@ -7,7 +7,11 @@ export default function Navbar({ theme, toggleTheme }) {
     <nav className={styles.navbar}>
       <div className={styles.container}>
         <Link href="/" className={styles.logo}>
-          <School className={styles.logoIcon} size={24} />
+          <img 
+            src="/img/logo-sin-fondo.webp" 
+            alt="Logo" 
+            className={styles.logoImage} 
+          />
           <span className={styles.logoText}>Encuentra tu colegio</span>
         </Link>
         <div className={styles.navRight}>
