@@ -140,6 +140,18 @@
     border-left: 1px solid var(--card-border);
 }
 
+.mapLink {
+    color: var(--primary);
+    text-decoration: none;
+    transition: all 0.2s;
+    font-weight: 500;
+}
+
+.mapLink:hover {
+    text-decoration: underline;
+    opacity: 0.8;
+}
+
 .emptyState {
     text-align: center;
     padding: 3rem;

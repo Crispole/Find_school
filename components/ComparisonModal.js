@@ -72,16 +72,57 @@ export default function ComparisonModal({ isOpen, onClose, schools }) {
 
           {school1 && school2 ? (
             <div className={styles.comparisonTable}>
-              {features.map(feature => (
-                <div key={feature.key} className={styles.row}>
-                  <div className={styles.featureLabel}>
-                    {feature.icon}
-                    <span style={{ marginLeft: '0.5rem' }}>{feature.label}</span>
+              {features.map(feature => {
+                const renderValue = (school) => {
+                  const value = school[feature.key];
+                  if (!value) return 'N/A';
+                  
+                  if (feature.key === 'address') {
+                    const query = encodeURIComponent(`${value} ${school.name} ${school.commune}`);
+                    return (
+                      <a 
+                        href={`https://www.google.com/maps/search/?api=1&query=${query}`}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.mapLink}
+                      >
+                        {value}
+                      </a>
+                    );
+                  }
+                  
+                  if (feature.key === 'website' && value !== 'N/A') {
+                    const url = value.startsWith('http') ? value : `https://${value}`;
+                    return (
+                      <a 
+                        href={url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.mapLink}
+                      >
+                        {value}
+                      </a>
+                    );
+                  }
+                  
+                  return value;
+                };
+
+                return (
+                  <div key={feature.key} className={styles.row}>
+                    <div className={styles.featureLabel}>
+                      {feature.icon}
+                      <span style={{ marginLeft: '0.5rem' }}>{feature.label}</span>
+                    </div>
+                    <div className={styles.featureValue}>
+                      {renderValue(school1)}
+                    </div>
+                    <div className={styles.featureValue}>
+                      {renderValue(school2)}
+                    </div>
                   </div>
-                  <div className={styles.featureValue}>{school1[feature.key] || 'N/A'}</div>
-                  <div className={styles.featureValue}>{school2[feature.key] || 'N/A'}</div>
-                </div>
-              ))}
+                );
+              })}
             </div>
           ) : (
             <div className={styles.emptyState}>

@@ -14,6 +14,17 @@ export default function FilterBar({
   currency, setCurrency,
   onCompareClick
 }) {
+  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const keywords = ["Mixto", "Laico", "Católico", "Excelencia", "Bilingüe", "Gratuito", "Tradicional", "Familiar", "Inclusivo", "Integral", "Bicentenario", "Técnico Profesional", "Artístico"];
+
+  const handleKeywordToggle = (keyword) => {
+    if (keywordQuery.includes(keyword)) {
+      setKeywordQuery(keywordQuery.filter(k => k !== keyword));
+    } else {
+      setKeywordQuery([...keywordQuery, keyword]);
+    }
+  };
+
   return (
     <div className={styles.container}>
       {/* 1. Search by Name */}
@@ -29,26 +40,36 @@ export default function FilterBar({
         />
       </div>
 
-      {/* 2. Search by Project (Keywords) */}
-      <div className={styles.searchWrapper}>
-        <Search size={20} className={styles.searchIcon} />
-        <input 
-            type="text" 
-            placeholder="Proyecto educativo..." 
-            value={keywordQuery}
-            onChange={(e) => setKeywordQuery(e.target.value)}
-            className={styles.searchInput}
-            style={{ paddingRight: '1rem' }}
-            list="keyword-suggestions"
-        />
-        <datalist id="keyword-suggestions">
-          <option value="Mixto" />
-          <option value="Laico" />
-          <option value="Católico" />
-          <option value="Excelencia" />
-          <option value="Bilingüe" />
-          <option value="Inglés" />
-        </datalist>
+      {/* 2. Search by Project (Keywords Checkboxes) */}
+      <div className={styles.dropdownWrapper}>
+        <button 
+          className={styles.dropdownTrigger}
+          onClick={() => setIsDropdownOpen(!isDropdownOpen)}
+          type="button"
+        >
+          <Search size={20} className={styles.searchIcon} />
+          <span className={styles.triggerText}>
+            {keywordQuery.length > 0 
+              ? `${keywordQuery.length} seleccionados` 
+              : "Proyecto educativo..."}
+          </span>
+        </button>
+        
+        {isDropdownOpen && (
+          <div className={styles.dropdownMenu}>
+            {keywords.map(keyword => (
+              <label key={keyword} className={styles.checkboxLabel}>
+                <input 
+                  type="checkbox"
+                  checked={keywordQuery.includes(keyword)}
+                  onChange={() => handleKeywordToggle(keyword)}
+                  className={styles.checkbox}
+                />
+                <span>{keyword}</span>
+              </label>
+            ))}
+          </div>
+        )}
       </div>
 
       {/* 3. Commune Selection */}

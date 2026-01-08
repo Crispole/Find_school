@@ -15,7 +15,7 @@ import 'driver.js/dist/driver.css';
 
 export default function Home() {
   const [searchQuery, setSearchQuery] = useState('');
-  const [keywordQuery, setKeywordQuery] = useState('');
+  const [keywordQuery, setKeywordQuery] = useState([]);
   const [selectedCommune, setSelectedCommune] = useState('');
   const [selectedDependency, setSelectedDependency] = useState('');
   const [currency, setCurrency] = useState('CLP');
@@ -103,9 +103,11 @@ export default function Home() {
     const matchesDependency = selectedDependency ? school.dependency === selectedDependency : true;
     
     // Keyword matching logic
-    const matchesKeywords = keywordQuery 
-        ? school.keywords?.some(keyword => 
-            keyword.toLowerCase().includes(keywordQuery.toLowerCase())
+    const matchesKeywords = keywordQuery.length > 0
+        ? keywordQuery.every(targetKeyword => 
+            school.keywords?.some(keyword => 
+                keyword.toLowerCase().includes(targetKeyword.toLowerCase())
+            )
           )
         : true;
 
@@ -156,7 +158,7 @@ export default function Home() {
             <div style={{ textAlign: 'center', padding: '4rem', color: 'var(--text-muted)' }}>
                 <p style={{ fontSize: '1.2rem' }}>No se encontraron colegios con esos criterios.</p>
                 <button 
-                    onClick={() => { setSearchQuery(''); setSelectedCommune(''); setKeywordQuery(''); setSelectedDependency(''); }}
+                    onClick={() => { setSearchQuery(''); setSelectedCommune(''); setKeywordQuery([]); setSelectedDependency(''); }}
                     className="btn btn-outline"
                     style={{ marginTop: '1rem' }}
                 >
