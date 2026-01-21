@@ -11,7 +11,7 @@ export default function Hero() {
         </div>
         <h1 className={styles.title}>Encuentra el colegio ideal para tus hijas e hijos</h1>
         <p className={styles.description}>
-          Explora los mejores establecimientos educacionales de Providencia, Ñuñoa, Santiago, Las Condes,  y más. 
+          Explora los mejores establecimientos educacionales de Providencia, Ñuñoa, Santiago, Las Condes y más. 
           Información detallada sobre aranceles, dependencia y opiniones reales.
         </p>
       </div>

@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { MapPin, Users, DollarSign, Star, School, Mail, ExternalLink, CreditCard } from 'lucide-react';
+import { MapPin, Users, DollarSign, Star, School, Mail, ExternalLink, CreditCard, BarChart } from 'lucide-react';
 import styles from './SchoolCard.module.css';
 import { convertAndFormat } from '../utils/currency';
 import FeeModal from './FeeModal';
@@ -51,11 +51,11 @@ export default function SchoolCard({ school, currency, rates }) {
             <div 
                 className={`${styles.feesHeader} tour-card-fees`} 
                 onClick={() => setShowFeesModal(true)}
-                title="Ver detalle de aranceles"
+                title="Ver resultados académicos"
             >
                 <h4 className={styles.feesTitle}>
-                    <CreditCard size={14} style={{ marginRight: '6px' }} />
-                    Costos
+                    <BarChart size={14} style={{ marginRight: '6px' }} />
+                    Resultados SIMCE y PAES
                 </h4>
                 <div className={styles.feesHint}>Ver detalle</div>
             </div>
@@ -113,8 +113,6 @@ export default function SchoolCard({ school, currency, rates }) {
         isOpen={showFeesModal} 
         onClose={() => setShowFeesModal(false)}
         school={school}
-        currency={currency}
-        rates={rates}
     />
     </>
   );

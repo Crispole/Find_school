@@ -1,9 +1,12 @@
-import { X, School } from 'lucide-react';
+import { X, School, ExternalLink, GraduationCap, BookOpen } from 'lucide-react';
 import styles from './FeeModal.module.css';
-import { convertAndFormat } from '../utils/currency';
 
-export default function FeeModal({ isOpen, onClose, school, currency, rates }) {
+export default function FeeModal({ isOpen, onClose, school }) {
   if (!isOpen) return null;
+
+  const hasSimce = school.simce_math || school.simce_language;
+  const hasPaes = school.paes_math || school.paes_language;
+  const hasResults = hasSimce || hasPaes;
 
   return (
     <div className={styles.overlay} onClick={onClose}>
@@ -12,43 +15,92 @@ export default function FeeModal({ isOpen, onClose, school, currency, rates }) {
             <X size={24} />
         </button>
         
-        <h2 className={styles.title}>Detalle de Aranceles</h2>
+        <h2 className={styles.title}>Resultados Académicos</h2>
         <div className={styles.subtitle}>
             <School size={16} />
             <span>{school.name}</span>
         </div>
 
-        <table className={styles.table}>
-            <thead>
-                <tr>
-                    <th>Nivel Educativo</th>
-                    <th style={{ textAlign: 'right' }}>Mensualidad Est.</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td className={styles.levelColumn}>Educación Parvularia</td>
-                    <td className={styles.valueColumn}>
-                        {convertAndFormat(school.tuition_details?.pre_kinder || school.monthly_fee, currency, rates)}
-                    </td>
-                </tr>
-                <tr>
-                    <td className={styles.levelColumn}>Educación Básica</td>
-                    <td className={styles.valueColumn}>
-                        {convertAndFormat(school.tuition_details?.primary || school.monthly_fee, currency, rates)}
-                    </td>
-                </tr>
-                <tr>
-                    <td className={styles.levelColumn}>Educación Media</td>
-                    <td className={styles.valueColumn}>
-                        {convertAndFormat(school.tuition_details?.secondary || school.monthly_fee, currency, rates)}
-                    </td>
-                </tr>
-            </tbody>
-        </table>
-        
-        <div style={{ marginTop: '1.5rem', fontSize: '0.8rem', color: 'var(--text-muted)', textAlign: 'center' }}>
-            * Valores referenciales sujetos a confirmación con el establecimiento.
+        <div className={styles.contentWrapper}>
+            {hasResults ? (
+                <>
+                    <table className={styles.table}>
+                        <thead>
+                            <tr>
+                                <th>Evaluación</th>
+                                <th style={{ textAlign: 'center' }}>Matemática</th>
+                                <th style={{ textAlign: 'center' }}>Lenguaje</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            {hasSimce && (
+                                <tr>
+                                    <td className={styles.levelColumn}>
+                                        <BookOpen size={16} />
+                                        SIMCE
+                                    </td>
+                                    <td className={styles.valueColumn}>
+                                        {school.simce_math || '-'}
+                                    </td>
+                                    <td className={styles.valueColumn}>
+                                        {school.simce_language || '-'}
+                                    </td>
+                                </tr>
+                            )}
+                            {hasPaes && (
+                                <tr>
+                                    <td className={styles.levelColumn}>
+                                        <GraduationCap size={16} />
+                                        PAES
+                                    </td>
+                                    <td className={styles.valueColumn}>
+                                        {school.paes_math || '-'}
+                                    </td>
+                                    <td className={styles.valueColumn}>
+                                        {school.paes_language || '-'}
+                                    </td>
+                                </tr>
+                            )}
+                        </tbody>
+                    </table>
+                    <div className={styles.disclaimer}>
+                        * Puntajes promedio registrados.
+                        <br />
+                        * SIMCE 2024 y PAES 2025
+                    </div>
+                </>
+            ) : (
+                <div className={styles.noResults}>
+                    <p className={styles.noResultsText}>
+                        No hay resultados registrados en nuestra base de datos para este establecimiento.
+                    </p>
+                    <p className={styles.noResultsSub}>
+                        Puedes consultar directamente en las fuentes oficiales:
+                    </p>
+                    
+                    <a 
+                        href="https://www.agenciaeducacion.cl/simce/" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className={styles.officialLink}
+                    >
+                        <BookOpen size={16} />
+                        Resultados SIMCE
+                        <ExternalLink size={14} />
+                    </a>
+
+                    <a 
+                        href="https://colegios.demre.cl/estadistica-resultados-puntajes" 
+                        target="_blank" 
+                        rel="noopener noreferrer"
+                        className={styles.officialLink}
+                    >
+                        <GraduationCap size={16} />
+                        Resultados PAES
+                        <ExternalLink size={14} />
+                    </a>
+                </div>
+            )}
         </div>
       </div>
     </div>

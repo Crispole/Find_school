@@ -277,7 +277,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 10873
+    "rbd": 10873,
+    "paes_math": 579.1,
+    "paes_language": 557.9,
+    "simce_math": 208.0,
+    "simce_language": 209.0
   },
   {
     "id": 11,
@@ -305,7 +309,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 26269
+    "rbd": 26269,
+    "paes_math": 597.4,
+    "paes_language": 576.5,
+    "simce_math": 221.0,
+    "simce_language": 249.0
   },
   {
     "id": 12,
@@ -333,7 +341,11 @@
       "Deportivo"
     ],
     "reviews": [],
-    "rbd": 24719
+    "rbd": 24719,
+    "paes_math": 784.5,
+    "paes_language": 706.8,
+    "simce_math": 342.0,
+    "simce_language": 300.0
   },
   {
     "id": 13,
@@ -361,7 +373,11 @@
       "Innovación"
     ],
     "reviews": [],
-    "rbd": 25278
+    "rbd": 25278,
+    "paes_math": 857.1,
+    "paes_language": 784.8,
+    "simce_math": 386.0,
+    "simce_language": 311.0
   },
   {
     "id": 14,
@@ -389,7 +405,11 @@
       "Excelencia"
     ],
     "reviews": [],
-    "rbd": 26482
+    "rbd": 26482,
+    "paes_math": 645.2,
+    "paes_language": 635.0,
+    "simce_math": 257.0,
+    "simce_language": 252.0
   },
   {
     "id": 15,
@@ -445,7 +465,11 @@
       "Admisión"
     ],
     "reviews": [],
-    "rbd": 10662
+    "rbd": 10662,
+    "paes_math": 772.2,
+    "paes_language": 711.9,
+    "simce_math": 347.0,
+    "simce_language": 305.0
   },
   {
     "id": 17,
@@ -473,7 +497,11 @@
       "Excelencia"
     ],
     "reviews": [],
-    "rbd": 24836
+    "rbd": 24836,
+    "paes_math": 865.7,
+    "paes_language": 745.4,
+    "simce_math": 371.0,
+    "simce_language": 302.0
   },
   {
     "id": 18,
@@ -501,7 +529,11 @@
       "Tradicional"
     ],
     "reviews": [],
-    "rbd": 24719
+    "rbd": 24719,
+    "paes_math": 784.5,
+    "paes_language": 706.8,
+    "simce_math": 342.0,
+    "simce_language": 300.0
   },
   {
     "id": 19,
@@ -585,7 +617,11 @@
       "Ignaciano"
     ],
     "reviews": [],
-    "rbd": 25477
+    "rbd": 25477,
+    "paes_math": 776.4,
+    "paes_language": 701.1,
+    "simce_math": 321.0,
+    "simce_language": 265.0
   },
   {
     "id": 22,
@@ -613,7 +649,11 @@
       "Científico"
     ],
     "reviews": [],
-    "rbd": 31042
+    "rbd": 31042,
+    "paes_math": 713.8,
+    "paes_language": 654.6,
+    "simce_math": 287.0,
+    "simce_language": 255.0
   },
   {
     "id": 23,
@@ -641,7 +681,11 @@
       "Familiar"
     ],
     "reviews": [],
-    "rbd": 24874
+    "rbd": 24874,
+    "paes_math": 629.0,
+    "paes_language": 635.7,
+    "simce_math": 214.0,
+    "simce_language": 273.0
   },
   {
     "id": 24,
@@ -669,7 +713,11 @@
       "Pastoral"
     ],
     "reviews": [],
-    "rbd": 24976
+    "rbd": 24976,
+    "paes_math": 756.1,
+    "paes_language": 697.2,
+    "simce_math": 314.0,
+    "simce_language": 273.0
   },
   {
     "id": 25,
@@ -781,7 +829,11 @@
       "Subvencionado"
     ],
     "reviews": [],
-    "rbd": 26383
+    "rbd": 26383,
+    "paes_math": 587.2,
+    "paes_language": 572.3,
+    "simce_math": 213.0,
+    "simce_language": 230.0
   },
   {
     "id": 29,
@@ -809,7 +861,9 @@
       "Subvencionado"
     ],
     "reviews": [],
-    "rbd": 10688
+    "rbd": 10688,
+    "paes_math": 500.2,
+    "paes_language": 521.6
   },
   {
     "id": 30,
@@ -837,7 +891,11 @@
       "Público"
     ],
     "reviews": [],
-    "rbd": 10686
+    "rbd": 10686,
+    "paes_math": 578.8,
+    "paes_language": 567.5,
+    "simce_math": 232.0,
+    "simce_language": 245.0
   },
   {
     "id": 31,
@@ -893,7 +951,11 @@
       "Tradicional"
     ],
     "reviews": [],
-    "rbd": 9947
+    "rbd": 9947,
+    "paes_math": 679.0,
+    "paes_language": 630.6,
+    "simce_math": 282.0,
+    "simce_language": 249.0
   },
   {
     "id": 33,
@@ -921,7 +983,11 @@
       "Valórico"
     ],
     "reviews": [],
-    "rbd": 9903
+    "rbd": 9903,
+    "paes_math": 636.6,
+    "paes_language": 639.7,
+    "simce_math": 282.0,
+    "simce_language": 269.0
   },
   {
     "id": 34,
@@ -949,7 +1015,11 @@
       "Valórico"
     ],
     "reviews": [],
-    "rbd": 9919
+    "rbd": 9919,
+    "paes_math": 607.2,
+    "paes_language": 621.7,
+    "simce_math": 248.0,
+    "simce_language": 255.0
   },
   {
     "id": 35,
@@ -977,7 +1047,11 @@
       "Técnico"
     ],
     "reviews": [],
-    "rbd": 26164
+    "rbd": 26164,
+    "paes_math": 544.9,
+    "paes_language": 542.5,
+    "simce_math": 237.0,
+    "simce_language": 255.0
   },
   {
     "id": 36,
@@ -1145,7 +1219,11 @@
       "Excelencia"
     ],
     "reviews": [],
-    "rbd": 10193
+    "rbd": 10193,
+    "paes_math": 630.2,
+    "paes_language": 613.0,
+    "simce_math": 316.0,
+    "simce_language": 268.0
   },
   {
     "id": 42,
@@ -1173,7 +1251,11 @@
       "Integral"
     ],
     "reviews": [],
-    "rbd": 10164
+    "rbd": 10164,
+    "paes_math": 602.6,
+    "paes_language": 583.1,
+    "simce_math": 237.0,
+    "simce_language": 237.0
   },
   {
     "id": 43,
@@ -1257,7 +1339,11 @@
       "Social"
     ],
     "reviews": [],
-    "rbd": 26303
+    "rbd": 26303,
+    "paes_math": 565.2,
+    "paes_language": 551.1,
+    "simce_math": 229.0,
+    "simce_language": 231.0
   },
   {
     "id": 46,
@@ -1397,7 +1483,9 @@
       "Técnico"
     ],
     "reviews": [],
-    "rbd": 31288
+    "rbd": 31288,
+    "paes_math": 772.8,
+    "paes_language": 691.6
   },
   {
     "id": 51,
@@ -1426,7 +1514,11 @@
       "Excelencia"
     ],
     "reviews": [],
-    "rbd": 24927
+    "rbd": 24927,
+    "paes_math": 887.7,
+    "paes_language": 760.3,
+    "simce_math": 345.0,
+    "simce_language": 292.0
   },
   {
     "id": 52,
@@ -1454,7 +1546,11 @@
       "Formación Integral"
     ],
     "reviews": [],
-    "rbd": 25348
+    "rbd": 25348,
+    "paes_math": 867.3,
+    "paes_language": 760.9,
+    "simce_math": 346.0,
+    "simce_language": 287.0
   },
   {
     "id": 53,
@@ -1482,7 +1578,11 @@
       "Excelencia Académica"
     ],
     "reviews": [],
-    "rbd": 25329
+    "rbd": 25329,
+    "paes_math": 829.8,
+    "paes_language": 736.9,
+    "simce_math": 393.0,
+    "simce_language": 305.0
   },
   {
     "id": 54,
@@ -1511,7 +1611,11 @@
       "IB"
     ],
     "reviews": [],
-    "rbd": 26335
+    "rbd": 26335,
+    "paes_math": 865.5,
+    "paes_language": 748.8,
+    "simce_math": 358.0,
+    "simce_language": 284.0
   },
   {
     "id": 55,
@@ -1540,7 +1644,11 @@
       "Familia"
     ],
     "reviews": [],
-    "rbd": 25669
+    "rbd": 25669,
+    "paes_math": 852.6,
+    "paes_language": 728.8,
+    "simce_math": 371.0,
+    "simce_language": 297.0
   },
   {
     "id": 56,
@@ -1568,7 +1676,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 25855
+    "rbd": 25855,
+    "paes_math": 728.4,
+    "paes_language": 680.4,
+    "simce_math": 283.0,
+    "simce_language": 263.0
   },
   {
     "id": 57,
@@ -1711,7 +1823,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 25396
+    "rbd": 25396,
+    "paes_math": 568.0,
+    "paes_language": 552.0,
+    "simce_math": 238.0,
+    "simce_language": 242.0
   },
   {
     "id": 62,
@@ -1739,7 +1855,11 @@
       "Deportivo"
     ],
     "reviews": [],
-    "rbd": 10315
+    "rbd": 10315,
+    "paes_math": 622.6,
+    "paes_language": 579.8,
+    "simce_math": 273.0,
+    "simce_language": 262.0
   },
   {
     "id": 63,
@@ -1795,7 +1915,11 @@
       "Integral"
     ],
     "reviews": [],
-    "rbd": 10329
+    "rbd": 10329,
+    "paes_math": 559.2,
+    "paes_language": 557.8,
+    "simce_math": 252.0,
+    "simce_language": 266.0
   },
   {
     "id": 65,
@@ -1907,7 +2031,11 @@
       "Integral"
     ],
     "reviews": [],
-    "rbd": 10253
+    "rbd": 10253,
+    "paes_math": 595.5,
+    "paes_language": 572.2,
+    "simce_math": 223.0,
+    "simce_language": 229.0
   },
   {
     "id": 69,
@@ -1935,7 +2063,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 10251
+    "rbd": 10251,
+    "paes_math": 534.2,
+    "paes_language": 526.9,
+    "simce_math": 222.0,
+    "simce_language": 227.0
   },
   {
     "id": 70,
@@ -1991,7 +2123,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 25526
+    "rbd": 25526,
+    "paes_math": 591.8,
+    "paes_language": 593.2,
+    "simce_math": 221.0,
+    "simce_language": 211.0
   },
   {
     "id": 72,
@@ -2019,7 +2155,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 10851
+    "rbd": 10851,
+    "paes_math": 609.4,
+    "paes_language": 604.8,
+    "simce_math": 246.0,
+    "simce_language": 239.0
   },
   {
     "id": 73,
@@ -2188,7 +2328,11 @@
       "Personalizado"
     ],
     "reviews": [],
-    "rbd": 24897
+    "rbd": 24897,
+    "paes_math": 688.4,
+    "paes_language": 654.6,
+    "simce_math": 298.0,
+    "simce_language": 306.0
   },
   {
     "id": 79,
@@ -2217,7 +2361,11 @@
       "Polivalente"
     ],
     "reviews": [],
-    "rbd": 10845
+    "rbd": 10845,
+    "paes_math": 539.5,
+    "paes_language": 533.4,
+    "simce_math": 210.0,
+    "simce_language": 209.0
   },
   {
     "id": 80,
@@ -2245,7 +2393,11 @@
       "Valórico"
     ],
     "reviews": [],
-    "rbd": 20348
+    "rbd": 20348,
+    "paes_math": 680.6,
+    "paes_language": 656.6,
+    "simce_math": 294.0,
+    "simce_language": 286.0
   },
   {
     "id": 81,
@@ -2302,7 +2454,11 @@
       "Fundación AMB"
     ],
     "reviews": [],
-    "rbd": 25249
+    "rbd": 25249,
+    "paes_math": 741.9,
+    "paes_language": 690.9,
+    "simce_math": 299.0,
+    "simce_language": 293.0
   },
   {
     "id": 83,
@@ -2331,7 +2487,11 @@
       "Tradicional"
     ],
     "reviews": [],
-    "rbd": 25464
+    "rbd": 25464,
+    "paes_math": 712.9,
+    "paes_language": 668.4,
+    "simce_math": 310.0,
+    "simce_language": 275.0
   },
   {
     "id": 84,
@@ -2500,7 +2660,11 @@
       "Técnico Profesional"
     ],
     "reviews": [],
-    "rbd": 10573
+    "rbd": 10573,
+    "paes_math": 520.9,
+    "paes_language": 538.2,
+    "simce_math": 242.0,
+    "simce_language": 246.0
   },
   {
     "id": 90,
@@ -2529,7 +2693,11 @@
       "Sedes Múltiples"
     ],
     "reviews": [],
-    "rbd": 25256
+    "rbd": 25256,
+    "paes_math": 615.6,
+    "paes_language": 602.9,
+    "simce_math": 270.0,
+    "simce_language": 237.0
   },
   {
     "id": 91,
@@ -2558,7 +2726,11 @@
       "Tradicional"
     ],
     "reviews": [],
-    "rbd": 24963
+    "rbd": 24963,
+    "paes_math": 606.2,
+    "paes_language": 563.8,
+    "simce_math": 256.0,
+    "simce_language": 255.0
   },
   {
     "id": 92,
@@ -2586,7 +2758,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 31066
+    "rbd": 31066,
+    "paes_math": 591.4,
+    "paes_language": 559.0,
+    "simce_math": 240.0,
+    "simce_language": 264.0
   },
   {
     "id": 93,
@@ -2839,7 +3015,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 8631
+    "rbd": 8631,
+    "paes_math": 564.2,
+    "paes_language": 563.3,
+    "simce_math": 218.0,
+    "simce_language": 241.0
   },
   {
     "id": 102,
@@ -2867,7 +3047,11 @@
       "Valórico"
     ],
     "reviews": [],
-    "rbd": 8613
+    "rbd": 8613,
+    "paes_math": 640.0,
+    "paes_language": 636.3,
+    "simce_math": 257.0,
+    "simce_language": 275.0
   },
   {
     "id": 103,
@@ -2922,7 +3106,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 10058
+    "rbd": 10058,
+    "paes_math": 586.4,
+    "paes_language": 578.7,
+    "simce_math": 239.0,
+    "simce_language": 229.0
   },
   {
     "id": 105,
@@ -2950,7 +3138,11 @@
       "Inclusivo"
     ],
     "reviews": [],
-    "rbd": 8657
+    "rbd": 8657,
+    "paes_math": 489.7,
+    "paes_language": 472.7,
+    "simce_math": 243.0,
+    "simce_language": 211.0
   },
   {
     "id": 106,
@@ -2977,7 +3169,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 8715
+    "rbd": 8715,
+    "paes_math": 579.6,
+    "paes_language": 591.3,
+    "simce_math": 230.0,
+    "simce_language": 221.0
   },
   {
     "id": 107,
@@ -3034,7 +3230,11 @@
       "Emblemático"
     ],
     "reviews": [],
-    "rbd": 8518
+    "rbd": 8518,
+    "paes_math": 540.0,
+    "paes_language": 559.9,
+    "simce_math": 209.0,
+    "simce_language": 236.0
   },
   {
     "id": 109,
@@ -3062,7 +3262,11 @@
       "Hombres"
     ],
     "reviews": [],
-    "rbd": 8634
+    "rbd": 8634,
+    "paes_math": 697.3,
+    "paes_language": 652.6,
+    "simce_math": 286.0,
+    "simce_language": 280.0
   },
   {
     "id": 110,
@@ -3119,7 +3323,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 10250
+    "rbd": 10250,
+    "paes_math": 490.5,
+    "paes_language": 490.0,
+    "simce_math": 231.0,
+    "simce_language": 233.0
   },
   {
     "id": 112,
@@ -3148,7 +3356,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 25202
+    "rbd": 25202,
+    "paes_math": 824.4,
+    "paes_language": 727.4,
+    "simce_math": 363.0,
+    "simce_language": 303.0
   },
   {
     "id": 113,
@@ -3176,7 +3388,11 @@
       "Formación Integral"
     ],
     "reviews": [],
-    "rbd": 25143
+    "rbd": 25143,
+    "paes_math": 846.1,
+    "paes_language": 749.4,
+    "simce_math": 355.0,
+    "simce_language": 307.0
   },
   {
     "id": 114,
@@ -3288,7 +3504,11 @@
       "Tradicional"
     ],
     "reviews": [],
-    "rbd": 10337
+    "rbd": 10337,
+    "paes_math": 612.2,
+    "paes_language": 607.4,
+    "simce_math": 226.0,
+    "simce_language": 249.0
   },
   {
     "id": 118,
@@ -3316,7 +3536,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 31276
+    "rbd": 31276,
+    "paes_math": 745.1,
+    "paes_language": 681.0,
+    "simce_math": 308.0,
+    "simce_language": 299.0
   },
   {
     "id": 119,
@@ -3372,7 +3596,11 @@
       "Ajeno a Redes"
     ],
     "reviews": [],
-    "rbd": 31373
+    "rbd": 31373,
+    "paes_math": 748.4,
+    "paes_language": 697.2,
+    "simce_math": 308.0,
+    "simce_language": 296.0
   },
   {
     "id": 121,
@@ -3401,7 +3629,11 @@
       "SIP Red"
     ],
     "reviews": [],
-    "rbd": 10224
+    "rbd": 10224,
+    "paes_math": 650.4,
+    "paes_language": 647.1,
+    "simce_math": 296.0,
+    "simce_language": 285.0
   },
   {
     "id": 122,
@@ -3429,7 +3661,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 10350
+    "rbd": 10350,
+    "paes_math": 599.1,
+    "paes_language": 632.0,
+    "simce_math": 253.0,
+    "simce_language": 267.0
   },
   {
     "id": 123,
@@ -3574,7 +3810,11 @@
       "Adultos"
     ],
     "reviews": [],
-    "rbd": 8616
+    "rbd": 8616,
+    "paes_math": 548.4,
+    "paes_language": 554.3,
+    "simce_math": 276.0,
+    "simce_language": 279.0
   },
   {
     "id": 128,
@@ -3603,7 +3843,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 10220
+    "rbd": 10220,
+    "paes_math": 708.3,
+    "paes_language": 648.6,
+    "simce_math": 295.0,
+    "simce_language": 278.0
   },
   {
     "id": 129,
@@ -3632,7 +3876,11 @@
       "Vespertino"
     ],
     "reviews": [],
-    "rbd": 8497
+    "rbd": 8497,
+    "paes_math": 555.5,
+    "paes_language": 547.1,
+    "simce_math": 242.0,
+    "simce_language": 244.0
   },
   {
     "id": 130,
@@ -3661,7 +3909,11 @@
       "Grande"
     ],
     "reviews": [],
-    "rbd": 8589
+    "rbd": 8589,
+    "paes_math": 607.2,
+    "paes_language": 603.6,
+    "simce_math": 258.0,
+    "simce_language": 269.0
   },
   {
     "id": 131,
@@ -3718,7 +3970,11 @@
       "Isla de Maipo"
     ],
     "reviews": [],
-    "rbd": 31253
+    "rbd": 31253,
+    "paes_math": 617.0,
+    "paes_language": 608.9,
+    "simce_math": 262.0,
+    "simce_language": 258.0
   },
   {
     "id": 133,
@@ -3921,7 +4177,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 10726
+    "rbd": 10726,
+    "paes_math": 672.8,
+    "paes_language": 638.8,
+    "simce_math": 271.0,
+    "simce_language": 260.0
   },
   {
     "id": 140,
@@ -3950,7 +4210,11 @@
       "Gratuito"
     ],
     "reviews": [],
-    "rbd": 10727
+    "rbd": 10727,
+    "paes_math": 531.1,
+    "paes_language": 497.9,
+    "simce_math": 256.0,
+    "simce_language": 263.0
   },
   {
     "id": 141,
@@ -3979,7 +4243,11 @@
       "Inglés"
     ],
     "reviews": [],
-    "rbd": 9771
+    "rbd": 9771,
+    "paes_math": 621.5,
+    "paes_language": 616.8,
+    "simce_math": 270.0,
+    "simce_language": 244.0
   },
   {
     "id": 142,
@@ -4008,7 +4276,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 9797
+    "rbd": 9797,
+    "paes_math": 673.9,
+    "paes_language": 653.7,
+    "simce_math": 245.0,
+    "simce_language": 277.0
   },
   {
     "id": 143,
@@ -4036,7 +4308,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 25265
+    "rbd": 25265,
+    "paes_math": 613.7,
+    "paes_language": 593.9,
+    "simce_math": 262.0,
+    "simce_language": 274.0
   },
   {
     "id": 144,
@@ -4064,7 +4340,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 9829
+    "rbd": 9829,
+    "paes_math": 551.8,
+    "paes_language": 553.5,
+    "simce_math": 275.0,
+    "simce_language": 246.0
   },
   {
     "id": 145,
@@ -4120,7 +4400,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 9766
+    "rbd": 9766,
+    "paes_math": 669.5,
+    "paes_language": 651.4,
+    "simce_math": 265.0,
+    "simce_language": 260.0
   },
   {
     "id": 147,
@@ -4177,7 +4461,11 @@
       "Católico"
     ],
     "reviews": [],
-    "rbd": 9759
+    "rbd": 9759,
+    "paes_math": 579.4,
+    "paes_language": 604.9,
+    "simce_math": 246.0,
+    "simce_language": 262.0
   },
   {
     "id": 149,
@@ -4206,7 +4494,11 @@
       "Bienestar Social"
     ],
     "reviews": [],
-    "rbd": 9767
+    "rbd": 9767,
+    "paes_math": 706.8,
+    "paes_language": 685.3,
+    "simce_math": 261.0,
+    "simce_language": 255.0
   },
   {
     "id": 150,
@@ -4235,7 +4527,11 @@
       "Excelencia"
     ],
     "reviews": [],
-    "rbd": 25727
+    "rbd": 25727,
+    "paes_math": 738.0,
+    "paes_language": 672.3,
+    "simce_math": 294.0,
+    "simce_language": 262.0
   },
   {
     "id": 151,
@@ -4263,7 +4559,11 @@
       "Deportivo"
     ],
     "reviews": [],
-    "rbd": 25704
+    "rbd": 25704,
+    "paes_math": 715.7,
+    "paes_language": 680.2,
+    "simce_math": 325.0,
+    "simce_language": 288.0
   },
   {
     "id": 152,
@@ -4291,7 +4591,11 @@
       "Académico"
     ],
     "reviews": [],
-    "rbd": 26001
+    "rbd": 26001,
+    "paes_math": 754.8,
+    "paes_language": 689.0,
+    "simce_math": 371.0,
+    "simce_language": 298.0
   },
   {
     "id": 153,
@@ -4319,7 +4623,11 @@
       "Excelencia"
     ],
     "reviews": [],
-    "rbd": 25724
+    "rbd": 25724,
+    "paes_math": 775.9,
+    "paes_language": 731.7,
+    "simce_math": 353.0,
+    "simce_language": 281.0
   },
   {
     "id": 154,
@@ -4375,7 +4683,11 @@
       "Valores"
     ],
     "reviews": [],
-    "rbd": 25713
+    "rbd": 25713,
+    "paes_math": 700.1,
+    "paes_language": 656.8,
+    "simce_math": 301.0,
+    "simce_language": 275.0
   },
   {
     "id": 156,
@@ -4431,7 +4743,11 @@
       "Inclusivo"
     ],
     "reviews": [],
-    "rbd": 25367
+    "rbd": 25367,
+    "paes_math": 629.9,
+    "paes_language": 603.4,
+    "simce_math": 274.0,
+    "simce_language": 255.0
   },
   {
     "id": 158,
@@ -4487,7 +4803,11 @@
       "Excelencia Académica"
     ],
     "reviews": [],
-    "rbd": 9317
+    "rbd": 9317,
+    "paes_math": 754.9,
+    "paes_language": 698.4,
+    "simce_math": 316.0,
+    "simce_language": 272.0
   },
   {
     "id": 160,
@@ -4515,7 +4835,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 26292
+    "rbd": 26292,
+    "paes_math": 564.3,
+    "paes_language": 561.6,
+    "simce_math": 236.0,
+    "simce_language": 234.0
   },
   {
     "id": 161,
@@ -4573,7 +4897,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 25220
+    "rbd": 25220,
+    "paes_math": 544.3,
+    "paes_language": 512.0,
+    "simce_math": 293.0,
+    "simce_language": 255.0
   },
   {
     "id": 163,
@@ -4601,7 +4929,11 @@
       "Granja"
     ],
     "reviews": [],
-    "rbd": 9637
+    "rbd": 9637,
+    "paes_math": 625.9,
+    "paes_language": 595.4,
+    "simce_math": 255.0,
+    "simce_language": 234.0
   },
   {
     "id": 164,
@@ -4630,7 +4962,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 9655
+    "rbd": 9655,
+    "paes_math": 712.9,
+    "paes_language": 671.6,
+    "simce_math": 290.0,
+    "simce_language": 269.0
   },
   {
     "id": 165,
@@ -4659,7 +4995,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 31161
+    "rbd": 31161,
+    "paes_math": 618.3,
+    "paes_language": 612.4,
+    "simce_math": 268.0,
+    "simce_language": 241.0
   },
   {
     "id": 166,
@@ -4775,7 +5115,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 24717
+    "rbd": 24717,
+    "paes_math": 632.3,
+    "paes_language": 620.9,
+    "simce_math": 261.0,
+    "simce_language": 247.0
   },
   {
     "id": 170,
@@ -4804,7 +5148,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 9582
+    "rbd": 9582,
+    "paes_math": 583.5,
+    "paes_language": 560.1,
+    "simce_math": 227.0,
+    "simce_language": 226.0
   },
   {
     "id": 171,
@@ -4833,7 +5181,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 9583
+    "rbd": 9583,
+    "paes_math": 516.6,
+    "paes_language": 488.8,
+    "simce_math": 223.0,
+    "simce_language": 206.0
   },
   {
     "id": 172,
@@ -4862,7 +5214,11 @@
       "Científico Humanista"
     ],
     "reviews": [],
-    "rbd": 25250
+    "rbd": 25250,
+    "paes_math": 597.4,
+    "paes_language": 618.6,
+    "simce_math": 286.0,
+    "simce_language": 281.0
   },
   {
     "id": 173,
@@ -4920,7 +5276,11 @@
       "Subvencionado"
     ],
     "reviews": [],
-    "rbd": 24946
+    "rbd": 24946,
+    "paes_math": 562.3,
+    "paes_language": 543.9,
+    "simce_math": 238.0,
+    "simce_language": 234.0
   },
   {
     "id": 175,
@@ -5007,7 +5367,11 @@
       "Nombres"
     ],
     "reviews": [],
-    "rbd": 24956
+    "rbd": 24956,
+    "paes_math": 737.0,
+    "paes_language": 642.7,
+    "simce_math": 335.0,
+    "simce_language": 270.0
   },
   {
     "id": 178,
@@ -5128,7 +5492,11 @@
         "comment": "Muy buen inglés."
       }
     ],
-    "rbd": 9051
+    "rbd": 9051,
+    "paes_math": 888.3,
+    "paes_language": 793.2,
+    "simce_math": 357.0,
+    "simce_language": 285.0
   },
   {
     "id": 182,
@@ -5157,7 +5525,11 @@
       "Cambridge"
     ],
     "reviews": [],
-    "rbd": 12087
+    "rbd": 12087,
+    "paes_math": 804.0,
+    "paes_language": 728.4,
+    "simce_math": 323.0,
+    "simce_language": 302.0
   },
   {
     "id": 183,
@@ -5213,7 +5585,11 @@
       "Pastoral"
     ],
     "reviews": [],
-    "rbd": 9042
+    "rbd": 9042,
+    "paes_math": 822.8,
+    "paes_language": 751.9,
+    "simce_math": 322.0,
+    "simce_language": 276.0
   },
   {
     "id": 185,
@@ -5240,7 +5616,7 @@
       "Primera Infancia",
       "Mixto",
       "Personalizado",
-      "Artístico",
+      "Artistico",
       "Música"
     ],
     "reviews": [
@@ -5276,7 +5652,7 @@
       "Holístico",
       "Mixto",
       "Personalizado",
-      "Artístico",
+      "Arte",
       "Gurdjieff"
     ],
     "reviews": [
@@ -5286,7 +5662,11 @@
         "comment": "Enfoque holístico y personalizado."
       }
     ],
-    "rbd": 24627
+    "rbd": 24627,
+    "paes_math": 718.9,
+    "paes_language": 723.5,
+    "simce_math": 312.0,
+    "simce_language": 294.0
   },
   {
     "id": 187,
@@ -5343,7 +5723,11 @@
       "Pastoral"
     ],
     "reviews": [],
-    "rbd": 9053
+    "rbd": 9053,
+    "paes_math": 779.5,
+    "paes_language": 713.5,
+    "simce_math": 336.0,
+    "simce_language": 284.0
   },
   {
     "id": 189,
@@ -5399,7 +5783,11 @@
       "Polivalente"
     ],
     "reviews": [],
-    "rbd": 9006
+    "rbd": 9006,
+    "paes_math": 594.1,
+    "paes_language": 573.2,
+    "simce_math": 216.0,
+    "simce_language": 224.0
   },
   {
     "id": 191,
@@ -5455,7 +5843,11 @@
       "Científico Humanista"
     ],
     "reviews": [],
-    "rbd": 9007
+    "rbd": 9007,
+    "paes_math": 598.4,
+    "paes_language": 595.2,
+    "simce_math": 238.0,
+    "simce_language": 252.0
   },
   {
     "id": 193,
@@ -5496,7 +5888,11 @@
         "comment": "Muy bueno pero el tráfico en la entrada es complicado."
       }
     ],
-    "rbd": 9046
+    "rbd": 9046,
+    "paes_math": 908.2,
+    "paes_language": 800.1,
+    "simce_math": 365.0,
+    "simce_language": 273.0
   },
   {
     "id": 194,
@@ -5525,7 +5921,11 @@
       "Lampa Center"
     ],
     "reviews": [],
-    "rbd": 31064
+    "rbd": 31064,
+    "paes_math": 515.7,
+    "paes_language": 482.7,
+    "simce_math": 214.0,
+    "simce_language": 247.0
   },
   {
     "id": 195,
@@ -5554,7 +5954,11 @@
       "Lampa"
     ],
     "reviews": [],
-    "rbd": 26157
+    "rbd": 26157,
+    "paes_math": 541.6,
+    "paes_language": 535.9,
+    "simce_math": 224.0,
+    "simce_language": 229.0
   },
   {
     "id": 196,
@@ -5583,7 +5987,11 @@
       "Excelencia"
     ],
     "reviews": [],
-    "rbd": 26135
+    "rbd": 26135,
+    "paes_math": 613.6,
+    "paes_language": 589.1,
+    "simce_math": 253.0,
+    "simce_language": 241.0
   },
   {
     "id": 197,
@@ -5612,7 +6020,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 20502
+    "rbd": 20502,
+    "paes_math": 773.5,
+    "paes_language": 689.4,
+    "simce_math": 351.0,
+    "simce_language": 301.0
   },
   {
     "id": 198,
@@ -5641,7 +6053,11 @@
       "Lampa"
     ],
     "reviews": [],
-    "rbd": 26045
+    "rbd": 26045,
+    "paes_math": 628.1,
+    "paes_language": 597.1,
+    "simce_math": 243.0,
+    "simce_language": 241.0
   },
   {
     "id": 199,
@@ -5669,7 +6085,9 @@
       "Lampa Centro"
     ],
     "reviews": [],
-    "rbd": 25484
+    "rbd": 25484,
+    "paes_math": 525.0,
+    "paes_language": 496.7
   },
   {
     "id": 200,
@@ -5698,7 +6116,11 @@
       "Tradicional"
     ],
     "reviews": [],
-    "rbd": 26379
+    "rbd": 26379,
+    "paes_math": 663.4,
+    "paes_language": 634.8,
+    "simce_math": 268.0,
+    "simce_language": 245.0
   },
   {
     "id": 201,
@@ -5785,7 +6207,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 26157
+    "rbd": 26157,
+    "paes_math": 541.6,
+    "paes_language": 535.9,
+    "simce_math": 224.0,
+    "simce_language": 229.0
   },
   {
     "id": 204,
@@ -5821,7 +6247,11 @@
         "comment": "Excelencia académica y formación integral."
       }
     ],
-    "rbd": 8979
+    "rbd": 8979,
+    "paes_math": 863.7,
+    "paes_language": 779.5,
+    "simce_math": 332.0,
+    "simce_language": 271.0
   },
   {
     "id": 205,
@@ -5849,7 +6279,11 @@
       "Tradicional"
     ],
     "reviews": [],
-    "rbd": 8818
+    "rbd": 8818,
+    "paes_math": 704.4,
+    "paes_language": 668.9,
+    "simce_math": 306.0,
+    "simce_language": 273.0
   },
   {
     "id": 206,
@@ -5908,7 +6342,11 @@
       "Deportivo"
     ],
     "reviews": [],
-    "rbd": 11968
+    "rbd": 11968,
+    "paes_math": 860.2,
+    "paes_language": 760.3,
+    "simce_math": 363.0,
+    "simce_language": 314.0
   },
   {
     "id": 208,
@@ -5938,7 +6376,11 @@
       "Deportivo"
     ],
     "reviews": [],
-    "rbd": 8888
+    "rbd": 8888,
+    "paes_math": 886.1,
+    "paes_language": 796.6,
+    "simce_math": 339.0,
+    "simce_language": 277.0
   },
   {
     "id": 209,
@@ -5966,7 +6408,11 @@
       "Excelencia Académica"
     ],
     "reviews": [],
-    "rbd": 25055
+    "rbd": 25055,
+    "paes_math": 799.3,
+    "paes_language": 745.6,
+    "simce_math": 313.0,
+    "simce_language": 284.0
   },
   {
     "id": 210,
@@ -5994,7 +6440,11 @@
       "Inglés"
     ],
     "reviews": [],
-    "rbd": 8893
+    "rbd": 8893,
+    "paes_math": 864.9,
+    "paes_language": 781.7,
+    "simce_math": 336.0,
+    "simce_language": 278.0
   },
   {
     "id": 211,
@@ -6022,7 +6472,11 @@
       "Excelencia Académica"
     ],
     "reviews": [],
-    "rbd": 8822
+    "rbd": 8822,
+    "paes_math": 713.7,
+    "paes_language": 656.2,
+    "simce_math": 372.0,
+    "simce_language": 291.0
   },
   {
     "id": 212,
@@ -6050,7 +6504,11 @@
       "Científico Humanista"
     ],
     "reviews": [],
-    "rbd": 24721
+    "rbd": 24721,
+    "paes_math": 732.6,
+    "paes_language": 688.4,
+    "simce_math": 346.0,
+    "simce_language": 298.0
   },
   {
     "id": 213,
@@ -6078,7 +6536,11 @@
       "Científico Humanista"
     ],
     "reviews": [],
-    "rbd": 8815
+    "rbd": 8815,
+    "paes_math": 750.8,
+    "paes_language": 692.2,
+    "simce_math": 339.0,
+    "simce_language": 297.0
   },
   {
     "id": 214,
@@ -6108,7 +6570,11 @@
       "Excelencia Académica"
     ],
     "reviews": [],
-    "rbd": 25825
+    "rbd": 25825,
+    "paes_math": 882.2,
+    "paes_language": 763.3,
+    "simce_math": 342.0,
+    "simce_language": 285.0
   },
   {
     "id": 215,
@@ -6137,7 +6603,11 @@
       "Excelencia"
     ],
     "reviews": [],
-    "rbd": 8835
+    "rbd": 8835,
+    "paes_math": 792.3,
+    "paes_language": 713.0,
+    "simce_math": 364.0,
+    "simce_language": 294.0
   },
   {
     "id": 216,
@@ -6166,7 +6636,11 @@
       "Excelencia"
     ],
     "reviews": [],
-    "rbd": 8828
+    "rbd": 8828,
+    "paes_math": 727.6,
+    "paes_language": 661.9,
+    "simce_math": 343.0,
+    "simce_language": 292.0
   },
   {
     "id": 217,
@@ -6195,7 +6669,11 @@
       "IB"
     ],
     "reviews": [],
-    "rbd": 8885
+    "rbd": 8885,
+    "paes_math": 871.8,
+    "paes_language": 783.7,
+    "simce_math": 339.0,
+    "simce_language": 306.0
   },
   {
     "id": 218,
@@ -6231,7 +6709,11 @@
         "comment": "Bravissimi!"
       }
     ],
-    "rbd": 8863
+    "rbd": 8863,
+    "paes_math": 776.2,
+    "paes_language": 760.9,
+    "simce_math": 347.0,
+    "simce_language": 296.0
   },
   {
     "id": 219,
@@ -6260,7 +6742,11 @@
       "Excelencia Académica"
     ],
     "reviews": [],
-    "rbd": 8873
+    "rbd": 8873,
+    "paes_math": 892.9,
+    "paes_language": 776.6,
+    "simce_math": 372.0,
+    "simce_language": 300.0
   },
   {
     "id": 220,
@@ -6289,7 +6775,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 12225
+    "rbd": 12225,
+    "paes_math": 609.9,
+    "paes_language": 587.2,
+    "simce_math": 264.0,
+    "simce_language": 244.0
   },
   {
     "id": 221,
@@ -6319,7 +6809,11 @@
       "Deportivo"
     ],
     "reviews": [],
-    "rbd": 25654
+    "rbd": 25654,
+    "paes_math": 908.3,
+    "paes_language": 776.6,
+    "simce_math": 353.0,
+    "simce_language": 293.0
   },
   {
     "id": 222,
@@ -6375,7 +6869,11 @@
       "Público"
     ],
     "reviews": [],
-    "rbd": 26037
+    "rbd": 26037,
+    "paes_math": 587.0,
+    "paes_language": 564.6,
+    "simce_math": 247.0,
+    "simce_language": 248.0
   },
   {
     "id": 224,
@@ -6404,7 +6902,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 8917
+    "rbd": 8917,
+    "paes_math": 870.4,
+    "paes_language": 770.7,
+    "simce_math": 351.0,
+    "simce_language": 302.0
   },
   {
     "id": 225,
@@ -6433,7 +6935,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 8995
+    "rbd": 8995,
+    "paes_math": 884.0,
+    "paes_language": 791.9,
+    "simce_math": 352.0,
+    "simce_language": 290.0
   },
   {
     "id": 226,
@@ -6462,7 +6968,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 8880
+    "rbd": 8880,
+    "paes_math": 803.9,
+    "paes_language": 755.7,
+    "simce_math": 333.0,
+    "simce_language": 285.0
   },
   {
     "id": 227,
@@ -6490,7 +7000,11 @@
       "Excelencia Académica"
     ],
     "reviews": [],
-    "rbd": 11776
+    "rbd": 11776,
+    "paes_math": 841.9,
+    "paes_language": 754.0,
+    "simce_math": 337.0,
+    "simce_language": 296.0
   },
   {
     "id": 228,
@@ -6518,7 +7032,11 @@
       "Tradicional"
     ],
     "reviews": [],
-    "rbd": 8869
+    "rbd": 8869,
+    "paes_math": 878.4,
+    "paes_language": 761.6,
+    "simce_math": 341.0,
+    "simce_language": 290.0
   },
   {
     "id": 229,
@@ -6689,7 +7207,11 @@
       "Lo Espejo"
     ],
     "reviews": [],
-    "rbd": 9828
+    "rbd": 9828,
+    "paes_math": 610.5,
+    "paes_language": 579.1,
+    "simce_math": 277.0,
+    "simce_language": 266.0
   },
   {
     "id": 235,
@@ -6834,7 +7356,11 @@
       "CASAP"
     ],
     "reviews": [],
-    "rbd": 24730
+    "rbd": 24730,
+    "paes_math": 588.1,
+    "paes_language": 611.9,
+    "simce_math": 270.0,
+    "simce_language": 253.0
   },
   {
     "id": 240,
@@ -6863,7 +7389,11 @@
       "SLEP Barrancas"
     ],
     "reviews": [],
-    "rbd": 10091
+    "rbd": 10091,
+    "paes_math": 545.9,
+    "paes_language": 541.3,
+    "simce_math": 251.0,
+    "simce_language": 235.0
   },
   {
     "id": 241,
@@ -6921,7 +7451,11 @@
       "Red Crecemos"
     ],
     "reviews": [],
-    "rbd": 10162
+    "rbd": 10162,
+    "paes_math": 614.7,
+    "paes_language": 600.5,
+    "simce_math": 249.0,
+    "simce_language": 257.0
   },
   {
     "id": 243,
@@ -6950,7 +7484,11 @@
       "SLEP Barrancas"
     ],
     "reviews": [],
-    "rbd": 10076
+    "rbd": 10076,
+    "paes_math": 527.1,
+    "paes_language": 521.1,
+    "simce_math": 216.0,
+    "simce_language": 210.0
   },
   {
     "id": 244,
@@ -7094,7 +7632,11 @@
       "Gratuito"
     ],
     "reviews": [],
-    "rbd": 10106
+    "rbd": 10106,
+    "paes_math": 601.8,
+    "paes_language": 571.5,
+    "simce_math": 257.0,
+    "simce_language": 245.0
   },
   {
     "id": 249,
@@ -7242,7 +7784,11 @@
       "Pastoral"
     ],
     "reviews": [],
-    "rbd": 9277
+    "rbd": 9277,
+    "paes_math": 732.5,
+    "paes_language": 675.1,
+    "simce_math": 317.0,
+    "simce_language": 278.0
   },
   {
     "id": 254,
@@ -7270,7 +7816,11 @@
       "Inclusivo"
     ],
     "reviews": [],
-    "rbd": 9208
+    "rbd": 9208,
+    "paes_math": 560.2,
+    "paes_language": 562.2,
+    "simce_math": 228.0,
+    "simce_language": 232.0
   },
   {
     "id": 255,
@@ -7355,7 +7905,11 @@
       "Gratuito"
     ],
     "reviews": [],
-    "rbd": 9069
+    "rbd": 9069,
+    "paes_math": 517.0,
+    "paes_language": 492.5,
+    "simce_math": 225.0,
+    "simce_language": 217.0
   },
   {
     "id": 258,
@@ -7441,7 +7995,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 25369
+    "rbd": 25369,
+    "paes_math": 707.1,
+    "paes_language": 663.0,
+    "simce_math": 340.0,
+    "simce_language": 292.0
   },
   {
     "id": 261,
@@ -7497,7 +8055,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 24986
+    "rbd": 24986,
+    "paes_math": 704.5,
+    "paes_language": 671.1,
+    "simce_math": 269.0,
+    "simce_language": 275.0
   },
   {
     "id": 263,
@@ -7525,7 +8087,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 24670
+    "rbd": 24670,
+    "paes_math": 856.9,
+    "paes_language": 751.3,
+    "simce_math": 350.0,
+    "simce_language": 316.0
   },
   {
     "id": 264,
@@ -7553,7 +8119,11 @@
       "Desarrollo Integral"
     ],
     "reviews": [],
-    "rbd": 25681
+    "rbd": 25681,
+    "paes_math": 616.6,
+    "paes_language": 620.4,
+    "simce_math": 242.0,
+    "simce_language": 253.0
   },
   {
     "id": 265,
@@ -7581,7 +8151,11 @@
       "Célula Social"
     ],
     "reviews": [],
-    "rbd": 25198
+    "rbd": 25198,
+    "paes_math": 722.6,
+    "paes_language": 670.0,
+    "simce_math": 299.0,
+    "simce_language": 281.0
   },
   {
     "id": 266,
@@ -7609,7 +8183,11 @@
       "Liderazgo"
     ],
     "reviews": [],
-    "rbd": 31074
+    "rbd": 31074,
+    "paes_math": 707.7,
+    "paes_language": 690.4,
+    "simce_math": 281.0,
+    "simce_language": 294.0
   },
   {
     "id": 267,
@@ -7637,7 +8215,11 @@
       "Tradicional"
     ],
     "reviews": [],
-    "rbd": 25770
+    "rbd": 25770,
+    "paes_math": 769.6,
+    "paes_language": 697.6,
+    "simce_math": 331.0,
+    "simce_language": 287.0
   },
   {
     "id": 268,
@@ -7665,7 +8247,11 @@
       "Familiar"
     ],
     "reviews": [],
-    "rbd": 9905
+    "rbd": 9905,
+    "paes_math": 781.9,
+    "paes_language": 743.2,
+    "simce_math": 300.0,
+    "simce_language": 299.0
   },
   {
     "id": 269,
@@ -7693,7 +8279,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 25785
+    "rbd": 25785,
+    "paes_math": 696.2,
+    "paes_language": 646.9,
+    "simce_math": 251.0,
+    "simce_language": 260.0
   },
   {
     "id": 270,
@@ -7917,7 +8507,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 11883
+    "rbd": 11883,
+    "paes_math": 551.0,
+    "paes_language": 541.4,
+    "simce_math": 229.0,
+    "simce_language": 231.0
   },
   {
     "id": 278,
@@ -7974,7 +8568,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 11883
+    "rbd": 11883,
+    "paes_math": 551.0,
+    "paes_language": 541.4,
+    "simce_math": 229.0,
+    "simce_language": 231.0
   },
   {
     "id": 280,
@@ -8002,7 +8600,11 @@
       "Excelencia"
     ],
     "reviews": [],
-    "rbd": 10828
+    "rbd": 10828,
+    "paes_math": 668.0,
+    "paes_language": 641.9,
+    "simce_math": 293.0,
+    "simce_language": 277.0
   },
   {
     "id": 281,
@@ -8030,7 +8632,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 24699
+    "rbd": 24699,
+    "paes_math": 845.5,
+    "paes_language": 758.3,
+    "simce_math": 354.0,
+    "simce_language": 284.0
   },
   {
     "id": 282,
@@ -8057,7 +8663,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 25692
+    "rbd": 25692,
+    "paes_math": 755.4,
+    "paes_language": 715.0,
+    "simce_math": 301.0,
+    "simce_language": 265.0
   },
   {
     "id": 283,
@@ -8141,7 +8751,11 @@
       "Innovador"
     ],
     "reviews": [],
-    "rbd": 10831
+    "rbd": 10831,
+    "paes_math": 665.6,
+    "paes_language": 651.1,
+    "simce_math": 297.0,
+    "simce_language": 268.0
   },
   {
     "id": 286,
@@ -8168,7 +8782,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 24675
+    "rbd": 24675,
+    "paes_math": 646.7,
+    "paes_language": 642.4,
+    "simce_math": 256.0,
+    "simce_language": 268.0
   },
   {
     "id": 287,
@@ -8196,7 +8814,11 @@
       "Excelencia Matemática"
     ],
     "reviews": [],
-    "rbd": 25012
+    "rbd": 25012,
+    "paes_math": 658.9,
+    "paes_language": 630.4,
+    "simce_math": 277.0,
+    "simce_language": 260.0
   },
   {
     "id": 288,
@@ -8281,7 +8903,11 @@
       "Inglés Intensivo"
     ],
     "reviews": [],
-    "rbd": 9217
+    "rbd": 9217,
+    "paes_math": 892.9,
+    "paes_language": 782.1,
+    "simce_math": 376.0,
+    "simce_language": 304.0
   },
   {
     "id": 291,
@@ -8339,7 +8965,11 @@
       "Acción Social"
     ],
     "reviews": [],
-    "rbd": 9250
+    "rbd": 9250,
+    "paes_math": 817.6,
+    "paes_language": 742.1,
+    "simce_math": 323.0,
+    "simce_language": 284.0
   },
   {
     "id": 293,
@@ -8367,7 +8997,11 @@
       "Valórico"
     ],
     "reviews": [],
-    "rbd": 25852
+    "rbd": 25852,
+    "paes_math": 701.3,
+    "paes_language": 660.7,
+    "simce_math": 274.0,
+    "simce_language": 277.0
   },
   {
     "id": 294,
@@ -8423,7 +9057,11 @@
       "Familiar"
     ],
     "reviews": [],
-    "rbd": 41264
+    "rbd": 41264,
+    "paes_math": 566.2,
+    "paes_language": 556.9,
+    "simce_math": 202.0,
+    "simce_language": 215.0
   },
   {
     "id": 296,
@@ -8451,7 +9089,11 @@
       "Tradicional"
     ],
     "reviews": [],
-    "rbd": 12133
+    "rbd": 12133,
+    "paes_math": 883.9,
+    "paes_language": 814.5,
+    "simce_math": 364.0,
+    "simce_language": 325.0
   },
   {
     "id": 297,
@@ -8480,7 +9122,11 @@
       "Laicismo"
     ],
     "reviews": [],
-    "rbd": 24842
+    "rbd": 24842,
+    "paes_math": 712.8,
+    "paes_language": 685.9,
+    "simce_math": 323.0,
+    "simce_language": 283.0
   },
   {
     "id": 298,
@@ -8509,7 +9155,11 @@
       "Deportivo"
     ],
     "reviews": [],
-    "rbd": 9078
+    "rbd": 9078,
+    "paes_math": 711.9,
+    "paes_language": 698.3,
+    "simce_math": 324.0,
+    "simce_language": 291.0
   },
   {
     "id": 299,
@@ -8538,7 +9188,11 @@
       "Excelencia Académica"
     ],
     "reviews": [],
-    "rbd": 9100
+    "rbd": 9100,
+    "paes_math": 780.1,
+    "paes_language": 714.5,
+    "simce_math": 308.0,
+    "simce_language": 274.0
   },
   {
     "id": 300,
@@ -8567,7 +9221,11 @@
       "Pastoral"
     ],
     "reviews": [],
-    "rbd": 9246
+    "rbd": 9246,
+    "paes_math": 798.5,
+    "paes_language": 747.0,
+    "simce_math": 324.0,
+    "simce_language": 288.0
   },
   {
     "id": 301,
@@ -8597,7 +9255,11 @@
       "Multicultural"
     ],
     "reviews": [],
-    "rbd": 9216
+    "rbd": 9216,
+    "paes_math": 872.5,
+    "paes_language": 792.8,
+    "simce_math": 343.0,
+    "simce_language": 304.0
   },
   {
     "id": 302,
@@ -8625,7 +9287,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 9216
+    "rbd": 9216,
+    "paes_math": 872.5,
+    "paes_language": 792.8,
+    "simce_math": 343.0,
+    "simce_language": 304.0
   },
   {
     "id": 303,
@@ -8660,7 +9326,11 @@
         "comment": "Uno de los mejores municipales de Chile."
       }
     ],
-    "rbd": 9071
+    "rbd": 9071,
+    "paes_math": 840.8,
+    "paes_language": 777.9,
+    "simce_math": 336.0,
+    "simce_language": 307.0
   },
   {
     "id": 304,
@@ -8688,7 +9358,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 9071
+    "rbd": 9071,
+    "paes_math": 840.8,
+    "paes_language": 777.9,
+    "simce_math": 336.0,
+    "simce_language": 307.0
   },
   {
     "id": 305,
@@ -8716,7 +9390,11 @@
       "Bicentenario"
     ],
     "reviews": [],
-    "rbd": 9073
+    "rbd": 9073,
+    "paes_math": 720.1,
+    "paes_language": 698.1,
+    "simce_math": 309.0,
+    "simce_language": 291.0
   },
   {
     "id": 306,
@@ -8752,7 +9430,11 @@
         "comment": "Formación integral y crítica."
       }
     ],
-    "rbd": 9267
+    "rbd": 9267,
+    "paes_math": 722.6,
+    "paes_language": 723.9,
+    "simce_math": 295.0,
+    "simce_language": 287.0
   },
   {
     "id": 307,
@@ -8808,7 +9490,11 @@
       "Excelencia"
     ],
     "reviews": [],
-    "rbd": 10757
+    "rbd": 10757,
+    "paes_math": 588.7,
+    "paes_language": 582.9,
+    "simce_math": 256.0,
+    "simce_language": 259.0
   },
   {
     "id": 309,
@@ -8836,7 +9522,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 25048
+    "rbd": 25048,
+    "paes_math": 714.2,
+    "paes_language": 671.5,
+    "simce_math": 305.0,
+    "simce_language": 285.0
   },
   {
     "id": 310,
@@ -8864,7 +9554,11 @@
       "Personalizado"
     ],
     "reviews": [],
-    "rbd": 25238
+    "rbd": 25238,
+    "paes_math": 628.8,
+    "paes_language": 623.1,
+    "simce_math": 276.0,
+    "simce_language": 256.0
   },
   {
     "id": 311,
@@ -8976,7 +9670,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 24903
+    "rbd": 24903,
+    "paes_math": 640.6,
+    "paes_language": 599.0,
+    "simce_math": 285.0,
+    "simce_language": 277.0
   },
   {
     "id": 315,
@@ -9060,7 +9758,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 26254
+    "rbd": 26254,
+    "paes_math": 614.3,
+    "paes_language": 628.1,
+    "simce_math": 231.0,
+    "simce_language": 240.0
   },
   {
     "id": 318,
@@ -9088,7 +9790,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 31260
+    "rbd": 31260,
+    "paes_math": 579.0,
+    "paes_language": 567.4,
+    "simce_math": 225.0,
+    "simce_language": 213.0
   },
   {
     "id": 319,
@@ -9116,7 +9822,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 26012
+    "rbd": 26012,
+    "paes_math": 587.9,
+    "paes_language": 581.0,
+    "simce_math": 235.0,
+    "simce_language": 233.0
   },
   {
     "id": 320,
@@ -9199,7 +9909,11 @@
       "Excelencia Académica"
     ],
     "reviews": [],
-    "rbd": 26507
+    "rbd": 26507,
+    "paes_math": 846.3,
+    "paes_language": 728.6,
+    "simce_math": 354.0,
+    "simce_language": 295.0
   },
   {
     "id": 323,
@@ -9227,7 +9941,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 31264
+    "rbd": 31264,
+    "paes_math": 711.8,
+    "paes_language": 652.5,
+    "simce_math": 281.0,
+    "simce_language": 288.0
   },
   {
     "id": 324,
@@ -9368,7 +10086,11 @@
       "Excelencia Académica"
     ],
     "reviews": [],
-    "rbd": 9505
+    "rbd": 9505,
+    "paes_math": 689.3,
+    "paes_language": 656.8,
+    "simce_math": 281.0,
+    "simce_language": 251.0
   },
   {
     "id": 329,
@@ -9507,7 +10229,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 9410
+    "rbd": 9410,
+    "paes_math": 524.5,
+    "paes_language": 495.6,
+    "simce_math": 227.0,
+    "simce_language": 235.0
   },
   {
     "id": 334,
@@ -9591,7 +10317,11 @@
       "Cristiano"
     ],
     "reviews": [],
-    "rbd": 9845
+    "rbd": 9845,
+    "paes_math": 662.9,
+    "paes_language": 638.3,
+    "simce_math": 251.0,
+    "simce_language": 256.0
   },
   {
     "id": 337,
@@ -9619,7 +10349,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 9695
+    "rbd": 9695,
+    "paes_math": 486.4,
+    "paes_language": 499.6,
+    "simce_math": 203.0,
+    "simce_language": 205.0
   },
   {
     "id": 338,
@@ -9648,7 +10382,11 @@
       "Cultural"
     ],
     "reviews": [],
-    "rbd": 9221
+    "rbd": 9221,
+    "paes_math": 676.0,
+    "paes_language": 657.3,
+    "simce_math": 272.0,
+    "simce_language": 260.0
   },
   {
     "id": 339,
@@ -9682,7 +10420,11 @@
         "comment": "Buen ambiente escolar."
       }
     ],
-    "rbd": 25478
+    "rbd": 25478,
+    "paes_math": 767.2,
+    "paes_language": 703.8,
+    "simce_math": 312.0,
+    "simce_language": 279.0
   },
   {
     "id": 340,
@@ -9711,7 +10453,11 @@
       "Pastoral"
     ],
     "reviews": [],
-    "rbd": 9244
+    "rbd": 9244,
+    "paes_math": 702.4,
+    "paes_language": 680.0,
+    "simce_math": 252.0,
+    "simce_language": 271.0
   },
   {
     "id": 341,
@@ -9741,7 +10487,11 @@
       "Preuniversitario"
     ],
     "reviews": [],
-    "rbd": 25065
+    "rbd": 25065,
+    "paes_math": 786.0,
+    "paes_language": 714.6,
+    "simce_math": 311.0,
+    "simce_language": 279.0
   },
   {
     "id": 342,
@@ -9771,7 +10521,11 @@
       "Cognita"
     ],
     "reviews": [],
-    "rbd": 25172
+    "rbd": 25172,
+    "paes_math": 837.4,
+    "paes_language": 755.4,
+    "simce_math": 334.0,
+    "simce_language": 303.0
   },
   {
     "id": 343,
@@ -9800,7 +10554,11 @@
       "Excelencia Académica"
     ],
     "reviews": [],
-    "rbd": 8998
+    "rbd": 8998,
+    "paes_math": 927.5,
+    "paes_language": 812.1,
+    "simce_math": 422.0,
+    "simce_language": 329.0
   },
   {
     "id": 344,
@@ -9836,7 +10594,11 @@
         "comment": "Tradición y valores sólidos."
       }
     ],
-    "rbd": 8996
+    "rbd": 8996,
+    "paes_math": 861.0,
+    "paes_language": 781.1,
+    "simce_math": 340.0,
+    "simce_language": 299.0
   },
   {
     "id": 345,
@@ -9871,7 +10633,11 @@
         "comment": "Gran nivel de exigencia."
       }
     ],
-    "rbd": 8927
+    "rbd": 8927,
+    "paes_math": 724.0,
+    "paes_language": 702.7,
+    "simce_math": 283.0,
+    "simce_language": 292.0
   },
   {
     "id": 346,
@@ -9900,7 +10666,11 @@
       "Tradicional"
     ],
     "reviews": [],
-    "rbd": 8928
+    "rbd": 8928,
+    "paes_math": 724.5,
+    "paes_language": 684.9,
+    "simce_math": 280.0,
+    "simce_language": 266.0
   },
   {
     "id": 347,
@@ -9985,7 +10755,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 26466
+    "rbd": 26466,
+    "paes_math": 638.6,
+    "paes_language": 592.6,
+    "simce_math": 273.0,
+    "simce_language": 253.0
   },
   {
     "id": 350,
@@ -10013,7 +10787,11 @@
       "Valórico"
     ],
     "reviews": [],
-    "rbd": 25695
+    "rbd": 25695,
+    "paes_math": 689.3,
+    "paes_language": 650.2,
+    "simce_math": 288.0,
+    "simce_language": 273.0
   },
   {
     "id": 351,
@@ -10041,7 +10819,11 @@
       "Excelencia"
     ],
     "reviews": [],
-    "rbd": 10635
+    "rbd": 10635,
+    "paes_math": 729.9,
+    "paes_language": 693.3,
+    "simce_math": 282.0,
+    "simce_language": 272.0
   },
   {
     "id": 352,
@@ -10097,7 +10879,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 10600
+    "rbd": 10600,
+    "paes_math": 640.3,
+    "paes_language": 604.9,
+    "simce_math": 272.0,
+    "simce_language": 265.0
   },
   {
     "id": 354,
@@ -10124,7 +10910,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 26454
+    "rbd": 26454,
+    "paes_math": 611.5,
+    "paes_language": 593.2,
+    "simce_math": 277.0,
+    "simce_language": 257.0
   },
   {
     "id": 355,
@@ -10179,7 +10969,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 12775
+    "rbd": 12775,
+    "paes_math": 628.5,
+    "paes_language": 591.5,
+    "simce_math": 305.0,
+    "simce_language": 270.0
   },
   {
     "id": 357,
@@ -10207,7 +11001,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 31293
+    "rbd": 31293,
+    "paes_math": 671.3,
+    "paes_language": 657.7,
+    "simce_math": 303.0,
+    "simce_language": 271.0
   },
   {
     "id": 358,
@@ -10235,7 +11033,11 @@
       "Gratuito"
     ],
     "reviews": [],
-    "rbd": 24686
+    "rbd": 24686,
+    "paes_math": 560.4,
+    "paes_language": 554.6,
+    "simce_math": 216.0,
+    "simce_language": 213.0
   },
   {
     "id": 359,
@@ -10263,7 +11065,11 @@
       "Gratuito"
     ],
     "reviews": [],
-    "rbd": 9411
+    "rbd": 9411,
+    "paes_math": 532.7,
+    "paes_language": 519.0,
+    "simce_math": 207.0,
+    "simce_language": 231.0
   },
   {
     "id": 360,
@@ -10347,7 +11153,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 9502
+    "rbd": 9502,
+    "paes_math": 586.5,
+    "paes_language": 595.4,
+    "simce_math": 235.0,
+    "simce_language": 258.0
   },
   {
     "id": 363,
@@ -10374,7 +11184,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 25783
+    "rbd": 25783,
+    "paes_math": 536.8,
+    "paes_language": 530.2,
+    "simce_math": 276.0,
+    "simce_language": 260.0
   },
   {
     "id": 364,
@@ -10538,7 +11352,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 25454
+    "rbd": 25454,
+    "paes_math": 637.9,
+    "paes_language": 616.2,
+    "simce_math": 263.0,
+    "simce_language": 260.0
   },
   {
     "id": 370,
@@ -10567,7 +11385,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 10540
+    "rbd": 10540,
+    "paes_math": 644.6,
+    "paes_language": 624.1,
+    "simce_math": 229.0,
+    "simce_language": 250.0
   },
   {
     "id": 371,
@@ -10791,7 +11613,11 @@
       "Público"
     ],
     "reviews": [],
-    "rbd": 10526
+    "rbd": 10526,
+    "paes_math": 517.1,
+    "paes_language": 518.1,
+    "simce_math": 216.0,
+    "simce_language": 224.0
   },
   {
     "id": 379,
@@ -10819,7 +11645,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 9519
+    "rbd": 9519,
+    "paes_math": 648.0,
+    "paes_language": 627.2,
+    "simce_math": 270.0,
+    "simce_language": 274.0
   },
   {
     "id": 380,
@@ -10846,7 +11676,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 25894
+    "rbd": 25894,
+    "paes_math": 623.0,
+    "paes_language": 636.9,
+    "simce_math": 280.0,
+    "simce_language": 278.0
   },
   {
     "id": 381,
@@ -10874,7 +11708,11 @@
       "Masivo"
     ],
     "reviews": [],
-    "rbd": 9564
+    "rbd": 9564,
+    "paes_math": 681.4,
+    "paes_language": 662.9,
+    "simce_math": 303.0,
+    "simce_language": 280.0
   },
   {
     "id": 382,
@@ -10902,7 +11740,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 24625
+    "rbd": 24625,
+    "paes_math": 691.1,
+    "paes_language": 662.3,
+    "simce_math": 339.0,
+    "simce_language": 286.0
   },
   {
     "id": 383,
@@ -10986,7 +11828,11 @@
       "Excelencia"
     ],
     "reviews": [],
-    "rbd": 9570
+    "rbd": 9570,
+    "paes_math": 777.3,
+    "paes_language": 717.8,
+    "simce_math": 322.0,
+    "simce_language": 296.0
   },
   {
     "id": 386,
@@ -11042,7 +11888,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 9406
+    "rbd": 9406,
+    "paes_math": 678.1,
+    "paes_language": 640.4,
+    "simce_math": 250.0,
+    "simce_language": 229.0
   },
   {
     "id": 388,
@@ -11098,7 +11948,11 @@
       "Tradicional"
     ],
     "reviews": [],
-    "rbd": 8609
+    "rbd": 8609,
+    "paes_math": 821.1,
+    "paes_language": 742.0,
+    "simce_math": 328.0,
+    "simce_language": 291.0
   },
   {
     "id": 390,
@@ -11134,7 +11988,11 @@
         "comment": "Mucha historia."
       }
     ],
-    "rbd": 8485
+    "rbd": 8485,
+    "paes_math": 751.6,
+    "paes_language": 702.9,
+    "simce_math": 264.0,
+    "simce_language": 273.0
   },
   {
     "id": 391,
@@ -11163,7 +12021,11 @@
       "Tradicional"
     ],
     "reviews": [],
-    "rbd": 8491
+    "rbd": 8491,
+    "paes_math": 662.6,
+    "paes_language": 630.1,
+    "simce_math": 250.0,
+    "simce_language": 246.0
   },
   {
     "id": 392,
@@ -11198,7 +12060,11 @@
         "comment": "Histórico y emblemático."
       }
     ],
-    "rbd": 8487
+    "rbd": 8487,
+    "paes_math": 643.2,
+    "paes_language": 650.7,
+    "simce_math": 238.0,
+    "simce_language": 269.0
   },
   {
     "id": 393,
@@ -11226,7 +12092,11 @@
       "Gratuito"
     ],
     "reviews": [],
-    "rbd": 8825
+    "rbd": 8825,
+    "paes_math": 636.7,
+    "paes_language": 623.2,
+    "simce_math": 301.0,
+    "simce_language": 270.0
   },
   {
     "id": 394,
@@ -11254,7 +12124,11 @@
       "IB"
     ],
     "reviews": [],
-    "rbd": 8909
+    "rbd": 8909,
+    "paes_math": 828.7,
+    "paes_language": 740.2,
+    "simce_math": 343.0,
+    "simce_language": 307.0
   },
   {
     "id": 395,
@@ -11283,7 +12157,11 @@
       "SEDUC"
     ],
     "reviews": [],
-    "rbd": 8871
+    "rbd": 8871,
+    "paes_math": 912.0,
+    "paes_language": 792.9,
+    "simce_math": 377.0,
+    "simce_language": 311.0
   },
   {
     "id": 396,
@@ -11341,7 +12219,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 8972
+    "rbd": 8972,
+    "paes_math": 904.7,
+    "paes_language": 787.2,
+    "simce_math": 366.0,
+    "simce_language": 292.0
   },
   {
     "id": 398,
@@ -11369,7 +12251,11 @@
       "Pastoral"
     ],
     "reviews": [],
-    "rbd": 12094
+    "rbd": 12094,
+    "paes_math": 762.1,
+    "paes_language": 711.4,
+    "simce_math": 307.0,
+    "simce_language": 263.0
   },
   {
     "id": 399,
@@ -11397,7 +12283,11 @@
       "Alemán"
     ],
     "reviews": [],
-    "rbd": 8904
+    "rbd": 8904,
+    "paes_math": 910.6,
+    "paes_language": 804.6,
+    "simce_math": 364.0,
+    "simce_language": 317.0
   },
   {
     "id": 400,
@@ -11426,7 +12316,11 @@
       "SEDUC"
     ],
     "reviews": [],
-    "rbd": 8862
+    "rbd": 8862,
+    "paes_math": 925.6,
+    "paes_language": 806.0,
+    "simce_math": 365.0,
+    "simce_language": 295.0
   },
   {
     "id": 401,
@@ -11491,7 +12385,11 @@
         "comment": "Inmenso campus, muchas actividades extraprogramáticas."
       }
     ],
-    "rbd": 8906
+    "rbd": 8906,
+    "paes_math": 886.7,
+    "paes_language": 783.8,
+    "simce_math": 347.0,
+    "simce_language": 288.0
   },
   {
     "id": 403,
@@ -11519,7 +12417,11 @@
       "Integral"
     ],
     "reviews": [],
-    "rbd": 26524
+    "rbd": 26524,
+    "paes_math": 674.8,
+    "paes_language": 653.3,
+    "simce_math": 279.0,
+    "simce_language": 279.0
   },
   {
     "id": 404,
@@ -11575,7 +12477,11 @@
       "Vicuña Mackenna"
     ],
     "reviews": [],
-    "rbd": 25944
+    "rbd": 25944,
+    "paes_math": 618.3,
+    "paes_language": 605.8,
+    "simce_math": 258.0,
+    "simce_language": 266.0
   },
   {
     "id": 406,
@@ -11603,7 +12509,11 @@
       "Comeduc"
     ],
     "reviews": [],
-    "rbd": 24496
+    "rbd": 24496,
+    "paes_math": 584.6,
+    "paes_language": 562.7,
+    "simce_math": 223.0,
+    "simce_language": 216.0
   },
   {
     "id": 407,
@@ -11715,7 +12625,11 @@
       "Tradicional"
     ],
     "reviews": [],
-    "rbd": 11851
+    "rbd": 11851,
+    "paes_math": 610.9,
+    "paes_language": 599.2,
+    "simce_math": 236.0,
+    "simce_language": 224.0
   },
   {
     "id": 411,
@@ -11799,7 +12713,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 24783
+    "rbd": 24783,
+    "paes_math": 697.1,
+    "paes_language": 662.4,
+    "simce_math": 309.0,
+    "simce_language": 289.0
   },
   {
     "id": 414,
@@ -11883,7 +12801,11 @@
       "El Principal"
     ],
     "reviews": [],
-    "rbd": 10520
+    "rbd": 10520,
+    "paes_math": 587.2,
+    "paes_language": 564.9,
+    "simce_math": 246.0,
+    "simce_language": 244.0
   },
   {
     "id": 417,
@@ -11995,7 +12917,11 @@
       "Técnico"
     ],
     "reviews": [],
-    "rbd": 24652
+    "rbd": 24652,
+    "paes_math": 569.5,
+    "paes_language": 563.3,
+    "simce_math": 226.0,
+    "simce_language": 249.0
   },
   {
     "id": 421,
@@ -12023,7 +12949,11 @@
       "Integración"
     ],
     "reviews": [],
-    "rbd": 20474
+    "rbd": 20474,
+    "paes_math": 644.0,
+    "paes_language": 633.0,
+    "simce_math": 239.0,
+    "simce_language": 272.0
   },
   {
     "id": 422,
@@ -12051,7 +12981,11 @@
       "Pirque"
     ],
     "reviews": [],
-    "rbd": 24907
+    "rbd": 24907,
+    "paes_math": 717.6,
+    "paes_language": 670.2,
+    "simce_math": 287.0,
+    "simce_language": 280.0
   },
   {
     "id": 423,
@@ -12107,7 +13041,11 @@
       "Valores"
     ],
     "reviews": [],
-    "rbd": 8954
+    "rbd": 8954,
+    "paes_math": 672.0,
+    "paes_language": 678.0,
+    "simce_math": 282.0,
+    "simce_language": 275.0
   },
   {
     "id": 425,
@@ -12135,7 +13073,11 @@
       "Integral"
     ],
     "reviews": [],
-    "rbd": 8988
+    "rbd": 8988,
+    "paes_math": 810.6,
+    "paes_language": 747.2,
+    "simce_math": 331.0,
+    "simce_language": 312.0
   },
   {
     "id": 426,
@@ -12163,7 +13105,11 @@
       "Humanista"
     ],
     "reviews": [],
-    "rbd": 8950
+    "rbd": 8950,
+    "paes_math": 762.7,
+    "paes_language": 710.1,
+    "simce_math": 322.0,
+    "simce_language": 289.0
   },
   {
     "id": 427,
@@ -12219,7 +13165,11 @@
       "Católico"
     ],
     "reviews": [],
-    "rbd": 24843
+    "rbd": 24843,
+    "paes_math": 616.8,
+    "paes_language": 564.2,
+    "simce_math": 246.0,
+    "simce_language": 232.0
   },
   {
     "id": 429,
@@ -12247,7 +13197,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 12242
+    "rbd": 12242,
+    "paes_math": 521.3,
+    "paes_language": 517.4,
+    "simce_math": 217.0,
+    "simce_language": 223.0
   },
   {
     "id": 430,
@@ -12275,7 +13229,11 @@
       "Municipal"
     ],
     "reviews": [],
-    "rbd": 24889
+    "rbd": 24889,
+    "paes_math": 554.1,
+    "paes_language": 531.1,
+    "simce_math": 237.0,
+    "simce_language": 260.0
   },
   {
     "id": 431,
@@ -12303,7 +13261,11 @@
       "Excelencia"
     ],
     "reviews": [],
-    "rbd": 26365
+    "rbd": 26365,
+    "paes_math": 629.0,
+    "paes_language": 592.2,
+    "simce_math": 264.0,
+    "simce_language": 232.0
   },
   {
     "id": 432,
@@ -12331,7 +13293,11 @@
       "Pudahuel"
     ],
     "reviews": [],
-    "rbd": 25922
+    "rbd": 25922,
+    "paes_math": 670.9,
+    "paes_language": 623.5,
+    "simce_math": 326.0,
+    "simce_language": 283.0
   },
   {
     "id": 433,
@@ -12359,7 +13325,11 @@
       "Excelencia"
     ],
     "reviews": [],
-    "rbd": 26260
+    "rbd": 26260,
+    "paes_math": 630.6,
+    "paes_language": 621.2,
+    "simce_math": 266.0,
+    "simce_language": 247.0
   },
   {
     "id": 434,
@@ -12387,7 +13357,11 @@
       "Subvencionado"
     ],
     "reviews": [],
-    "rbd": 12242
+    "rbd": 12242,
+    "paes_math": 521.3,
+    "paes_language": 517.4,
+    "simce_math": 217.0,
+    "simce_language": 223.0
   },
   {
     "id": 435,
@@ -12499,7 +13473,11 @@
       "Google Reference"
     ],
     "reviews": [],
-    "rbd": 24648
+    "rbd": 24648,
+    "paes_math": 709.4,
+    "paes_language": 668.2,
+    "simce_math": 304.0,
+    "simce_language": 283.0
   },
   {
     "id": 439,
@@ -12517,9 +13495,9 @@
       "secondary": "Gratuito"
     },
     "rating": 4.6,
-    "address": "Puente Alto Центр, Puente Alto",
-    "email": "contacto@pedroapostol.cl",
-    "website": "",
+    "address": "Del Tranque 1412, Puente Alto",
+    "email": "contacto@colegiopedroapostol.cl",
+    "website": "http://www.colegiopedroapostol.cl",
     "keywords": [
       "Bicentenario",
       "Gratuito",
@@ -12527,7 +13505,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 25613
+    "rbd": 25613,
+    "paes_math": 631.0,
+    "paes_language": 589.3,
+    "simce_math": 278.0,
+    "simce_language": 261.0
   },
   {
     "id": 440,
@@ -12555,7 +13537,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 10452
+    "rbd": 10452,
+    "paes_math": 549.9,
+    "paes_language": 537.4,
+    "simce_math": 239.0,
+    "simce_language": 247.0
   },
   {
     "id": 441,
@@ -12583,7 +13569,11 @@
       "Municipal"
     ],
     "reviews": [],
-    "rbd": 31078
+    "rbd": 31078,
+    "paes_math": 729.4,
+    "paes_language": 697.6,
+    "simce_math": 308.0,
+    "simce_language": 284.0
   },
   {
     "id": 442,
@@ -12611,7 +13601,11 @@
       "Independencia"
     ],
     "reviews": [],
-    "rbd": 10452
+    "rbd": 10452,
+    "paes_math": 549.9,
+    "paes_language": 537.4,
+    "simce_math": 239.0,
+    "simce_language": 247.0
   },
   {
     "id": 443,
@@ -12639,14 +13633,18 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 25580
+    "rbd": 25580,
+    "paes_math": 667.8,
+    "paes_language": 623.4,
+    "simce_math": 237.0,
+    "simce_language": 261.0
   },
   {
     "id": 444,
     "name": "Colegio Altazor",
     "commune": "Puente Alto",
     "dependency": "Particular Subvencionado",
-    "students": 600,
+    "students": 950,
     "tuition": "Consultar",
     "incorporation_fee": "Consultar",
     "enrollment_fee": "Consultar",
@@ -12657,9 +13655,9 @@
       "secondary": "Consultar"
     },
     "rating": 4.9,
-    "address": "Puente Alto, Santiago",
-    "email": "contacto@colegioaltazor.cl",
-    "website": "http://www.colegioaltazor.cl",
+    "address": "Av Independencia 261, Puente Alto",
+    "email": "informaciones@colegio-altazor.cl",
+    "website": "http://www.colegio-altazor.cl",
     "keywords": [
       "SIMCE Alto",
       "Subvencionado",
@@ -12667,7 +13665,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 25558
+    "rbd": 25558,
+    "paes_math": 760.6,
+    "paes_language": 706.4,
+    "simce_math": 332.0,
+    "simce_language": 295.0
   },
   {
     "id": 445,
@@ -12695,7 +13697,11 @@
       "Subvencionado"
     ],
     "reviews": [],
-    "rbd": 31327
+    "rbd": 31327,
+    "paes_math": 718.1,
+    "paes_language": 686.3,
+    "simce_math": 292.0,
+    "simce_language": 280.0
   },
   {
     "id": 446,
@@ -12723,7 +13729,11 @@
       "Calidad"
     ],
     "reviews": [],
-    "rbd": 25439
+    "rbd": 25439,
+    "paes_math": 644.4,
+    "paes_language": 627.5,
+    "simce_math": 277.0,
+    "simce_language": 260.0
   },
   {
     "id": 447,
@@ -12751,7 +13761,11 @@
       "Familiar"
     ],
     "reviews": [],
-    "rbd": 10452
+    "rbd": 10452,
+    "paes_math": 549.9,
+    "paes_language": 537.4,
+    "simce_math": 239.0,
+    "simce_language": 247.0
   },
   {
     "id": 448,
@@ -12807,7 +13821,11 @@
       "Integral"
     ],
     "reviews": [],
-    "rbd": 26083
+    "rbd": 26083,
+    "paes_math": 572.2,
+    "paes_language": 554.0,
+    "simce_math": 263.0,
+    "simce_language": 262.0
   },
   {
     "id": 450,
@@ -12863,7 +13881,11 @@
       "Deportivo"
     ],
     "reviews": [],
-    "rbd": 26272
+    "rbd": 26272,
+    "paes_math": 702.3,
+    "paes_language": 667.4,
+    "simce_math": 304.0,
+    "simce_language": 271.0
   },
   {
     "id": 452,
@@ -12891,7 +13913,11 @@
       "Valores"
     ],
     "reviews": [],
-    "rbd": 25829
+    "rbd": 25829,
+    "paes_math": 693.4,
+    "paes_language": 640.4,
+    "simce_math": 266.0,
+    "simce_language": 250.0
   },
   {
     "id": 453,
@@ -12919,7 +13945,11 @@
       "Tradicional"
     ],
     "reviews": [],
-    "rbd": 26033
+    "rbd": 26033,
+    "paes_math": 656.8,
+    "paes_language": 623.1,
+    "simce_math": 290.0,
+    "simce_language": 270.0
   },
   {
     "id": 454,
@@ -12947,7 +13977,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 25961
+    "rbd": 25961,
+    "paes_math": 810.0,
+    "paes_language": 751.5,
+    "simce_math": 355.0,
+    "simce_language": 288.0
   },
   {
     "id": 455,
@@ -12975,7 +14009,11 @@
       "Mixto"
     ],
     "reviews": [],
-    "rbd": 26110
+    "rbd": 26110,
+    "paes_math": 613.3,
+    "paes_language": 577.7,
+    "simce_math": 237.0,
+    "simce_language": 250.0
   },
   {
     "id": 456,
@@ -13003,7 +14041,11 @@
       "Tecnología"
     ],
     "reviews": [],
-    "rbd": 25349
+    "rbd": 25349,
+    "paes_math": 653.8,
+    "paes_language": 634.1,
+    "simce_math": 269.0,
+    "simce_language": 271.0
   },
   {
     "id": 457,
@@ -13059,7 +14101,11 @@
       "Tradición"
     ],
     "reviews": [],
-    "rbd": 10042
+    "rbd": 10042,
+    "paes_math": 693.6,
+    "paes_language": 642.3,
+    "simce_math": 288.0,
+    "simce_language": 262.0
   },
   {
     "id": 459,
@@ -13087,7 +14133,11 @@
       "Valores"
     ],
     "reviews": [],
-    "rbd": 12241
+    "rbd": 12241,
+    "paes_math": 584.8,
+    "paes_language": 554.9,
+    "simce_math": 271.0,
+    "simce_language": 272.0
   },
   {
     "id": 460,
@@ -13115,7 +14165,11 @@
       "Quinta Normal"
     ],
     "reviews": [],
-    "rbd": 10069
+    "rbd": 10069,
+    "paes_math": 642.8,
+    "paes_language": 618.0,
+    "simce_math": 259.0,
+    "simce_language": 258.0
   },
   {
     "id": 461,
@@ -13171,7 +14225,11 @@
       "Subvencionado"
     ],
     "reviews": [],
-    "rbd": 25458
+    "rbd": 25458,
+    "paes_math": 566.0,
+    "paes_language": 571.2,
+    "simce_math": 215.0,
+    "simce_language": 223.0
   },
   {
     "id": 463,
@@ -13339,7 +14397,11 @@
       "Integral"
     ],
     "reviews": [],
-    "rbd": 8682
+    "rbd": 8682,
+    "paes_math": 717.6,
+    "paes_language": 651.4,
+    "simce_math": 284.0,
+    "simce_language": 269.0
   },
   {
     "id": 469,
@@ -13367,7 +14429,11 @@
       "Privado"
     ],
     "reviews": [],
-    "rbd": 8750
+    "rbd": 8750,
+    "paes_math": 738.3,
+    "paes_language": 700.0,
+    "simce_math": 305.0,
+    "simce_language": 277.0
   },
   {
     "id": 470,
@@ -13395,7 +14461,11 @@
       "Integral"
     ],
     "reviews": [],
-    "rbd": 25138
+    "rbd": 25138,
+    "paes_math": 688.2,
+    "paes_language": 653.1,
+    "simce_math": 308.0,
+    "simce_language": 291.0
   },
   {
     "id": 471,
@@ -13451,7 +14521,11 @@
       "Subvencionado"
     ],
     "reviews": [],
-    "rbd": 8636
+    "rbd": 8636,
+    "paes_math": 682.6,
+    "paes_language": 657.2,
+    "simce_math": 265.0,
+    "simce_language": 270.0
   },
   {
     "id": 473,
@@ -13479,7 +14553,11 @@
       "Gratuito"
     ],
     "reviews": [],
-    "rbd": 8510
+    "rbd": 8510,
+    "paes_math": 572.2,
+    "paes_language": 591.4,
+    "simce_math": 241.0,
+    "simce_language": 252.0
   },
   {
     "id": 474,
@@ -13535,7 +14613,11 @@
       "Tradicional"
     ],
     "reviews": [],
-    "rbd": 8650
+    "rbd": 8650,
+    "paes_math": 590.7,
+    "paes_language": 580.3,
+    "simce_math": 253.0,
+    "simce_language": 245.0
   },
   {
     "id": 476,
@@ -13563,7 +14645,11 @@
       "Excelencia"
     ],
     "reviews": [],
-    "rbd": 10255
+    "rbd": 10255,
+    "paes_math": 514.9,
+    "paes_language": 512.4,
+    "simce_math": 208.0,
+    "simce_language": 218.0
   },
   {
     "id": 477,
@@ -13619,7 +14705,11 @@
       "Google Reference"
     ],
     "reviews": [],
-    "rbd": 24623
+    "rbd": 24623,
+    "paes_math": 651.4,
+    "paes_language": 612.8,
+    "simce_math": 269.0,
+    "simce_language": 257.0
   },
   {
     "id": 479,
@@ -13647,7 +14737,11 @@
       "Renca"
     ],
     "reviews": [],
-    "rbd": 20436
+    "rbd": 20436,
+    "paes_math": 683.6,
+    "paes_language": 662.2,
+    "simce_math": 284.0,
+    "simce_language": 281.0
   },
   {
     "id": 480,
@@ -13675,7 +14769,11 @@
       "Gratuito"
     ],
     "reviews": [],
-    "rbd": 31037
+    "rbd": 31037,
+    "paes_math": 622.0,
+    "paes_language": 602.5,
+    "simce_math": 293.0,
+    "simce_language": 267.0
   },
   {
     "id": 481,
@@ -13759,7 +14857,11 @@
       "Excelencia"
     ],
     "reviews": [],
-    "rbd": 24482
+    "rbd": 24482,
+    "paes_math": 642.7,
+    "paes_language": 596.0,
+    "simce_math": 264.0,
+    "simce_language": 248.0
   },
   {
     "id": 484,
@@ -13787,7 +14889,11 @@
       "Renca"
     ],
     "reviews": [],
-    "rbd": 24812
+    "rbd": 24812,
+    "paes_math": 644.6,
+    "paes_language": 621.3,
+    "simce_math": 318.0,
+    "simce_language": 276.0
   },
   {
     "id": 485,
@@ -13899,7 +15005,11 @@
       "Integral"
     ],
     "reviews": [],
-    "rbd": 10854
+    "rbd": 10854,
+    "paes_math": 546.9,
+    "paes_language": 527.0,
+    "simce_math": 218.0,
+    "simce_language": 200.0
   },
   {
     "id": 489,
@@ -14179,7 +15289,11 @@
       "Municipal"
     ],
     "reviews": [],
-    "rbd": 9601
+    "rbd": 9601,
+    "paes_math": 492.2,
+    "paes_language": 488.6,
+    "simce_math": 210.0,
+    "simce_language": 192.0
   },
   {
     "id": 499,
@@ -14207,7 +15321,11 @@
       "Subvencionado"
     ],
     "reviews": [],
-    "rbd": 9659
+    "rbd": 9659,
+    "paes_math": 575.0,
+    "paes_language": 565.4,
+    "simce_math": 235.0,
+    "simce_language": 234.0
   },
   {
     "id": 500,
@@ -14235,7 +15353,11 @@
       "San Ramón"
     ],
     "reviews": [],
-    "rbd": 9660
+    "rbd": 9660,
+    "paes_math": 608.3,
+    "paes_language": 584.9,
+    "simce_math": 242.0,
+    "simce_language": 251.0
   },
   {
     "id": 501,
@@ -14263,7 +15385,11 @@
       "Valores"
     ],
     "reviews": [],
-    "rbd": 9646
+    "rbd": 9646,
+    "paes_math": 681.0,
+    "paes_language": 642.3,
+    "simce_math": 325.0,
+    "simce_language": 269.0
   },
   {
     "id": 502,
@@ -14319,7 +15445,11 @@
       "Técnico"
     ],
     "reviews": [],
-    "rbd": 9584
+    "rbd": 9584,
+    "paes_math": 574.6,
+    "paes_language": 550.9,
+    "simce_math": 243.0,
+    "simce_language": 231.0
   },
   {
     "id": 504,
@@ -14347,7 +15477,11 @@
       "San Ramón"
     ],
     "reviews": [],
-    "rbd": 9599
+    "rbd": 9599,
+    "paes_math": 520.9,
+    "paes_language": 525.3,
+    "simce_math": 219.0,
+    "simce_language": 229.0
   },
   {
     "id": 505,
@@ -14375,7 +15509,11 @@
       "Excelencia"
     ],
     "reviews": [],
-    "rbd": 9647
+    "rbd": 9647,
+    "paes_math": 617.5,
+    "paes_language": 601.4,
+    "simce_math": 261.0,
+    "simce_language": 261.0
   },
   {
     "id": 506,
@@ -14403,7 +15541,9 @@
       "Subvencionado"
     ],
     "reviews": [],
-    "rbd": 25014
+    "rbd": 25014,
+    "paes_math": 476.6,
+    "paes_language": 485.1
   },
   {
     "id": 507,
@@ -14459,7 +15599,11 @@
       "Excelencia"
     ],
     "reviews": [],
-    "rbd": 8762
+    "rbd": 8762,
+    "paes_math": 656.6,
+    "paes_language": 686.5,
+    "simce_math": 271.0,
+    "simce_language": 284.0
   },
   {
     "id": 509,
@@ -14487,7 +15631,11 @@
       "Privado"
     ],
     "reviews": [],
-    "rbd": 8755
+    "rbd": 8755,
+    "paes_math": 764.6,
+    "paes_language": 722.4,
+    "simce_math": 305.0,
+    "simce_language": 301.0
   },
   {
     "id": 510,
@@ -14515,7 +15663,11 @@
       "Subvencionado"
     ],
     "reviews": [],
-    "rbd": 8658
+    "rbd": 8658,
+    "paes_math": 640.6,
+    "paes_language": 637.2,
+    "simce_math": 306.0,
+    "simce_language": 297.0
   },
   {
     "id": 511,
@@ -14543,7 +15695,11 @@
       "Excelencia"
     ],
     "reviews": [],
-    "rbd": 31295
+    "rbd": 31295,
+    "paes_math": 715.8,
+    "paes_language": 673.1,
+    "simce_math": 281.0,
+    "simce_language": 259.0
   },
   {
     "id": 512,
@@ -14571,7 +15727,11 @@
       "Gratuito"
     ],
     "reviews": [],
-    "rbd": 8490
+    "rbd": 8490,
+    "paes_math": 571.6,
+    "paes_language": 560.4,
+    "simce_math": 213.0,
+    "simce_language": 228.0
   },
   {
     "id": 513,
@@ -14599,7 +15759,11 @@
       "Gratuito"
     ],
     "reviews": [],
-    "rbd": 8488
+    "rbd": 8488,
+    "paes_math": 582.1,
+    "paes_language": 614.3,
+    "simce_math": 242.0,
+    "simce_language": 265.0
   },
   {
     "id": 514,
@@ -14627,7 +15791,11 @@
       "Tradición"
     ],
     "reviews": [],
-    "rbd": 8492
+    "rbd": 8492,
+    "paes_math": 664.8,
+    "paes_language": 627.1,
+    "simce_math": 252.0,
+    "simce_language": 256.0
   },
   {
     "id": 515,
@@ -14655,7 +15823,11 @@
       "Inclusivo"
     ],
     "reviews": [],
-    "rbd": 8495
+    "rbd": 8495,
+    "paes_math": 564.2,
+    "paes_language": 577.8,
+    "simce_math": 211.0,
+    "simce_language": 220.0
   },
   {
     "id": 516,
@@ -14683,7 +15855,11 @@
       "Tradición"
     ],
     "reviews": [],
-    "rbd": 8499
+    "rbd": 8499,
+    "paes_math": 657.5,
+    "paes_language": 627.3,
+    "simce_math": 246.0,
+    "simce_language": 260.0
   },
   {
     "id": 517,
@@ -14711,7 +15887,11 @@
       "Gratuito"
     ],
     "reviews": [],
-    "rbd": 24638
+    "rbd": 24638,
+    "paes_math": 568.5,
+    "paes_language": 585.9,
+    "simce_math": 212.0,
+    "simce_language": 229.0
   },
   {
     "id": 518,
@@ -14739,7 +15919,11 @@
       "Inclusivo"
     ],
     "reviews": [],
-    "rbd": 10710
+    "rbd": 10710,
+    "paes_math": 668.8,
+    "paes_language": 639.2,
+    "simce_math": 287.0,
+    "simce_language": 265.0
   },
   {
     "id": 519,
@@ -14767,7 +15951,11 @@
       "Privado"
     ],
     "reviews": [],
-    "rbd": 10724
+    "rbd": 10724,
+    "paes_math": 817.2,
+    "paes_language": 729.7,
+    "simce_math": 368.0,
+    "simce_language": 285.0
   },
   {
     "id": 520,
@@ -14851,7 +16039,11 @@
       "Exclusivo"
     ],
     "reviews": [],
-    "rbd": 25452
+    "rbd": 25452,
+    "paes_math": 900.4,
+    "paes_language": 765.7,
+    "simce_math": 386.0,
+    "simce_language": 315.0
   },
   {
     "id": 523,
@@ -14907,7 +16099,11 @@
       "Privado"
     ],
     "reviews": [],
-    "rbd": 10713
+    "rbd": 10713,
+    "paes_math": 646.9,
+    "paes_language": 610.6,
+    "simce_math": 282.0,
+    "simce_language": 267.0
   },
   {
     "id": 525,
@@ -14963,7 +16159,11 @@
       "Público"
     ],
     "reviews": [],
-    "rbd": 10696
+    "rbd": 10696,
+    "paes_math": 583.2,
+    "paes_language": 591.0,
+    "simce_math": 293.0,
+    "simce_language": 256.0
   },
   {
     "id": 527,
@@ -14991,7 +16191,11 @@
       "Comunitario"
     ],
     "reviews": [],
-    "rbd": 10704
+    "rbd": 10704,
+    "paes_math": 578.4,
+    "paes_language": 589.7,
+    "simce_math": 288.0,
+    "simce_language": 254.0
   },
   {
     "id": 528,
@@ -15019,7 +16223,7 @@
       "Comunitario"
     ],
     "reviews": [],
-    "rbd": null
+    "rbd": null 
   },
   {
     "id": 529,
