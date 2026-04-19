@@ -15,8 +15,8 @@ export default function SchoolCard({ school, currency, rates }) {
             <School size={24} color="var(--primary)" />
         </div>
         <div className={styles.badges}>
-            <span className={`${styles.badge} ${styles[school.dependency.replace(/\s+/g, '').toLowerCase()]}`}>
-                {school.dependency}
+            <span className={`${styles.badge} ${school.dependency ? styles[school.dependency.replace(/\s+/g, '').toLowerCase()] : ''}`}>
+                {school.dependency || 'Desconocido'}
             </span>
         </div>
       </div>

@@ -98,7 +98,9 @@ export default function Home() {
 
   // Filter schools
   const filteredSchools = schoolsData.filter(school => {
-    const matchesSearch = school.name.toLowerCase().includes(searchQuery.toLowerCase());
+    if (!school.name) return false;
+
+    const matchesSearch = school.name.toLowerCase().includes((searchQuery || '').toLowerCase());
     const matchesCommune = selectedCommune ? school.commune === selectedCommune : true;
     const matchesDependency = selectedDependency ? school.dependency === selectedDependency : true;
     
@@ -106,7 +108,7 @@ export default function Home() {
     const matchesKeywords = keywordQuery.length > 0
         ? keywordQuery.every(targetKeyword => 
             school.keywords?.some(keyword => 
-                keyword.toLowerCase().includes(targetKeyword.toLowerCase())
+                keyword?.toLowerCase().includes(targetKeyword.toLowerCase())
             )
           )
         : true;
