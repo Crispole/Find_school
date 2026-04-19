@@ -149,6 +149,64 @@
     text-align: center;
 }
 
+.extraSection {
+    margin-top: 2rem;
+    padding-top: 1.5rem;
+    border-top: 1px dashed #e2e8f0;
+}
+
+.sectionTitle {
+    font-size: 1rem;
+    font-weight: 600;
+    color: #1e293b;
+    margin-bottom: 1rem;
+}
+
+.extraGrid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 0.75rem;
+}
+
+@media (min-width: 400px) {
+    .extraGrid {
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+.extraItem {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.75rem 1rem;
+    background: #f8fafc;
+    border-radius: 8px;
+    border: 1px solid #f1f5f9;
+}
+
+.extraLabel {
+    font-size: 0.9rem;
+    color: #64748b;
+    font-weight: 500;
+}
+
+.extraValue {
+    font-size: 0.95rem;
+    color: #1e293b;
+    font-weight: 700;
+    font-family: var(--font-mono);
+}
+
+.noExtraInfo {
+    font-size: 0.9rem;
+    color: #94a3b8;
+    font-style: italic;
+    text-align: center;
+    padding: 1rem;
+    background: #f8fafc;
+    border-radius: 8px;
+}
+
 @keyframes fadeIn {
     from {
         opacity: 0;

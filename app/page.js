@@ -1,7 +1,7 @@
 'use client';
 
 import { useState, useMemo, useEffect } from 'react';
-import schoolsData from '../data/schools.json';
+import schoolsData from '../data/schools_updated.json';
 import SchoolCard from '../components/SchoolCard';
 import FilterBar from '../components/FilterBar';
 import Hero from '../components/Hero';
