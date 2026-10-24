@@ -2,10 +2,13 @@ import { useState } from 'react';
 import { MapPin, Users, DollarSign, Star, School, Mail, ExternalLink, CreditCard, BarChart } from 'lucide-react';
 import styles from './SchoolCard.module.css';
 import { convertAndFormat } from '../utils/currency';
+import { toExternalUrl, toMapsUrl } from '../utils/links';
 import FeeModal from './FeeModal';
 
 export default function SchoolCard({ school, currency, rates }) {
   const [showFeesModal, setShowFeesModal] = useState(false);
+  const reviews = school.reviews ?? [];
+  const websiteUrl = toExternalUrl(school.website);
 
   return (
     <>
@@ -24,7 +27,7 @@ export default function SchoolCard({ school, currency, rates }) {
       <div className={styles.content}>
         <h3 className={styles.name}>{school.name}</h3>
         <a 
-            href={`https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(school.address)}`}
+            href={toMapsUrl(school)}
             target="_blank"
             rel="noopener noreferrer"
             className={`${styles.commune} tour-card-commune`}
@@ -37,7 +40,7 @@ export default function SchoolCard({ school, currency, rates }) {
         <div className={styles.details}>
             <div className={styles.detailItem}>
                 <Users size={16} className={styles.detailIcon} />
-                <span>{school.students} est.</span>
+                <span>{school.students != null ? `${school.students} est.` : 'Matrícula s/i'}</span>
             </div>
             {/* Show just the tuition summary or primary cost if preferred, but user asked for ALL values. 
                 We'll create a dedicated fee section below for clarity. */}
@@ -76,44 +79,66 @@ export default function SchoolCard({ school, currency, rates }) {
         </div>
 
         <div className={styles.rating}>
-            <div className={styles.stars}>
-                {[...Array(5)].map((_, i) => (
-                    <Star 
-                        key={i} 
-                        size={14} 
-                        fill={i < Math.floor(school.rating) ? "#fbbf24" : "none"} 
-                        color={i < Math.floor(school.rating) ? "#fbbf24" : "#cbd5e1"}
-                    />
-                ))}
-            </div>
-            <span className={styles.ratingValue}>{school.rating}</span>
-             <span className={styles.reviewCount}>({school.reviews.length} reviews)</span>
+            {school.rating != null ? (
+                <>
+                    <div className={styles.stars}>
+                        {[...Array(5)].map((_, i) => (
+                            <Star
+                                key={i}
+                                size={14}
+                                fill={i < Math.floor(school.rating) ? "#fbbf24" : "none"}
+                                color={i < Math.floor(school.rating) ? "#fbbf24" : "#cbd5e1"}
+                            />
+                        ))}
+                    </div>
+                    <span className={styles.ratingValue}>{school.rating}</span>
+                    <span className={styles.reviewCount}>({reviews.length} reseñas)</span>
+                </>
+            ) : (
+                <span className={styles.noRating}>Sin calificaciones aún</span>
+            )}
         </div>
-        
-        {school.reviews.length > 0 && (
+
+        {reviews.length > 0 && (
             <div className={styles.reviewSnippet}>
-                <p>"{school.reviews[0].comment}"</p>
+                <p>&ldquo;{reviews[0].comment}&rdquo;</p>
             </div>
         )}
 
         <div className={styles.actions}>
-            <a href={school.website} target="_blank" rel="noopener noreferrer" className={`${styles.btn} ${styles.btnOutline} tour-card-website`}>
-                <ExternalLink size={16} />
-                Sitio Web
-            </a>
-            <a href={`mailto:${school.email}`} className={`${styles.btn} ${styles.btnPrimary} tour-card-contact`}>
-                <Mail size={16} />
-                Contactar
-            </a>
+            {websiteUrl ? (
+                <a href={websiteUrl} target="_blank" rel="noopener noreferrer" className={`${styles.btn} ${styles.btnOutline} tour-card-website`}>
+                    <ExternalLink size={16} />
+                    Sitio Web
+                </a>
+            ) : (
+                <span className={`${styles.btn} ${styles.btnDisabled} tour-card-website`} title="Sitio web no informado" aria-disabled="true">
+                    <ExternalLink size={16} />
+                    Sin sitio web
+                </span>
+            )}
+            {school.email ? (
+                <a href={`mailto:${school.email}`} className={`${styles.btn} ${styles.btnPrimary} tour-card-contact`}>
+                    <Mail size={16} />
+                    Contactar
+                </a>
+            ) : (
+                <span className={`${styles.btn} ${styles.btnDisabled} tour-card-contact`} title="Correo no informado" aria-disabled="true">
+                    <Mail size={16} />
+                    Sin correo
+                </span>
+            )}
         </div>
       </div>
     </div>
 
-    <FeeModal 
-        isOpen={showFeesModal} 
-        onClose={() => setShowFeesModal(false)}
-        school={school}
-    />
+    {showFeesModal && (
+        <FeeModal
+            isOpen={showFeesModal}
+            onClose={() => setShowFeesModal(false)}
+            school={school}
+        />
+    )}
     </>
   );
 }

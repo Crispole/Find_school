@@ -267,3 +267,16 @@
     background-color: var(--background);
     border-color: var(--text-secondary);
 }
+.btnDisabled,
+.btnDisabled:hover {
+    background-color: transparent;
+    border: 1px dashed var(--card-border);
+    color: var(--text-muted);
+    cursor: not-allowed;
+    transform: none;
+}
+
+.noRating {
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}

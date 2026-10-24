@@ -1,4 +1,5 @@
 import { NextResponse } from 'next/server';
+import { EXCHANGE_RATES } from '../../../utils/currency';
 
 export async function GET() {
   try {
@@ -17,8 +18,8 @@ export async function GET() {
     console.error('Error fetching indicators:', error);
     // Fallback values if API fails
     return NextResponse.json({
-      UF: 39700,
-      USD: 900,
+      UF: EXCHANGE_RATES.UF,
+      USD: EXCHANGE_RATES.USD,
       UTM: 69500
     });
   }

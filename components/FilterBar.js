@@ -9,7 +9,7 @@ export default function FilterBar({
   searchQuery, setSearchQuery, 
   keywordQuery, setKeywordQuery, 
   selectedCommune, setSelectedCommune, 
-  communes, 
+  communesByRegion,
   selectedDependency, setSelectedDependency,
   currency, setCurrency,
   onCompareClick
@@ -79,8 +79,12 @@ export default function FilterBar({
         className={styles.select}
       >
         <option value="">Todas las comunas</option>
-        {communes.map(commune => (
-            <option key={commune} value={commune}>{commune}</option>
+        {communesByRegion.map(({ region, communes }) => (
+            <optgroup key={region} label={region}>
+                {communes.map(commune => (
+                    <option key={commune} value={commune}>{commune}</option>
+                ))}
+            </optgroup>
         ))}
       </select>
       
@@ -110,6 +114,12 @@ export default function FilterBar({
             onClick={() => setSelectedDependency('Particular Pagado')}
           >
             Particulares
+          </button>
+          <button
+            className={`${styles.toggleBtn} ${selectedDependency === 'Corporación de Administración Delegada' ? styles.active : ''}`}
+            onClick={() => setSelectedDependency('Corporación de Administración Delegada')}
+          >
+            Adm. Delegada
           </button>
         </div>
       </div>

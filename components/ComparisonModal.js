@@ -1,27 +1,95 @@
 'use client';
 
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import { X, Scale, Star, Users, MapPin, Globe, CreditCard } from 'lucide-react';
 import styles from './ComparisonModal.module.css';
+import { convertAndFormat } from '../utils/currency';
+import { toExternalUrl, toMapsUrl } from '../utils/links';
 
-export default function ComparisonModal({ isOpen, onClose, schools }) {
-  const [school1Id, setSchool1Id] = useState('');
-  const [school2Id, setSchool2Id] = useState('');
+const MIN_QUERY_LENGTH = 2;
+
+// Search-as-you-type against /api/schools instead of a <select> with thousands of options
+function SchoolPicker({ label, selected, onSelect }) {
+  const [query, setQuery] = useState('');
+  const [results, setResults] = useState([]);
+  const [isOpen, setIsOpen] = useState(false);
+  const [isLoading, setIsLoading] = useState(false);
+
+  useEffect(() => {
+    if (query.trim().length < MIN_QUERY_LENGTH) {
+      setResults([]);
+      return;
+    }
+    const controller = new AbortController();
+    const timer = setTimeout(async () => {
+      setIsLoading(true);
+      try {
+        const params = new URLSearchParams({ q: query.trim(), pageSize: '8' });
+        const res = await fetch(`/api/schools?${params}`, { signal: controller.signal });
+        if (res.ok) setResults((await res.json()).items);
+      } catch (e) {
+        if (e.name !== 'AbortError') setResults([]);
+      } finally {
+        setIsLoading(false);
+      }
+    }, 250);
+    return () => {
+      clearTimeout(timer);
+      controller.abort();
+    };
+  }, [query]);
+
+  const choose = (school) => {
+    onSelect(school);
+    setQuery('');
+    setIsOpen(false);
+  };
+
+  return (
+    <div className={styles.selectGroup}>
+      <label className={styles.label}>{label}</label>
+      <div className={styles.picker}>
+        <input
+          type="text"
+          className={`${styles.select} ${styles.pickerInput}`}
+          placeholder={selected ? selected.name : 'Escribe el nombre del colegio...'}
+          value={query}
+          onChange={(e) => { setQuery(e.target.value); setIsOpen(true); }}
+          onFocus={() => setIsOpen(true)}
+          onBlur={() => setTimeout(() => setIsOpen(false), 150)}
+        />
+        {isOpen && query.trim().length >= MIN_QUERY_LENGTH && (
+          <ul className={styles.results}>
+            {isLoading && results.length === 0 && <li className={styles.resultHint}>Buscando…</li>}
+            {!isLoading && results.length === 0 && <li className={styles.resultHint}>Sin resultados</li>}
+            {results.map((school) => (
+              <li key={school.id}>
+                <button type="button" className={styles.resultItem} onMouseDown={() => choose(school)}>
+                  <span>{school.name}</span>
+                  <span className={styles.resultMeta}>{school.commune} · {school.dependency}</span>
+                </button>
+              </li>
+            ))}
+          </ul>
+        )}
+      </div>
+    </div>
+  );
+}
+
+export default function ComparisonModal({ isOpen, onClose, currency, rates }) {
+  const [school1, setSchool1] = useState(null);
+  const [school2, setSchool2] = useState(null);
 
   if (!isOpen) return null;
-
-  const school1 = schools.find(s => s.id.toString() === school1Id.toString());
-  const school2 = schools.find(s => s.id.toString() === school2Id.toString());
-
-  const sortedSchools = [...schools].sort((a, b) => a.name.localeCompare(b.name));
 
   const features = [
     { label: 'Comuna', key: 'commune', icon: <MapPin size={16} /> },
     { label: 'Dependencia', key: 'dependency', icon: <Users size={16} /> },
     { label: 'Estudiantes', key: 'students', icon: <Users size={16} /> },
     { label: 'Calificación', key: 'rating', icon: <Star size={16} /> },
-    { label: 'Matrícula', key: 'enrollment_fee', icon: <CreditCard size={16} /> },
-    { label: 'Mensualidad', key: 'monthly_fee', icon: <CreditCard size={16} /> },
+    { label: 'Matrícula', key: 'enrollment_fee', icon: <CreditCard size={16} />, isFee: true },
+    { label: 'Mensualidad', key: 'monthly_fee', icon: <CreditCard size={16} />, isFee: true },
     { label: 'Dirección', key: 'address', icon: <MapPin size={16} /> },
     { label: 'Sitio Web', key: 'website', icon: <Globe size={16} /> },
   ];
@@ -41,33 +109,8 @@ export default function ComparisonModal({ isOpen, onClose, schools }) {
 
         <div className={styles.content}>
           <div className={styles.selectionArea}>
-            <div className={styles.selectGroup}>
-              <label className={styles.label}>Colegio 1</label>
-              <select 
-                className={styles.select} 
-                value={school1Id} 
-                onChange={e => setSchool1Id(e.target.value)}
-              >
-                <option value="">Seleccionar colegio...</option>
-                {sortedSchools.map(s => (
-                  <option key={`s1-${s.id}`} value={s.id}>{s.name}</option>
-                ))}
-              </select>
-            </div>
-
-            <div className={styles.selectGroup}>
-              <label className={styles.label}>Colegio 2</label>
-              <select 
-                className={styles.select} 
-                value={school2Id} 
-                onChange={e => setSchool2Id(e.target.value)}
-              >
-                <option value="">Seleccionar colegio...</option>
-                {sortedSchools.map(s => (
-                  <option key={`s2-${s.id}`} value={s.id}>{s.name}</option>
-                ))}
-              </select>
-            </div>
+            <SchoolPicker label="Colegio 1" selected={school1} onSelect={setSchool1} />
+            <SchoolPicker label="Colegio 2" selected={school2} onSelect={setSchool2} />
           </div>
 
           {school1 && school2 ? (
@@ -75,13 +118,28 @@ export default function ComparisonModal({ isOpen, onClose, schools }) {
               {features.map(feature => {
                 const renderValue = (school) => {
                   const value = school[feature.key];
-                  if (!value) return 'N/A';
-                  
+
+                  if (feature.isFee) return convertAndFormat(value, currency, rates);
+
                   if (feature.key === 'address') {
-                    const query = encodeURIComponent(`${value} ${school.name} ${school.commune}`);
                     return (
-                      <a 
-                        href={`https://www.google.com/maps/search/?api=1&query=${query}`}
+                      <a
+                        href={toMapsUrl(school)}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className={styles.mapLink}
+                      >
+                        {value || 'Ver en mapa'}
+                      </a>
+                    );
+                  }
+
+                  if (value === null || value === undefined || value === '') return 'N/A';
+
+                  if (feature.key === 'website') {
+                    return (
+                      <a
+                        href={toExternalUrl(value)}
                         target="_blank"
                         rel="noopener noreferrer"
                         className={styles.mapLink}
@@ -90,21 +148,7 @@ export default function ComparisonModal({ isOpen, onClose, schools }) {
                       </a>
                     );
                   }
-                  
-                  if (feature.key === 'website' && value !== 'N/A') {
-                    const url = value.startsWith('http') ? value : `https://${value}`;
-                    return (
-                      <a 
-                        href={url}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={styles.mapLink}
-                      >
-                        {value}
-                      </a>
-                    );
-                  }
-                  
+
                   return value;
                 };
 

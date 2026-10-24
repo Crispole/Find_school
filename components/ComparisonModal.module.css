@@ -179,3 +179,57 @@
         border-bottom: 1px solid var(--card-border);
     }
 }
+.picker {
+    position: relative;
+}
+
+.pickerInput {
+    cursor: text;
+}
+
+.results {
+    position: absolute;
+    top: calc(100% + 0.25rem);
+    left: 0;
+    right: 0;
+    z-index: 10;
+    max-height: 260px;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0.25rem;
+    list-style: none;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: 0.75rem;
+    box-shadow: var(--shadow-lg);
+}
+
+.resultItem {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 0.5rem 0.75rem;
+    border: none;
+    border-radius: 0.5rem;
+    background: transparent;
+    color: var(--text-primary);
+    text-align: left;
+    cursor: pointer;
+    font: inherit;
+}
+
+.resultItem:hover {
+    background: var(--background);
+}
+
+.resultMeta {
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
+
+.resultHint {
+    padding: 0.5rem 0.75rem;
+    font-size: 0.85rem;
+    color: var(--text-muted);
+}
