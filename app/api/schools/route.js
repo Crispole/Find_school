@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { searchSchools } from '../../../lib/schools';
 
-// GET /api/schools?q=&commune=&dependency=&keywords=Laico,Mixto&page=1&pageSize=24
+// GET /api/schools?q=&commune=&dependency=&keywords=Laico,Mixto&page=1&pageSize=24[&cumulative=1]
 export async function GET(request) {
   const params = request.nextUrl.searchParams;
 
@@ -12,6 +12,7 @@ export async function GET(request) {
     keywords: (params.get('keywords') || '').split(',').filter(Boolean),
     page: Number(params.get('page')) || 1,
     pageSize: Number(params.get('pageSize')) || undefined,
+    cumulative: params.get('cumulative') === '1',
   });
 
   return NextResponse.json(result);
