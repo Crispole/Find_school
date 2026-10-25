@@ -7,6 +7,7 @@ import { MapContainer, TileLayer, CircleMarker, Popup, useMap } from 'react-leaf
 import 'leaflet/dist/leaflet.css';
 import { getDependencyColor } from '../utils/dependency';
 import { convertAndFormat } from '../utils/currency';
+import { formatPhone, toTelHref } from '../utils/phone';
 import styles from './MapView.module.css';
 
 const SANTIAGO = [-33.45, -70.66];
@@ -78,6 +79,9 @@ export default function SchoolMap({ schools, theme, hoveredId, selectedId, flyTo
               <div className={styles.popup}>
                 <strong className={styles.popupName}>{school.name}</strong>
                 <span className={styles.popupMeta}>{school.dependency}</span>
+                {formatPhone(school.phone) && (
+                  <a href={toTelHref(school.phone)} className={styles.popupPhone}>{formatPhone(school.phone)}</a>
+                )}
                 <dl className={styles.popupStats}>
                   <div>
                     <dt>Mensualidad</dt>

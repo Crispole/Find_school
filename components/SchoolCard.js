@@ -1,14 +1,17 @@
 import { useState } from 'react';
-import { MapPin, Users, DollarSign, Star, School, Mail, ExternalLink, CreditCard, BarChart } from 'lucide-react';
+import { MapPin, Users, DollarSign, Star, School, Mail, ExternalLink, BarChart, Phone } from 'lucide-react';
 import styles from './SchoolCard.module.css';
 import { convertAndFormat } from '../utils/currency';
-import { toExternalUrl, toMapsUrl } from '../utils/links';
+import { toExternalUrl, toMapsUrl, websiteLabel } from '../utils/links';
+import { formatPhone, toTelHref } from '../utils/phone';
 import FeeModal from './FeeModal';
 
 export default function SchoolCard({ school, currency, rates }) {
   const [showFeesModal, setShowFeesModal] = useState(false);
   const reviews = school.reviews ?? [];
   const websiteUrl = toExternalUrl(school.website);
+  const phoneLabel = formatPhone(school.phone);
+  const phoneHref = toTelHref(school.phone);
 
   return (
     <>
@@ -48,6 +51,12 @@ export default function SchoolCard({ school, currency, rates }) {
                 <DollarSign size={16} className={styles.detailIcon} />
                 <span>Anual: {convertAndFormat(school.tuition, currency, rates)}</span>
             </div>
+            {phoneLabel && (
+                <a href={phoneHref} className={`${styles.detailItem} ${styles.phone}`} title="Llamar al establecimiento">
+                    <Phone size={16} className={styles.detailIcon} />
+                    <span>{phoneLabel}</span>
+                </a>
+            )}
         </div>
 
         <div className={styles.fees}>
@@ -115,13 +124,18 @@ export default function SchoolCard({ school, currency, rates }) {
                     className={`${styles.btn} ${school.email ? styles.btnOutline : styles.btnPrimary} tour-card-website`}
                 >
                     <ExternalLink size={16} />
-                    {school.email ? 'Sitio Web' : 'Visitar sitio web'}
+                    {websiteLabel(school.website, { long: !school.email })}
                 </a>
             ) : school.email ? (
                 <span className={`${styles.btn} ${styles.btnDisabled} tour-card-website`} title="Sitio web no informado" aria-disabled="true">
                     <ExternalLink size={16} />
                     Sin sitio web
                 </span>
+            ) : phoneHref ? (
+                <a href={phoneHref} className={`${styles.btn} ${styles.btnPrimary}`}>
+                    <Phone size={16} />
+                    Llamar
+                </a>
             ) : (
                 <span className={`${styles.btn} ${styles.btnDisabled}`} aria-disabled="true">
                     Sin datos de contacto

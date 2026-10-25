@@ -1,10 +1,11 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { X, Scale, Star, Users, MapPin, Globe, CreditCard } from 'lucide-react';
+import { X, Scale, Star, Users, MapPin, Globe, CreditCard, Phone } from 'lucide-react';
 import styles from './ComparisonModal.module.css';
 import { convertAndFormat } from '../utils/currency';
 import { toExternalUrl, toMapsUrl } from '../utils/links';
+import { formatPhone, toTelHref } from '../utils/phone';
 
 const MIN_QUERY_LENGTH = 2;
 
@@ -92,6 +93,7 @@ export default function ComparisonModal({ isOpen, onClose, currency, rates }) {
     { label: 'Mensualidad', key: 'monthly_fee', icon: <CreditCard size={16} />, isFee: true },
     { label: 'Dirección', key: 'address', icon: <MapPin size={16} /> },
     { label: 'Sitio Web', key: 'website', icon: <Globe size={16} /> },
+    { label: 'Teléfono', key: 'phone', icon: <Phone size={16} /> },
   ];
 
   return (
@@ -135,6 +137,11 @@ export default function ComparisonModal({ isOpen, onClose, currency, rates }) {
                   }
 
                   if (value === null || value === undefined || value === '') return 'N/A';
+
+                  if (feature.key === 'phone') {
+                    const label = formatPhone(value);
+                    return label ? <a href={toTelHref(value)} className={styles.mapLink}>{label}</a> : 'N/A';
+                  }
 
                   if (feature.key === 'website') {
                     return (

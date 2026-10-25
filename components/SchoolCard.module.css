@@ -280,3 +280,15 @@
     font-size: 0.85rem;
     color: var(--text-muted);
 }
+
+/* Phone spans the whole row; tapping it dials on mobile */
+.phone {
+    grid-column: 1 / -1;
+    color: var(--text-primary);
+    font-weight: 500;
+    width: fit-content;
+}
+
+.phone:hover {
+    color: var(--primary);
+}

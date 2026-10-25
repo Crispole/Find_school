@@ -268,3 +268,9 @@
     font-size: 0.75rem;
     color: var(--text-muted);
 }
+
+.popupPhone {
+    font-size: 0.8rem;
+    font-weight: 600;
+    color: #2563eb !important;
+}
