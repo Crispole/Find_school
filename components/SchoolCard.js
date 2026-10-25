@@ -106,27 +106,32 @@ export default function SchoolCard({ school, currency, rates }) {
         )}
 
         <div className={styles.actions}>
+            {/* Without an email the website is the only way to reach the school, so it takes the full width */}
             {websiteUrl ? (
-                <a href={websiteUrl} target="_blank" rel="noopener noreferrer" className={`${styles.btn} ${styles.btnOutline} tour-card-website`}>
+                <a
+                    href={websiteUrl}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${styles.btn} ${school.email ? styles.btnOutline : styles.btnPrimary} tour-card-website`}
+                >
                     <ExternalLink size={16} />
-                    Sitio Web
+                    {school.email ? 'Sitio Web' : 'Visitar sitio web'}
                 </a>
-            ) : (
+            ) : school.email ? (
                 <span className={`${styles.btn} ${styles.btnDisabled} tour-card-website`} title="Sitio web no informado" aria-disabled="true">
                     <ExternalLink size={16} />
                     Sin sitio web
                 </span>
+            ) : (
+                <span className={`${styles.btn} ${styles.btnDisabled}`} aria-disabled="true">
+                    Sin datos de contacto
+                </span>
             )}
-            {school.email ? (
+            {school.email && (
                 <a href={`mailto:${school.email}`} className={`${styles.btn} ${styles.btnPrimary} tour-card-contact`}>
                     <Mail size={16} />
                     Contactar
                 </a>
-            ) : (
-                <span className={`${styles.btn} ${styles.btnDisabled} tour-card-contact`} title="Correo no informado" aria-disabled="true">
-                    <Mail size={16} />
-                    Sin correo
-                </span>
             )}
         </div>
       </div>

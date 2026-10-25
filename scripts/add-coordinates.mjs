@@ -2,7 +2,9 @@
 // that has RBD, LATITUD and LONGITUD columns (Directorio Oficial de
 // Establecimientos, or the "Establecimientos de Educación Escolar" layer).
 //
-// Usage: node scripts/add-coordinates.mjs <path-to-csv>
+// Usage: node scripts/add-coordinates.mjs <path-to-csv> [--overwrite]
+//   Schools that already have coordinates (e.g. from scripts/enrich-from-sae.mjs,
+//   which are more recent) are kept unless --overwrite is passed.
 import { readFileSync, writeFileSync } from 'node:fs';
 import { fileURLToPath } from 'node:url';
 
@@ -30,15 +32,19 @@ const splitLine = (line, delimiter) => {
   return cells.map((cell) => cell.trim());
 };
 
-const csvPath = process.argv[2];
+const csvPath = process.argv.slice(2).find((arg) => !arg.startsWith('--'));
+const overwrite = process.argv.includes('--overwrite');
 if (!csvPath) {
   console.error('Uso: node scripts/add-coordinates.mjs <archivo.csv>');
   process.exit(1);
 }
 
-// Mineduc files are usually latin1; the columns we need are ASCII either way
-const lines = readFileSync(csvPath, 'latin1').replace(/^﻿/, '').split(/\r?\n/).filter(Boolean);
-const delimiter = (lines[0].match(/;/g) || []).length > (lines[0].match(/,/g) || []).length ? ';' : ',';
+// Mineduc files are usually latin1 (a UTF-8 BOM then reads as 3 chars); the columns we need are ASCII either way
+const lines = readFileSync(csvPath, 'latin1').replace(/^\u00EF\u00BB\u00BF/, '').split(/\r?\n/).filter(Boolean);
+// Itrend files may use "|"; Mineduc ones usually ";"
+const delimiter = [';', ',', '|', '\t']
+  .map((candidate) => ({ candidate, count: lines[0].split(candidate).length }))
+  .sort((a, b) => b.count - a.count)[0].candidate;
 const header = splitLine(lines[0], delimiter).map((name) => name.replace(/"/g, '').toUpperCase());
 
 const rbdIndex = header.indexOf('RBD');
@@ -62,7 +68,7 @@ const schools = JSON.parse(readFileSync(SCHOOLS_PATH, 'utf8'));
 let matched = 0;
 for (const school of schools) {
   const coordinates = coordinatesByRbd.get(school.rbd);
-  if (coordinates) {
+  if (coordinates && (overwrite || !Number.isFinite(school.lat))) {
     school.lat = Number(coordinates.lat.toFixed(6));
     school.lng = Number(coordinates.lng.toFixed(6));
     matched++;

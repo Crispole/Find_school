@@ -20,10 +20,35 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Datos de contacto y ubicación (Sistema de Admisión Escolar)
+
+```bash
+node scripts/enrich-from-sae.mjs
+```
+
+Consulta por RBD la API pública de la Vitrina del Mineduc (admision.mineduc.cl) y completa en
+`data/schools.json` el sitio web, correo, teléfono, dirección y coordenadas que falten. Solo
+incluye colegios que participan en el SAE (no particulares pagados). Las respuestas quedan en
+`data/raw/sae/` (ignorado por git), así que volver a ejecutarlo es rápido; usa `--refresh` para
+consultar de nuevo.
+
 ## Coordenadas para la búsqueda en mapa
 
 El modo "Buscar en mapa" muestra los colegios que tienen `lat`/`lng` en `data/schools.json`.
-Para cargarlas, descarga un CSV del Mineduc con columnas `RBD`, `LATITUD` y `LONGITUD`
+La mayoría viene del script anterior; para los que faltan (sobre todo particulares pagados):
+
+**Opción A: descarga automática desde Itrend.** Crea tus credenciales en
+https://www.plataformadedatos.cl/user/developer, copia `.env.example` a `.env.local`, completa
+`ITREND_ACCESS_KEY_ID` y `ITREND_SECRET_ACCESS_KEY`, y ejecuta:
+
+```bash
+npm run coords:download
+```
+
+Descarga la capa "Establecimientos de Educación Escolar" del Mineduc a `data/raw/` (ignorado por git)
+y agrega las coordenadas a `data/schools.json`.
+
+**Opción B: CSV propio.** Descarga un CSV del Mineduc con columnas `RBD`, `LATITUD` y `LONGITUD`
 (por ejemplo el "Directorio Oficial de Establecimientos" de datosabiertos.mineduc.cl) y ejecuta:
 
 ```bash

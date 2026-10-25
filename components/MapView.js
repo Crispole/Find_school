@@ -156,6 +156,13 @@ export default function MapView({ commune, data, isLoading, error, theme, curren
         </div>
       </div>
 
+      {located.length > 0 && (
+        <p className={styles.attribution}>
+          Ubicaciones: Ministerio de Educación (Sistema de Admisión Escolar y «Establecimientos de Educación Escolar»,
+          publicados en la Plataforma de Datos Abiertos de Itrend). Esta información fue adaptada para este sitio.
+        </p>
+      )}
+
       {resultsSchool && (
         <FeeModal isOpen onClose={() => setResultsSchool(null)} school={resultsSchool} />
       )}

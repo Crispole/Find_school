@@ -6,7 +6,8 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "coords:download": "node --env-file=.env.local scripts/download-itrend.mjs"
   },
   "dependencies": {
     "driver.js": "^1.4.0",

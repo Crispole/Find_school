@@ -262,3 +262,9 @@
         display: none;
     }
 }
+
+.attribution {
+    margin-top: 0.75rem;
+    font-size: 0.75rem;
+    color: var(--text-muted);
+}
