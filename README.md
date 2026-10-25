@@ -20,6 +20,19 @@ You can start editing the page by modifying `app/page.tsx`. The page auto-update
 
 This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
+## Coordenadas para la búsqueda en mapa
+
+El modo "Buscar en mapa" muestra los colegios que tienen `lat`/`lng` en `data/schools.json`.
+Para cargarlas, descarga un CSV del Mineduc con columnas `RBD`, `LATITUD` y `LONGITUD`
+(por ejemplo el "Directorio Oficial de Establecimientos" de datosabiertos.mineduc.cl) y ejecuta:
+
+```bash
+node scripts/add-coordinates.mjs ruta/al/directorio.csv
+```
+
+El script cruza los colegios por RBD, descarta coordenadas fuera de Chile e informa cuántos quedaron sin ubicación.
+No subas el CSV al repositorio; basta con el `schools.json` actualizado.
+
 ## Learn More
 
 To learn more about Next.js, take a look at the following resources:

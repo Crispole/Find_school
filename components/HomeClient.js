@@ -1,15 +1,18 @@
 'use client';
 
 import { useState, useEffect, useRef } from 'react';
+import { List, Map as MapIcon } from 'lucide-react';
 import SchoolCard from './SchoolCard';
 import FilterBar from './FilterBar';
 import Hero from './Hero';
 import Navbar from './Navbar';
 import ComparisonModal from './ComparisonModal';
+import MapView from './MapView';
 import { EXCHANGE_RATES } from '../utils/currency';
 import { EMPTY_FILTERS, filtersFromParams, filtersToSearch } from '../utils/filters';
 import { driver } from 'driver.js';
 import 'driver.js/dist/driver.css';
+import styles from './HomeClient.module.css';
 
 const SEARCH_DEBOUNCE_MS = 300;
 
@@ -25,8 +28,8 @@ const buildQuery = ({ searchQuery, selectedCommune, selectedDependency, keywordQ
 
 // Keeps filters and page in the address bar without a server round trip, so
 // links can be shared and the Back button returns to the same results
-const syncUrl = (filters, page) => {
-  const url = `${window.location.pathname}${filtersToSearch(filters, page)}`;
+const syncUrl = (filters, page, view = 'lista') => {
+  const url = `${window.location.pathname}${filtersToSearch(filters, page, view)}`;
   if (url !== `${window.location.pathname}${window.location.search}`) {
     window.history.replaceState(null, '', url);
   }
@@ -42,12 +45,21 @@ export default function HomeClient({ communesByRegion, initialFilters = EMPTY_FI
   const [theme, setTheme] = useState('light');
   const [isCompareOpen, setIsCompareOpen] = useState(false);
 
+  // 'lista' = search by school (paginated cards), 'mapa' = every school of one commune on a map
+  const [view, setView] = useState(initialFilters.view || 'lista');
+
   const [schools, setSchools] = useState(initialData.items);
   const [total, setTotal] = useState(initialData.total);
   const [page, setPage] = useState(initialData.page);
   const [totalPages, setTotalPages] = useState(initialData.totalPages);
   const [isLoading, setIsLoading] = useState(false);
   const [error, setError] = useState('');
+
+  // Commune shown on the map: set by "Buscar en mapa", not by every change of the select
+  const [mapCommune, setMapCommune] = useState(initialFilters.view === 'mapa' ? initialFilters.selectedCommune : '');
+  const [mapData, setMapData] = useState(null);
+  const [isMapLoading, setIsMapLoading] = useState(false);
+  const [mapError, setMapError] = useState('');
 
   // Filters (without page) of the results currently on screen
   const loadedQueryRef = useRef(filtersToSearch(initialFilters));
@@ -80,9 +92,10 @@ export default function HomeClient({ communesByRegion, initialFilters = EMPTY_FI
     }
   };
 
-  // Re-query page 1 when the filters differ from the results on screen
-  // (debounced for typing). The initial render already has the server data.
+  // List view: re-query page 1 when the filters differ from the results on
+  // screen (debounced for typing). The initial render already has the server data.
   useEffect(() => {
+    if (view !== 'lista') return;
     const query = filtersToSearch(filters);
     if (query === loadedQueryRef.current) return;
     const timer = setTimeout(() => {
@@ -91,21 +104,54 @@ export default function HomeClient({ communesByRegion, initialFilters = EMPTY_FI
     }, SEARCH_DEBOUNCE_MS);
     return () => clearTimeout(timer);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [searchQuery, selectedCommune, selectedDependency, keywordQuery]);
+  }, [searchQuery, selectedCommune, selectedDependency, keywordQuery, view]);
+
+  // Map view: load every school of the searched commune; dependency and
+  // project filters refine the map right away
+  useEffect(() => {
+    if (view !== 'mapa' || !mapCommune) return;
+    const controller = new AbortController();
+
+    const loadMap = async () => {
+      setIsMapLoading(true);
+      setMapError('');
+      try {
+        const params = new URLSearchParams({ commune: mapCommune });
+        if (selectedDependency) params.set('dependency', selectedDependency);
+        if (keywordQuery.length > 0) params.set('keywords', keywordQuery.join(','));
+        const res = await fetch(`/api/schools/map?${params}`, { signal: controller.signal });
+        if (!res.ok) throw new Error(`HTTP ${res.status}`);
+        setMapData({ ...(await res.json()), commune: mapCommune });
+        syncUrl({ ...EMPTY_FILTERS, selectedCommune: mapCommune, selectedDependency, keywordQuery }, 1, 'mapa');
+      } catch (e) {
+        if (e.name !== 'AbortError') setMapError('No se pudo cargar el mapa. Intenta nuevamente.');
+      } finally {
+        if (!controller.signal.aborted) setIsMapLoading(false);
+      }
+    };
+
+    loadMap();
+    return () => controller.abort();
+  }, [view, mapCommune, selectedDependency, keywordQuery]);
 
   // Back/Forward can restore a cached render made for another URL: when the
   // address bar disagrees with the results on screen, trust the address bar
   useEffect(() => {
     const urlParams = new URLSearchParams(window.location.search);
-    const { page: urlPage, ...urlFilters } = filtersFromParams((key) => urlParams.get(key));
-    if (filtersToSearch(urlFilters, urlPage) === filtersToSearch(initialFilters, initialData.page)) return;
+    const { page: urlPage, view: urlView, ...urlFilters } = filtersFromParams((key) => urlParams.get(key));
+    if (filtersToSearch(urlFilters, urlPage, urlView) === filtersToSearch(initialFilters, initialData.page, initialFilters.view)) return;
 
-    loadedQueryRef.current = filtersToSearch(urlFilters);
+    setView(urlView);
     setSearchQuery(urlFilters.searchQuery);
     setSelectedCommune(urlFilters.selectedCommune);
     setSelectedDependency(urlFilters.selectedDependency);
     setKeywordQuery(urlFilters.keywordQuery);
-    fetchPage(urlPage, { cumulative: true, from: urlFilters });
+    if (urlView === 'mapa') {
+      setMapCommune(urlFilters.selectedCommune);
+    } else {
+      loadedQueryRef.current = filtersToSearch(urlFilters);
+      fetchPage(urlPage, { cumulative: true, from: urlFilters });
+    }
     // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
@@ -133,6 +179,7 @@ export default function HomeClient({ communesByRegion, initialFilters = EMPTY_FI
             showProgress: true,
             animate: true,
             steps: [
+                { element: '#tour-view', popover: { title: 'Cómo buscar', description: 'Busca colegios por nombre, o elige una comuna y míralos todos en el mapa.' } },
                 { element: '#tour-filters', popover: { title: 'Filtros', description: 'Selecciona el tipo de establecimiento: Todos - Municipales - Subvencionados - Particulares - Adm. Delegada' } },
                 { element: '#tour-compare', popover: { title: 'Compara', description: 'Elige dos establecimientos y compara sus características.' } },
                 { element: '#tour-currency', popover: { title: 'Divisa', description: 'Selecciona la divisa que más te acomode.' } },
@@ -176,12 +223,47 @@ export default function HomeClient({ communesByRegion, initialFilters = EMPTY_FI
     setSelectedDependency('');
   };
 
+  const changeView = (nextView) => {
+    if (nextView === view) return;
+    setView(nextView);
+    if (nextView === 'mapa') {
+      // A commune already picked in the list view is searched on the map right away
+      setMapCommune(selectedCommune);
+      if (!selectedCommune) syncUrl({ ...EMPTY_FILTERS, selectedDependency, keywordQuery }, 1, 'mapa');
+    } else {
+      syncUrl(filters, page);
+    }
+  };
+
   return (
     <main style={{ minHeight: '100vh', paddingBottom: '4rem' }}>
       <Navbar theme={theme} toggleTheme={toggleTheme} />
       <Hero />
 
       <div className="container">
+        <div className={styles.viewToggle} role="tablist" aria-label="Modo de búsqueda" id="tour-view">
+          <button
+            type="button"
+            role="tab"
+            aria-selected={view === 'lista'}
+            className={`${styles.viewBtn} ${view === 'lista' ? styles.viewBtnActive : ''}`}
+            onClick={() => changeView('lista')}
+          >
+            <List size={18} />
+            Buscar por colegio
+          </button>
+          <button
+            type="button"
+            role="tab"
+            aria-selected={view === 'mapa'}
+            className={`${styles.viewBtn} ${view === 'mapa' ? styles.viewBtnActive : ''}`}
+            onClick={() => changeView('mapa')}
+          >
+            <MapIcon size={18} />
+            Buscar en mapa
+          </button>
+        </div>
+
         <FilterBar
             searchQuery={searchQuery}
             setSearchQuery={setSearchQuery}
@@ -195,6 +277,9 @@ export default function HomeClient({ communesByRegion, initialFilters = EMPTY_FI
             currency={currency}
             setCurrency={setCurrency}
             onCompareClick={() => setIsCompareOpen(true)}
+            view={view}
+            mapCommune={mapCommune}
+            onMapSearch={() => setMapCommune(selectedCommune)}
         />
 
         <ComparisonModal
@@ -204,45 +289,59 @@ export default function HomeClient({ communesByRegion, initialFilters = EMPTY_FI
             rates={exchangeRates}
         />
 
-        <div style={{ marginBottom: '1rem', color: 'var(--text-secondary)' }} aria-live="polite">
-            Mostrando <strong>{schools.length}</strong> de <strong>{total}</strong> colegios encontrados
-            {isLoading && ' · Cargando…'}
-        </div>
-
-        {error && (
-            <div style={{ marginBottom: '1rem', color: '#dc2626' }}>{error}</div>
-        )}
-
-        {schools.length > 0 ? (
-            <>
-                <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', opacity: isLoading && page === 1 ? 0.6 : 1 }}>
-                {schools.map(school => (
-                    <SchoolCard key={school.id} school={school} currency={currency} rates={exchangeRates} />
-                ))}
-                </div>
-                {page < totalPages && (
-                    <div style={{ textAlign: 'center', marginTop: '2rem' }}>
-                        <button
-                            onClick={() => fetchPage(page + 1, { append: true })}
-                            className="btn btn-outline"
-                            disabled={isLoading}
-                        >
-                            {isLoading ? 'Cargando…' : 'Cargar más colegios'}
-                        </button>
-                    </div>
-                )}
-            </>
-        ) : !isLoading && (
-            <div style={{ textAlign: 'center', padding: '4rem', color: 'var(--text-muted)' }}>
-                <p style={{ fontSize: '1.2rem' }}>No se encontraron colegios con esos criterios.</p>
-                <button
-                    onClick={clearFilters}
-                    className="btn btn-outline"
-                    style={{ marginTop: '1rem' }}
-                >
-                    Limpiar filtros
-                </button>
+        {view === 'mapa' ? (
+          <MapView
+              commune={mapData?.commune || mapCommune}
+              data={mapCommune ? mapData : null}
+              isLoading={isMapLoading}
+              error={mapError}
+              theme={theme}
+              currency={currency}
+              rates={exchangeRates}
+          />
+        ) : (
+          <>
+            <div style={{ marginBottom: '1rem', color: 'var(--text-secondary)' }} aria-live="polite">
+                Mostrando <strong>{schools.length}</strong> de <strong>{total}</strong> colegios encontrados
+                {isLoading && ' · Cargando…'}
             </div>
+
+            {error && (
+                <div style={{ marginBottom: '1rem', color: '#dc2626' }}>{error}</div>
+            )}
+
+            {schools.length > 0 ? (
+                <>
+                    <div className="grid" style={{ gridTemplateColumns: 'repeat(auto-fill, minmax(300px, 1fr))', opacity: isLoading && page === 1 ? 0.6 : 1 }}>
+                    {schools.map(school => (
+                        <SchoolCard key={school.id} school={school} currency={currency} rates={exchangeRates} />
+                    ))}
+                    </div>
+                    {page < totalPages && (
+                        <div style={{ textAlign: 'center', marginTop: '2rem' }}>
+                            <button
+                                onClick={() => fetchPage(page + 1, { append: true })}
+                                className="btn btn-outline"
+                                disabled={isLoading}
+                            >
+                                {isLoading ? 'Cargando…' : 'Cargar más colegios'}
+                            </button>
+                        </div>
+                    )}
+                </>
+            ) : !isLoading && (
+                <div style={{ textAlign: 'center', padding: '4rem', color: 'var(--text-muted)' }}>
+                    <p style={{ fontSize: '1.2rem' }}>No se encontraron colegios con esos criterios.</p>
+                    <button
+                        onClick={clearFilters}
+                        className="btn btn-outline"
+                        style={{ marginTop: '1rem' }}
+                    >
+                        Limpiar filtros
+                    </button>
+                </div>
+            )}
+          </>
         )}
       </div>
     </main>

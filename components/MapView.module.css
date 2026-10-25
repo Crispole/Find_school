@@ -1,0 +1,264 @@
+.wrapper {
+    transition: opacity 0.2s ease;
+}
+
+.summary {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    color: var(--text-secondary);
+}
+
+.legend {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    list-style: none;
+    font-size: 0.8rem;
+}
+
+.legend li {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+}
+
+.dot {
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    border: 1px solid rgba(255, 255, 255, 0.8);
+}
+
+.layout {
+    display: grid;
+    grid-template-columns: minmax(280px, 380px) 1fr;
+    gap: 1rem;
+    height: 70vh;
+    min-height: 480px;
+}
+
+.list {
+    overflow-y: auto;
+    background: var(--card-bg);
+    border: 1px solid var(--card-border);
+    border-radius: var(--radius);
+    padding: 0.5rem;
+}
+
+.list ul {
+    list-style: none;
+}
+
+.listTitle {
+    margin: 1rem 0.5rem 0.5rem;
+    font-size: 0.8rem;
+    text-transform: uppercase;
+    letter-spacing: 0.05em;
+    color: var(--text-muted);
+}
+
+.item {
+    border-radius: 0.5rem;
+    border: 1px solid transparent;
+    transition: background 0.15s, border-color 0.15s;
+}
+
+.item + .item {
+    margin-top: 0.25rem;
+}
+
+.itemActive {
+    background: var(--background);
+    border-color: var(--primary);
+}
+
+.itemButton {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 0.2rem;
+    padding: 0.65rem 0.75rem;
+    border: none;
+    background: transparent;
+    color: var(--text-primary);
+    text-align: left;
+    font: inherit;
+    cursor: pointer;
+}
+
+.itemHeader {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.itemName {
+    font-weight: 600;
+    font-size: 0.95rem;
+}
+
+.itemMeta {
+    font-size: 0.8rem;
+    color: var(--text-secondary);
+    padding-left: 1.1rem;
+}
+
+.empty {
+    padding: 1rem;
+    color: var(--text-muted);
+}
+
+/* isolation keeps Leaflet's high z-indexes below the navbar and modals */
+.mapWrapper {
+    position: relative;
+    isolation: isolate;
+    border-radius: var(--radius);
+    overflow: hidden;
+    border: 1px solid var(--card-border);
+}
+
+.map {
+    width: 100%;
+    height: 100%;
+}
+
+/* OpenStreetMap has no free dark tiles: invert the light ones (markers stay as-is) */
+.mapDark :global(.leaflet-tile-pane) {
+    filter: invert(1) hue-rotate(180deg) brightness(0.9) contrast(0.9);
+}
+
+.mapDark {
+    background: #1e293b;
+}
+
+.mapPlaceholder {
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding: 2rem;
+    text-align: center;
+    color: var(--text-muted);
+    background: var(--card-bg);
+}
+
+.prompt {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 4rem 1rem;
+    text-align: center;
+    color: var(--text-secondary);
+}
+
+/* Popup content */
+.popup {
+    display: flex;
+    flex-direction: column;
+    gap: 0.35rem;
+    min-width: 200px;
+    font-family: var(--font-sans);
+}
+
+.popupName {
+    font-size: 0.95rem;
+    color: #0f172a;
+}
+
+.popupMeta {
+    font-size: 0.75rem;
+    color: #64748b;
+}
+
+.popupStats {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.5rem;
+    margin: 0.25rem 0;
+}
+
+.popupStats dt {
+    font-size: 0.7rem;
+    color: #64748b;
+}
+
+.popupStats dd {
+    font-weight: 600;
+    color: #0f172a;
+}
+
+.popupActions {
+    display: flex;
+    gap: 0.5rem;
+}
+
+.popupActions button,
+.popupActions a {
+    flex: 1;
+    padding: 0.4rem 0.5rem;
+    border-radius: 0.5rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    text-align: center;
+    cursor: pointer;
+}
+
+.popupActions button {
+    border: none;
+    background: #2563eb;
+    color: #ffffff;
+}
+
+.popupActions a {
+    border: 1px solid #cbd5e1;
+    color: #0f172a !important;
+}
+
+/* Mobile: one panel at a time, switched with tabs */
+.tabs {
+    display: none;
+}
+
+@media (max-width: 768px) {
+    .tabs {
+        display: flex;
+        gap: 0.25rem;
+        padding: 0.25rem;
+        margin-bottom: 0.75rem;
+        background: var(--background);
+        border: 1px solid var(--card-border);
+        border-radius: 0.75rem;
+    }
+
+    .tabs button {
+        flex: 1;
+        padding: 0.5rem;
+        border: none;
+        border-radius: 0.5rem;
+        background: transparent;
+        color: var(--text-primary);
+        font-weight: 500;
+        cursor: pointer;
+    }
+
+    .tabs .tabActive {
+        background: var(--primary);
+        color: #ffffff;
+    }
+
+    .layout {
+        grid-template-columns: 1fr;
+        height: 65vh;
+    }
+
+    .layout[data-tab='map'] .list,
+    .layout[data-tab='list'] .mapWrapper {
+        display: none;
+    }
+}

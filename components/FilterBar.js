@@ -1,7 +1,7 @@
 'use client'; // Client component for interactivity
-import { useState, useEffect } from 'react';
+import { useState } from 'react';
 
-import { Search, Scale } from 'lucide-react';
+import { Search, Scale, MapPin } from 'lucide-react';
 import styles from './FilterBar.module.css';
 import CurrencySwitcher from './CurrencySwitcher';
 
@@ -12,7 +12,8 @@ export default function FilterBar({
   communesByRegion,
   selectedDependency, setSelectedDependency,
   currency, setCurrency,
-  onCompareClick
+  onCompareClick,
+  view = 'lista', mapCommune = '', onMapSearch
 }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const keywords = ["Mixto", "Laico", "Católico", "Excelencia", "Bilingüe", "Gratuito", "Tradicional", "Familiar", "Inclusivo", "Integral", "Bicentenario", "Técnico Profesional", "Artístico"];
@@ -26,19 +27,21 @@ export default function FilterBar({
   };
 
   return (
-    <div className={styles.container}>
-      {/* 1. Search by Name */}
-      <div className={styles.searchWrapper}>
-        <Search size={20} className={styles.searchIcon} />
-        <input 
-            type="text" 
-            placeholder="Buscar por nombre..." 
-            value={searchQuery}
-            onChange={(e) => setSearchQuery(e.target.value)}
-            className={styles.searchInput}
-            style={{ paddingRight: '1rem' }}
-        />
-      </div>
+    <div className={`${styles.container} ${view === 'mapa' ? styles.static : ''}`}>
+      {/* 1. Search by Name (list view only; the map shows a whole commune) */}
+      {view === 'lista' && (
+        <div className={styles.searchWrapper}>
+          <Search size={20} className={styles.searchIcon} />
+          <input
+              type="text"
+              placeholder="Buscar por nombre..."
+              value={searchQuery}
+              onChange={(e) => setSearchQuery(e.target.value)}
+              className={styles.searchInput}
+              style={{ paddingRight: '1rem' }}
+          />
+        </div>
+      )}
 
       {/* 2. Search by Project (Keywords Checkboxes) */}
       <div className={styles.dropdownWrapper}>
@@ -78,7 +81,7 @@ export default function FilterBar({
         onChange={(e) => setSelectedCommune(e.target.value)}
         className={styles.select}
       >
-        <option value="">Todas las comunas</option>
+        <option value="">{view === 'mapa' ? 'Elige una comuna...' : 'Todas las comunas'}</option>
         {communesByRegion.map(({ region, communes }) => (
             <optgroup key={region} label={region}>
                 {communes.map(commune => (
@@ -87,7 +90,21 @@ export default function FilterBar({
             </optgroup>
         ))}
       </select>
-      
+
+      {/* 3.5 Map search: runs once a commune is picked */}
+      {view === 'mapa' && (
+        <button
+          type="button"
+          className={`${styles.mapSearchBtn} ${selectedCommune && selectedCommune !== mapCommune ? styles.mapSearchPending : ''}`}
+          onClick={onMapSearch}
+          disabled={!selectedCommune}
+          title={selectedCommune ? `Ver colegios de ${selectedCommune} en el mapa` : 'Primero elige una comuna'}
+        >
+          <MapPin size={18} />
+          <span>Buscar en mapa</span>
+        </button>
+      )}
+
       {/* 4. Dependency Switcher */}
       <div className={styles.filterGroup} id="tour-filters">
         <div className={styles.toggleGroup}>

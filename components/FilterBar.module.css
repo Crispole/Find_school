@@ -232,3 +232,35 @@
     color: white;
     box-shadow: 0 4px 6px -1px var(--primary-light);
 }
+.mapSearchBtn {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    padding: 0.6rem 1.25rem;
+    background-color: var(--primary);
+    border: 1px solid var(--primary);
+    color: white;
+    border-radius: 0.75rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.2s;
+}
+
+.mapSearchBtn:hover:not(:disabled) {
+    background-color: var(--primary-hover);
+}
+
+.mapSearchBtn:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+/* A different commune was picked but not searched yet */
+.mapSearchPending {
+    box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.35);
+}
+
+/* Map view: not sticky, so it does not cover the map while scrolling */
+.static {
+    position: static;
+}

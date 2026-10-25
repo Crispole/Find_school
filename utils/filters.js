@@ -1,5 +1,6 @@
 // Filters <-> URL, shared by the server page and the client.
 // Example: /?q=san&comuna=Ñuñoa&dependencia=particular&proyecto=Laico,Mixto&pagina=2
+// Map view: /?vista=mapa&comuna=Ñuñoa&dependencia=particular
 
 export const DEPENDENCY_SLUGS = {
   municipal: 'Municipal',
@@ -31,11 +32,13 @@ export function filtersFromParams(get) {
     selectedDependency: DEPENDENCY_SLUGS[get('dependencia')] || '',
     keywordQuery: (get('proyecto') || '').split(',').filter(Boolean),
     page: Number.isFinite(page) ? Math.min(Math.max(page, 1), MAX_URL_PAGE) : 1,
+    view: get('vista') === 'mapa' ? 'mapa' : 'lista',
   };
 }
 
-export function filtersToSearch({ searchQuery, selectedCommune, selectedDependency, keywordQuery }, page = 1) {
+export function filtersToSearch({ searchQuery, selectedCommune, selectedDependency, keywordQuery }, page = 1, view = 'lista') {
   const params = new URLSearchParams();
+  if (view === 'mapa') params.set('vista', 'mapa');
   if (searchQuery.trim()) params.set('q', searchQuery.trim());
   if (selectedCommune) params.set('comuna', selectedCommune);
   if (SLUG_BY_DEPENDENCY[selectedDependency]) params.set('dependencia', SLUG_BY_DEPENDENCY[selectedDependency]);
