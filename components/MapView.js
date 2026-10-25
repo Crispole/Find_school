@@ -159,7 +159,8 @@ export default function MapView({ commune, data, isLoading, error, theme, curren
       {located.length > 0 && (
         <p className={styles.attribution}>
           Ubicaciones: Ministerio de Educación (Sistema de Admisión Escolar y «Establecimientos de Educación Escolar»,
-          publicados en la Plataforma de Datos Abiertos de Itrend). Esta información fue adaptada para este sitio.
+          publicados en la Plataforma de Datos Abiertos de Itrend) y © colaboradores de OpenStreetMap.
+          Esta información fue adaptada para este sitio.
         </p>
       )}
 

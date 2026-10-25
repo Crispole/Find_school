@@ -35,7 +35,18 @@ consultar de nuevo.
 ## Coordenadas para la búsqueda en mapa
 
 El modo "Buscar en mapa" muestra los colegios que tienen `lat`/`lng` en `data/schools.json`.
-La mayoría viene del script anterior; para los que faltan (sobre todo particulares pagados):
+La mayoría viene del script anterior. Para los que faltan (sobre todo particulares pagados):
+
+```bash
+node scripts/geocode-osm.mjs
+```
+
+Ubica con OpenStreetMap (Nominatim) los colegios sin coordenadas: por dirección, o por nombre si
+OpenStreetMap lo tiene registrado como colegio. Solo acepta resultados dentro de la comuna del
+colegio y a menos de 40 km de sus otros colegios. Respeta el límite de 1 consulta por segundo y
+guarda las respuestas en `data/raw/geocode/`.
+
+Otra alternativa son las coordenadas del Mineduc publicadas en Itrend:
 
 **Opción A: descarga automática desde Itrend.** Crea tus credenciales en
 https://www.plataformadedatos.cl/user/developer, copia `.env.example` a `.env.local`, completa
