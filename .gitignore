@@ -37,6 +37,9 @@ yarn-error.log*
 .env*
 !.env.example
 
+# Claude Code local settings (may hold personal permissions)
+/.claude/settings.local.json
+
 # vercel
 .vercel
 

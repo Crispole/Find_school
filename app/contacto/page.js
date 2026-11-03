@@ -190,7 +190,7 @@ export default function Contacto() {
                   textAlign: 'center',
                   border: '1px solid #bbf7d0'
                 }}>
-                  ¡Mensaje enviado con éxito! Nos pondremos en contacto pronto.
+                  Por ahora este formulario no envía mensajes. Escríbenos directamente a contacto@deepwell.cl.
                 </div>
               )}
             </form>

@@ -1,7 +1,14 @@
-// Adds the protocol when the data stores bare domains like "colegio.cl"
+// Only http(s) links may reach an href: anything else ("javascript:", "data:", ...) is dropped.
+// Adds the protocol when the data stores bare domains like "colegio.cl".
 export const toExternalUrl = (website) => {
   if (!website) return null;
-  return /^https?:\/\//i.test(website) ? website : `https://${website}`;
+  const candidate = /^https?:\/\//i.test(website) ? website : `https://${website}`;
+  try {
+    const url = new URL(candidate);
+    return url.protocol === 'http:' || url.protocol === 'https:' ? url.href : null;
+  } catch {
+    return null;
+  }
 };
 
 // Many small schools only have a social profile; the button says so instead of "Sitio Web"

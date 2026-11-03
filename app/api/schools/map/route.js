@@ -7,6 +7,7 @@ export async function GET(request) {
   const commune = params.get('commune');
 
   if (!commune) {
+    console.warn(JSON.stringify({ level: 'warn', event: 'api_invalid_params', path: request.nextUrl.pathname, reason: 'missing commune' }));
     return NextResponse.json({ error: 'Debes indicar una comuna' }, { status: 400 });
   }
 
