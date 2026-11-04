@@ -1,13 +1,29 @@
 'use client';
 
 import { useState, useEffect } from 'react';
-import { X, Scale, Star, Users, MapPin, Globe, CreditCard, Phone } from 'lucide-react';
+import { X, Scale, Star, Users, MapPin, Globe, CreditCard, Phone, BookOpen, GraduationCap } from 'lucide-react';
 import styles from './ComparisonModal.module.css';
 import { convertAndFormat } from '../utils/currency';
 import { toExternalUrl, toMapsUrl } from '../utils/links';
 import { formatPhone, toTelHref } from '../utils/phone';
 
 const MIN_QUERY_LENGTH = 2;
+
+const SCORE_ICON = <BookOpen size={16} />;
+const PAES_ICON = <GraduationCap size={16} />;
+const SCORE_ROWS = [
+  { label: 'SIMCE 2° medio · Mat.', key: 'simce_2m_math', icon: SCORE_ICON },
+  { label: 'SIMCE 2° medio · Leng.', key: 'simce_2m_language', icon: SCORE_ICON },
+  { label: 'SIMCE 8° básico · Mat.', key: 'simce_8b_math', icon: SCORE_ICON },
+  { label: 'SIMCE 8° básico · Leng.', key: 'simce_8b_language', icon: SCORE_ICON },
+  { label: 'SIMCE 4° básico · Mat.', key: 'simce_4b_math', icon: SCORE_ICON },
+  { label: 'SIMCE 4° básico · Leng.', key: 'simce_4b_language', icon: SCORE_ICON },
+  { label: 'PAES · Matemática 1', key: 'paes_math', icon: PAES_ICON },
+  { label: 'PAES · Lectora', key: 'paes_language', icon: PAES_ICON },
+  { label: 'PAES · Matemática 2', key: 'paes_ptu_matematica2', icon: PAES_ICON },
+  { label: 'PAES · Historia', key: 'paes_ptu_historia', icon: PAES_ICON },
+  { label: 'PAES · Ciencias', key: 'paes_ptu_ciencias', icon: PAES_ICON },
+];
 
 // Search-as-you-type against /api/schools instead of a <select> with thousands of options
 function SchoolPicker({ label, selected, onSelect }) {
@@ -96,6 +112,14 @@ export default function ComparisonModal({ isOpen, onClose, currency, rates }) {
     { label: 'Teléfono', key: 'phone', icon: <Phone size={16} /> },
   ];
 
+  // Results rows only appear when at least one of the two schools has a score
+  const hasScore = (value) => typeof value === 'number';
+  const scoreFeatures = SCORE_ROWS
+    .filter(({ key }) => school1 && school2 && (hasScore(school1[key]) || hasScore(school2[key])))
+    .map((row) => ({ ...row, isScore: true }));
+  const simceYear = school1?.simce_year || school2?.simce_year;
+  const paesYear = school1?.paes_year || school2?.paes_year;
+
   return (
     <div className={styles.overlay} onClick={onClose}>
       <div className={styles.modal} onClick={e => e.stopPropagation()}>
@@ -117,9 +141,17 @@ export default function ComparisonModal({ isOpen, onClose, currency, rates }) {
 
           {school1 && school2 ? (
             <div className={styles.comparisonTable}>
-              {features.map(feature => {
+              {[...features, ...scoreFeatures].map(feature => {
                 const renderValue = (school) => {
                   const value = school[feature.key];
+
+                  if (feature.isScore) {
+                    if (!hasScore(value)) return 'N/A';
+                    // Only highlight when both schools have a score and they differ
+                    const other = school === school1 ? school2[feature.key] : school1[feature.key];
+                    const isBest = hasScore(other) && value > other;
+                    return <span className={isBest ? styles.best : undefined}>{value}</span>;
+                  }
 
                   if (feature.isFee) return convertAndFormat(value, currency, rates);
 
@@ -174,6 +206,14 @@ export default function ComparisonModal({ isOpen, onClose, currency, rates }) {
                   </div>
                 );
               })}
+              {scoreFeatures.length > 0 && (
+                <p className={styles.resultsNote}>
+                  Puntajes promedio
+                  {simceYear ? ` · SIMCE ${simceYear} (preliminar)` : ''}
+                  {paesYear ? ` · PAES Admisión ${paesYear}` : ''}. El puntaje destacado es el más alto de la fila; no
+                  indica por sí solo que un colegio sea mejor que otro.
+                </p>
+              )}
             </div>
           ) : (
             <div className={styles.emptyState}>

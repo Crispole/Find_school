@@ -264,3 +264,64 @@
 .static {
     position: static;
 }
+
+.scoreGroup {
+    display: flex;
+    gap: 0.5rem;
+    align-items: center;
+}
+
+.scoreSelect {
+    min-width: 190px;
+}
+
+.scoreInput {
+    width: 6.5rem;
+    padding: 0.75rem 0.75rem;
+    border-radius: 0.75rem;
+    border: 1px solid var(--card-border);
+    background-color: var(--background);
+    color: var(--text-primary);
+}
+
+.scoreInput:disabled {
+    opacity: 0.5;
+    cursor: not-allowed;
+}
+
+.scoreHint {
+    flex-basis: 100%;
+    margin: 0;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+}
+
+/* Desktop keeps the toggle buttons; on phones they would not fit, so a select takes over */
+.dependencySelect {
+    display: none;
+}
+
+@media (max-width: 640px) {
+    .filterGroup,
+    .scoreGroup,
+    .dependencySelect {
+        width: 100%;
+    }
+
+    .toggleGroup {
+        display: none;
+    }
+
+    .dependencySelect {
+        display: block;
+    }
+
+    .scoreSelect {
+        flex: 1 1 auto;
+        min-width: 0;
+    }
+
+    .select {
+        max-width: 100%;
+    }
+}

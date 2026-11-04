@@ -2,6 +2,8 @@
 // Example: /?q=san&comuna=Ñuñoa&dependencia=particular&proyecto=Laico,Mixto&pagina=2
 // Map view: /?vista=mapa&comuna=Ñuñoa&dependencia=particular
 
+import { isScoreMetric, parseMinScore } from './scores';
+
 export const DEPENDENCY_SLUGS = {
   municipal: 'Municipal',
   subvencionado: 'Particular Subvencionado',
@@ -21,6 +23,8 @@ export const EMPTY_FILTERS = {
   selectedCommune: '',
   selectedDependency: '',
   keywordQuery: [],
+  scoreMetric: '',
+  minScore: '',
 };
 
 // `get` returns the raw value of a param (works with URLSearchParams.get or a plain object)
@@ -31,18 +35,25 @@ export function filtersFromParams(get) {
     selectedCommune: get('comuna') || '',
     selectedDependency: DEPENDENCY_SLUGS[get('dependencia')] || '',
     keywordQuery: (get('proyecto') || '').split(',').filter(Boolean),
+    // A minimum only makes sense together with a valid test
+    scoreMetric: isScoreMetric(get('prueba')) ? get('prueba') : '',
+    minScore: isScoreMetric(get('prueba')) ? parseMinScore(get('min')) : '',
     page: Number.isFinite(page) ? Math.min(Math.max(page, 1), MAX_URL_PAGE) : 1,
     view: get('vista') === 'mapa' ? 'mapa' : 'lista',
   };
 }
 
-export function filtersToSearch({ searchQuery, selectedCommune, selectedDependency, keywordQuery }, page = 1, view = 'lista') {
+export function filtersToSearch({ searchQuery, selectedCommune, selectedDependency, keywordQuery, scoreMetric = '', minScore = '' }, page = 1, view = 'lista') {
   const params = new URLSearchParams();
   if (view === 'mapa') params.set('vista', 'mapa');
   if (searchQuery.trim()) params.set('q', searchQuery.trim());
   if (selectedCommune) params.set('comuna', selectedCommune);
   if (SLUG_BY_DEPENDENCY[selectedDependency]) params.set('dependencia', SLUG_BY_DEPENDENCY[selectedDependency]);
   if (keywordQuery.length > 0) params.set('proyecto', keywordQuery.join(','));
+  if (isScoreMetric(scoreMetric)) {
+    params.set('prueba', scoreMetric);
+    if (parseMinScore(minScore)) params.set('min', String(parseMinScore(minScore)));
+  }
   if (page > 1) params.set('pagina', String(Math.min(page, MAX_URL_PAGE)));
   const search = params.toString();
   return search ? `?${search}` : '';

@@ -1,7 +1,7 @@
 import { NextResponse } from 'next/server';
 import { getMapSchools } from '../../../../lib/schools';
 
-// GET /api/schools/map?commune=Ñuñoa&dependency=&keywords=Laico,Mixto
+// GET /api/schools/map?commune=Ñuñoa&dependency=&keywords=Laico,Mixto&scoreMetric=paes-mat&minScore=600
 export async function GET(request) {
   const params = request.nextUrl.searchParams;
   const commune = params.get('commune');
@@ -15,5 +15,7 @@ export async function GET(request) {
     commune,
     dependency: params.get('dependency') || '',
     keywords: (params.get('keywords') || '').split(',').filter(Boolean),
+    scoreMetric: params.get('scoreMetric') || '',
+    minScore: params.get('minScore') || '',
   }));
 }

@@ -17,6 +17,8 @@ export default async function Home({ searchParams }) {
     commune: filters.selectedCommune,
     dependency: filters.selectedDependency,
     keywords: filters.keywordQuery,
+    scoreMetric: filters.scoreMetric,
+    minScore: filters.minScore,
     page,
     cumulative: true,
   });

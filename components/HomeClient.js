@@ -16,12 +16,16 @@ import styles from './HomeClient.module.css';
 
 const SEARCH_DEBOUNCE_MS = 300;
 
-const buildQuery = ({ searchQuery, selectedCommune, selectedDependency, keywordQuery }, page) => {
+const buildQuery = ({ searchQuery, selectedCommune, selectedDependency, keywordQuery, scoreMetric, minScore }, page) => {
   const params = new URLSearchParams();
   if (searchQuery.trim()) params.set('q', searchQuery.trim());
   if (selectedCommune) params.set('commune', selectedCommune);
   if (selectedDependency) params.set('dependency', selectedDependency);
   if (keywordQuery.length > 0) params.set('keywords', keywordQuery.join(','));
+  if (scoreMetric && minScore) {
+    params.set('scoreMetric', scoreMetric);
+    params.set('minScore', String(minScore));
+  }
   params.set('page', String(page));
   return params.toString();
 };
@@ -40,6 +44,8 @@ export default function HomeClient({ communesByRegion, initialFilters = EMPTY_FI
   const [keywordQuery, setKeywordQuery] = useState(initialFilters.keywordQuery);
   const [selectedCommune, setSelectedCommune] = useState(initialFilters.selectedCommune);
   const [selectedDependency, setSelectedDependency] = useState(initialFilters.selectedDependency);
+  const [scoreMetric, setScoreMetric] = useState(initialFilters.scoreMetric || '');
+  const [minScore, setMinScore] = useState(initialFilters.minScore || '');
   const [currency, setCurrency] = useState('CLP');
   const [exchangeRates, setExchangeRates] = useState(EXCHANGE_RATES);
   const [theme, setTheme] = useState('light');
@@ -65,7 +71,7 @@ export default function HomeClient({ communesByRegion, initialFilters = EMPTY_FI
   const loadedQueryRef = useRef(filtersToSearch(initialFilters));
   const abortRef = useRef(null);
 
-  const filters = { searchQuery, selectedCommune, selectedDependency, keywordQuery };
+  const filters = { searchQuery, selectedCommune, selectedDependency, keywordQuery, scoreMetric, minScore };
 
   // `cumulative` loads pages 1..pageToLoad at once (restoring a URL with ?pagina=N)
   const fetchPage = async (pageToLoad, { append = false, cumulative = false, from = filters } = {}) => {
@@ -104,7 +110,7 @@ export default function HomeClient({ communesByRegion, initialFilters = EMPTY_FI
     }, SEARCH_DEBOUNCE_MS);
     return () => clearTimeout(timer);
     // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [searchQuery, selectedCommune, selectedDependency, keywordQuery, view]);
+  }, [searchQuery, selectedCommune, selectedDependency, keywordQuery, scoreMetric, minScore, view]);
 
   // Map view: load every school of the searched commune; dependency and
   // project filters refine the map right away
@@ -119,10 +125,14 @@ export default function HomeClient({ communesByRegion, initialFilters = EMPTY_FI
         const params = new URLSearchParams({ commune: mapCommune });
         if (selectedDependency) params.set('dependency', selectedDependency);
         if (keywordQuery.length > 0) params.set('keywords', keywordQuery.join(','));
+        if (scoreMetric && minScore) {
+          params.set('scoreMetric', scoreMetric);
+          params.set('minScore', String(minScore));
+        }
         const res = await fetch(`/api/schools/map?${params}`, { signal: controller.signal });
         if (!res.ok) throw new Error(`HTTP ${res.status}`);
         setMapData({ ...(await res.json()), commune: mapCommune });
-        syncUrl({ ...EMPTY_FILTERS, selectedCommune: mapCommune, selectedDependency, keywordQuery }, 1, 'mapa');
+        syncUrl({ ...EMPTY_FILTERS, selectedCommune: mapCommune, selectedDependency, keywordQuery, scoreMetric, minScore }, 1, 'mapa');
       } catch (e) {
         if (e.name !== 'AbortError') setMapError('No se pudo cargar el mapa. Intenta nuevamente.');
       } finally {
@@ -132,7 +142,7 @@ export default function HomeClient({ communesByRegion, initialFilters = EMPTY_FI
 
     loadMap();
     return () => controller.abort();
-  }, [view, mapCommune, selectedDependency, keywordQuery]);
+  }, [view, mapCommune, selectedDependency, keywordQuery, scoreMetric, minScore]);
 
   // Back/Forward can restore a cached render made for another URL: when the
   // address bar disagrees with the results on screen, trust the address bar
@@ -146,6 +156,8 @@ export default function HomeClient({ communesByRegion, initialFilters = EMPTY_FI
     setSelectedCommune(urlFilters.selectedCommune);
     setSelectedDependency(urlFilters.selectedDependency);
     setKeywordQuery(urlFilters.keywordQuery);
+    setScoreMetric(urlFilters.scoreMetric);
+    setMinScore(urlFilters.minScore);
     if (urlView === 'mapa') {
       setMapCommune(urlFilters.selectedCommune);
     } else {
@@ -181,7 +193,8 @@ export default function HomeClient({ communesByRegion, initialFilters = EMPTY_FI
             steps: [
                 { element: '#tour-view', popover: { title: 'Cómo buscar', description: 'Busca colegios por nombre, o elige una comuna y míralos todos en el mapa.' } },
                 { element: '#tour-filters', popover: { title: 'Filtros', description: 'Selecciona el tipo de establecimiento: Todos - Municipales - Subvencionados - Particulares - Adm. Delegada' } },
-                { element: '#tour-compare', popover: { title: 'Compara', description: 'Elige dos establecimientos y compara sus características.' } },
+                { element: '#tour-score', popover: { title: 'Puntajes', description: 'Elige una prueba (SIMCE o PAES) y un puntaje mínimo para ver solo los colegios que lo alcanzan. Los colegios sin dato en esa prueba no aparecen.' } },
+                { element: '#tour-compare', popover: { title: 'Compara', description: 'Elige dos establecimientos y compara sus características y resultados SIMCE y PAES.' } },
                 { element: '#tour-currency', popover: { title: 'Divisa', description: 'Selecciona la divisa que más te acomode.' } },
                 { element: '.tour-card-commune', popover: { title: 'Ubicación', description: 'Encuentra el establecimiento en Google Maps' } },
                 { element: '.tour-card-fees', popover: { title: 'Resultados', description: 'Revisa los resultados SIMCE y PAES del establecimiento.' } },
@@ -221,6 +234,8 @@ export default function HomeClient({ communesByRegion, initialFilters = EMPTY_FI
     setSelectedCommune('');
     setKeywordQuery([]);
     setSelectedDependency('');
+    setScoreMetric('');
+    setMinScore('');
   };
 
   const changeView = (nextView) => {
@@ -229,7 +244,7 @@ export default function HomeClient({ communesByRegion, initialFilters = EMPTY_FI
     if (nextView === 'mapa') {
       // A commune already picked in the list view is searched on the map right away
       setMapCommune(selectedCommune);
-      if (!selectedCommune) syncUrl({ ...EMPTY_FILTERS, selectedDependency, keywordQuery }, 1, 'mapa');
+      if (!selectedCommune) syncUrl({ ...EMPTY_FILTERS, selectedDependency, keywordQuery, scoreMetric, minScore }, 1, 'mapa');
     } else {
       syncUrl(filters, page);
     }
@@ -274,6 +289,10 @@ export default function HomeClient({ communesByRegion, initialFilters = EMPTY_FI
             communesByRegion={communesByRegion}
             selectedDependency={selectedDependency}
             setSelectedDependency={setSelectedDependency}
+            scoreMetric={scoreMetric}
+            setScoreMetric={setScoreMetric}
+            minScore={minScore}
+            setMinScore={setMinScore}
             currency={currency}
             setCurrency={setCurrency}
             onCompareClick={() => setIsCompareOpen(true)}

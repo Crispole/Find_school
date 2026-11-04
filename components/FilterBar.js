@@ -4,6 +4,23 @@ import { useState } from 'react';
 import { Search, Scale, MapPin } from 'lucide-react';
 import styles from './FilterBar.module.css';
 import CurrencySwitcher from './CurrencySwitcher';
+import { MAX_SCORE, SCORE_METRICS, parseMinScore } from '../utils/scores';
+
+const DEPENDENCY_OPTIONS = [
+  { value: '', label: 'Todos los establecimientos' },
+  { value: 'Municipal', label: 'Municipales' },
+  { value: 'Particular Subvencionado', label: 'Subvencionados' },
+  { value: 'Particular Pagado', label: 'Particulares' },
+  { value: 'Corporación de Administración Delegada', label: 'Adm. Delegada' },
+];
+
+// <optgroup> sections of the score select, in the order of SCORE_METRICS
+const SCORE_GROUPS = SCORE_METRICS.reduce((groups, metric) => {
+  const last = groups[groups.length - 1];
+  if (last?.group === metric.group) last.metrics.push(metric);
+  else groups.push({ group: metric.group, metrics: [metric] });
+  return groups;
+}, []);
 
 export default function FilterBar({ 
   searchQuery, setSearchQuery, 
@@ -11,6 +28,8 @@ export default function FilterBar({
   selectedCommune, setSelectedCommune, 
   communesByRegion,
   selectedDependency, setSelectedDependency,
+  scoreMetric = '', setScoreMetric,
+  minScore = '', setMinScore,
   currency, setCurrency,
   onCompareClick,
   view = 'lista', mapCommune = '', onMapSearch
@@ -107,6 +126,18 @@ export default function FilterBar({
 
       {/* 4. Dependency Switcher */}
       <div className={styles.filterGroup} id="tour-filters">
+        {/* Phones: one select instead of the row of buttons */}
+        <select
+          value={selectedDependency}
+          onChange={(e) => setSelectedDependency(e.target.value)}
+          className={`${styles.select} ${styles.dependencySelect}`}
+          aria-label="Tipo de establecimiento"
+        >
+          {DEPENDENCY_OPTIONS.map(({ value, label }) => (
+            <option key={value} value={value}>{label}</option>
+          ))}
+        </select>
+
         <div className={styles.toggleGroup}>
           <button 
             className={`${styles.toggleBtn} ${!selectedDependency ? styles.active : ''}`}
@@ -140,6 +171,44 @@ export default function FilterBar({
           </button>
         </div>
       </div>
+
+      {/* 4.2 Score filter: a test plus a minimum score */}
+      <div className={styles.scoreGroup} id="tour-score">
+        <select
+          value={scoreMetric}
+          onChange={(e) => setScoreMetric(e.target.value)}
+          className={`${styles.select} ${styles.scoreSelect}`}
+          aria-label="Filtrar por prueba"
+        >
+          <option value="">Filtrar por puntaje…</option>
+          {SCORE_GROUPS.map(({ group, metrics }) => (
+            <optgroup key={group} label={group}>
+              {metrics.map(({ slug, label }) => (
+                <option key={slug} value={slug}>{group} · {label}</option>
+              ))}
+            </optgroup>
+          ))}
+        </select>
+        <input
+          type="number"
+          inputMode="numeric"
+          min="1"
+          max={MAX_SCORE}
+          placeholder="Mínimo"
+          value={minScore}
+          disabled={!scoreMetric}
+          onChange={(e) => setMinScore(parseMinScore(e.target.value))}
+          className={styles.scoreInput}
+          aria-label="Puntaje mínimo"
+        />
+      </div>
+
+      {scoreMetric && minScore ? (
+        <p className={styles.scoreHint} role="note">
+          Se muestran solo colegios con puntaje registrado igual o superior a {minScore}; los que no tienen dato en esa
+          prueba quedan fuera. Los puntajes no miden por sí solos la calidad de un colegio.
+        </p>
+      ) : null}
 
       {/* 4.5 Comparison Button */}
       <button className={styles.compareBtn} onClick={onCompareClick} id="tour-compare">

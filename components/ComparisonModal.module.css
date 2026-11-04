@@ -233,3 +233,16 @@
     font-size: 0.85rem;
     color: var(--text-muted);
 }
+
+.best {
+    font-weight: 700;
+    color: var(--primary);
+}
+
+.resultsNote {
+    margin: 0;
+    padding: 0.75rem 1rem;
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    border-top: 1px solid var(--card-border);
+}
