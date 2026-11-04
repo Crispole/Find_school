@@ -4,7 +4,12 @@ import styles from './FeeModal.module.css';
 export default function FeeModal({ isOpen, onClose, school }) {
   if (!isOpen) return null;
 
-  const hasSimce = school.simce_math || school.simce_language;
+  const simceRows = [
+    { key: '2m', label: '2° medio' },
+    { key: '4b', label: '4° básico' },
+    { key: '8b', label: '8° básico' },
+  ].filter(({ key }) => school[`simce_${key}_math`] || school[`simce_${key}_language`]);
+  const hasSimce = simceRows.length > 0;
   const hasPaes = school.paes_math || school.paes_language;
   const hasExtraPaes = school.paes_ptu_matematica2 || school.paes_ptu_historia || school.paes_ptu_ciencias;
   const hasResults = hasSimce || hasPaes || hasExtraPaes;
@@ -35,20 +40,20 @@ export default function FeeModal({ isOpen, onClose, school }) {
                                 </tr>
                             </thead>
                             <tbody>
-                                {hasSimce && (
-                                    <tr>
+                                {simceRows.map(({ key, label }) => (
+                                    <tr key={key}>
                                         <td className={styles.levelColumn}>
                                             <BookOpen size={16} />
-                                            SIMCE
+                                            SIMCE {label}
                                         </td>
                                         <td className={styles.valueColumn}>
-                                            {school.simce_math || '-'}
+                                            {school[`simce_${key}_math`] || '-'}
                                         </td>
                                         <td className={styles.valueColumn}>
-                                            {school.simce_language || '-'}
+                                            {school[`simce_${key}_language`] || '-'}
                                         </td>
                                     </tr>
-                                )}
+                                ))}
                                 {hasPaes && (
                                     <tr>
                                         <td className={styles.levelColumn}>
@@ -94,7 +99,9 @@ export default function FeeModal({ isOpen, onClose, school }) {
                     <div className={styles.disclaimer}>
                         * Puntajes promedio registrados.
                         <br />
-                        * SIMCE 2024 y PAES 2025
+                        * SIMCE {school.simce_year || 2025} (datos preliminares) y PAES Admisión {school.paes_year || 2026} (proceso regular).
+                        <br />
+                        * Los resultados no miden por sí solos la calidad de un colegio.
                     </div>
                 </>
             ) : (
