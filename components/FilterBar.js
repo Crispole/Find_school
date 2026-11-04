@@ -1,7 +1,7 @@
 'use client'; // Client component for interactivity
 import { useState } from 'react';
 
-import { Search, Scale, MapPin } from 'lucide-react';
+import { Search, Scale, MapPin, SlidersHorizontal } from 'lucide-react';
 import styles from './FilterBar.module.css';
 import CurrencySwitcher from './CurrencySwitcher';
 import { MAX_SCORE, SCORE_METRICS, parseMinScore } from '../utils/scores';
@@ -35,6 +35,14 @@ export default function FilterBar({
   view = 'lista', mapCommune = '', onMapSearch
 }) {
   const [isDropdownOpen, setIsDropdownOpen] = useState(false);
+  const [isPanelOpen, setIsPanelOpen] = useState(false);
+  // The map view needs the commune picker in sight, so only the list view folds
+  const collapsible = view === 'lista';
+  const activeFilters =
+    (keywordQuery.length > 0 ? 1 : 0) +
+    (selectedCommune ? 1 : 0) +
+    (selectedDependency ? 1 : 0) +
+    (scoreMetric && minScore ? 1 : 0);
   const keywords = ["Mixto", "Laico", "Católico", "Excelencia", "Bilingüe", "Gratuito", "Tradicional", "Familiar", "Inclusivo", "Integral", "Bicentenario", "Técnico Profesional", "Artístico"];
 
   const handleKeywordToggle = (keyword) => {
@@ -46,7 +54,7 @@ export default function FilterBar({
   };
 
   return (
-    <div className={`${styles.container} ${view === 'mapa' ? styles.static : ''}`}>
+    <div className={`${styles.container} ${view === 'mapa' ? styles.static : ''} ${collapsible && isPanelOpen ? styles.containerOpen : ''}`}>
       {/* 1. Search by Name (list view only; the map shows a whole commune) */}
       {view === 'lista' && (
         <div className={styles.searchWrapper}>
@@ -62,6 +70,23 @@ export default function FilterBar({
         </div>
       )}
 
+      {/* Phones, list view: the other controls fold behind this button to keep the sticky bar short */}
+      {collapsible && (
+        <button
+          type="button"
+          className={`${styles.filtersToggle} ${isPanelOpen ? styles.filtersToggleOpen : ''}`}
+          onClick={() => setIsPanelOpen((open) => !open)}
+          aria-expanded={isPanelOpen}
+          aria-controls="filter-panel"
+        >
+          <SlidersHorizontal size={18} />
+          <span>Filtros</span>
+          {activeFilters > 0 && <span className={styles.filtersBadge}>{activeFilters}</span>}
+        </button>
+      )}
+
+      {/* On desktop the panel is transparent to layout (display: contents) */}
+      <div id="filter-panel" className={`${styles.panel} ${collapsible && !isPanelOpen ? styles.panelCollapsed : ''}`}>
       {/* 2. Search by Project (Keywords Checkboxes) */}
       <div className={styles.dropdownWrapper}>
         <button 
@@ -219,6 +244,7 @@ export default function FilterBar({
       {/* 5. Currency Switcher */}
       <div id="tour-currency">
         <CurrencySwitcher currentCurrency={currency} setCurrency={setCurrency} />
+      </div>
       </div>
     </div>
   );

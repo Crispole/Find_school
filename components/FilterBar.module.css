@@ -325,3 +325,84 @@
         max-width: 100%;
     }
 }
+
+/* Folding panel: transparent to the layout on desktop, collapsible on phones */
+.panel {
+    display: contents;
+}
+
+.filtersToggle {
+    display: none;
+}
+
+.filtersBadge {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 1.35rem;
+    height: 1.35rem;
+    padding: 0 0.35rem;
+    border-radius: 999px;
+    background-color: var(--primary);
+    color: white;
+    font-size: 0.75rem;
+    font-weight: 700;
+}
+
+@media (max-width: 640px) {
+    .container {
+        padding: 0.75rem;
+        gap: 0.5rem;
+        top: 0.5rem;
+    }
+
+    /* Compact bar: name search + "Filtros" button on one row */
+    .searchWrapper {
+        flex: 1 1 0;
+        min-width: 0;
+    }
+
+    .filtersToggle {
+        display: flex;
+        align-items: center;
+        gap: 0.4rem;
+        padding: 0.65rem 0.85rem;
+        background-color: var(--background);
+        border: 1px solid var(--primary);
+        color: var(--primary);
+        border-radius: 0.75rem;
+        font-weight: 600;
+        cursor: pointer;
+    }
+
+    .filtersToggleOpen {
+        background-color: var(--primary);
+        color: white;
+    }
+
+    .filtersToggleOpen .filtersBadge {
+        background-color: white;
+        color: var(--primary);
+    }
+
+    .panel {
+        display: flex;
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 100%;
+    }
+
+    .panelCollapsed {
+        display: none;
+    }
+
+    /* With the panel open the bar can be taller than the screen: let it scroll */
+    .containerOpen {
+        max-height: calc(100dvh - 1rem);
+        overflow-y: auto;
+    }
+
+    .scoreHint {
+        flex-basis: auto;
+    }
+}
